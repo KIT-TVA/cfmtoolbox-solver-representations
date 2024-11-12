@@ -56,14 +56,14 @@
           "require": false,
           "first_feature_name": "player",
           "first_cardinality": { "intervals": [{ "lower": 15, "upper": 15 }] },
-          "second_feature_name": "sourdough",
+          "second_feature_name": "coach",
           "second_cardinality": { "intervals": [{ "lower": 2, "upper": null }] }
         },
         {
-          "require": false,
+          "require": true,
           "first_feature_name": "player",
           "first_cardinality": { "intervals": [{ "lower": 20, "upper": 20 }] },
-          "second_feature_name": "gouda",
+          "second_feature_name": "coach",
           "second_cardinality": { "intervals": [{ "lower": 2, "upper": 4 }] }
         }
       ]
