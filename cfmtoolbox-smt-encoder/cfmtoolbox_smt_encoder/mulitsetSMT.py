@@ -1,5 +1,6 @@
-from cfmtoolbox import CFM, Feature, Interval
-from click import Abort
+from cfmtoolbox import CFM, Feature, Interval, Constraint
+
+
 
 
 def create_smt_multiset_encoding(cfm: CFM):
@@ -11,6 +12,7 @@ def create_smt_multiset_encoding(cfm: CFM):
     encoding += create_assert_feature_group_type_cardinality(cfm.root)
     encoding += create_assert_feature_group_instance_cardinality(cfm.root, Interval(1, 1))
     encoding += create_assert_feature_instance_cardinality(cfm.root, Interval(1, 1))
+    encoding += create_assert_constraints(cfm.constraints)
 
     print(encoding)
     return encoding
@@ -46,6 +48,46 @@ def create_assert_feature_group_type_cardinality(feature: Feature):
     return assertStatement
 
 
+
+
+def create_assert_constraints(constraints):
+    assertStatement = ""
+    for constraint in constraints:
+        assertStatement += "(assert "
+        assertStatement += "(ite "
+        assertStatement += create_constraint_feature_to_intervals(constraint.first_cardinality.intervals, constraint.first_feature)
+        if not constraint.require:
+            assertStatement += "(not "
+
+        assertStatement += create_constraint_feature_to_intervals(constraint.second_cardinality.intervals, constraint.second_feature)
+
+        if not constraint.require:
+            assertStatement += " )"
+
+        assertStatement += "(= true true)"
+        assertStatement += ")"
+        assertStatement += ")"
+    return assertStatement
+
+
+def create_constraint_feature_to_intervals(intervals: list, feature: Feature):
+    constraint = ""
+    if len(intervals) > 1:
+        constraint +=  "(or "
+    for interval in intervals:
+        constraint = "(and "
+        constraint += "(<= "
+        constraint += create_const_name(feature)
+        constraint += str(interval.upper)
+        constraint += ")"
+        constraint += "(>= "
+        constraint += create_const_name(feature)
+        constraint += str(interval.lower)
+        constraint += ")"
+
+    if len(intervals) > 1:
+        constraint += ")"
+    return constraint
 
 def create_assert_feature_instance_cardinality(feature: Feature, parent: Interval):
     assertStatement = ""
