@@ -41,7 +41,7 @@
               { "lower": 2, "upper": 4 }
             ]
           },
-          "group_type_cardinality": { "intervals": [{ "lower": 1, "upper": 3 }] },
+          "group_type_cardinality": { "intervals": [{ "lower": 3, "upper": 3 }] },
           "group_instance_cardinality": {
             "intervals": [{ "lower": 3, "upper": 3 }]
           },
