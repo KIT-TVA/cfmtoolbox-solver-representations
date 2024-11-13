@@ -41,6 +41,22 @@ def run_smt_solver_with_multisetencoding_maximize_cardinalities(cfm: CFM):
         solver_cmd += "(exit)"
         print(callSolverWithEncoding(solver_cmd))
 
+
+@app.command()
+def run_smt_solver_with_multisetencoding_minimize_cardinalities(cfm: CFM):
+    list_constants = get_all_constants_of_CFM_mulitset(cfm)
+    encoding = create_smt_multiset_encoding(cfm)
+    print(len(list_constants))
+    for constant in list_constants:
+        solver_cmd = encoding
+        solver_cmd += "(minimize "
+        solver_cmd += constant
+        solver_cmd += ")"
+        solver_cmd += "(check-sat)"
+        solver_cmd += "(get-value (" + constant + "))"
+        solver_cmd += "(exit)"
+        print(callSolverWithEncoding(solver_cmd))
+
 @app.command()
 def encode_to_smt_cloning(cfm: CFM) -> str:
     print("Encoding CFM...")
