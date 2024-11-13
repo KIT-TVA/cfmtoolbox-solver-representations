@@ -28,14 +28,14 @@ def create_assert_feature_group_type_cardinality(feature: Feature):
 
             assertStatement += "(and "
             assertStatement += "(>= "
-            assertStatement += create_amount_of_children_for_group_type_cardinality(feature.children)
+            assertStatement += create_amount_of_children_for_group_type_cardinality(feature.children, feature)
             assertStatement += str(interval.lower)
             assertStatement += ")"
             if interval.upper is None:
                 assertStatement += "(= true true)"
             else:
                 assertStatement += "(<= "
-                assertStatement += create_amount_of_children_for_group_type_cardinality(feature.children)
+                assertStatement += create_amount_of_children_for_group_type_cardinality(feature.children, feature)
                 assertStatement += str(interval.upper)
                 assertStatement += ")"
             assertStatement += ")"  # closing and
@@ -123,13 +123,15 @@ def create_assert_feature_instance_cardinality(feature: Feature, parent_interval
 
     return assert_statement
 
-def create_amount_of_children_for_group_type_cardinality(features: list):
+def create_amount_of_children_for_group_type_cardinality(features: list, parent: Feature):
     amount = ""
 
     amount += "(+ "
     for feature in features:
         amount += "(ite "
-        amount += "(>= " + create_const_name(feature) + " 1)"
+        amount += "(>= " + create_const_name(feature) + " "
+        amount += create_const_name(parent) # for group type cardinality in multisets, it is only valid if the feature is in all subtrees -> if the lower and upper bound are equal this is necessary
+        amount +=  ")"                       # for max bounded check this should not change anything
         amount += " 1 "
         amount += " 0 "
         amount += " )" # closing ite
@@ -162,18 +164,15 @@ def create_assert_feature_group_instance_cardinality(feature: Feature):
             assert_statement += "(>= "
             assert_statement += create_sum_of_children_for_group_type_cardinality(feature.children)
             assert_statement += " "
-            if feature.parent:
-                assert_statement += "(* " + str(interval.lower) + " " +  create_const_name(feature.parent) + ")"   #str(interval.lower * parentInterval.lower)
-            else:
-                assert_statement += str(interval.lower)
+
+            assert_statement += "(* " + str(interval.lower) + " " +  create_const_name(feature) + ")"   #str(interval.lower * parentInterval.lower)
+
             assert_statement += ") "
             assert_statement += "(<= "
             assert_statement += create_sum_of_children_for_group_type_cardinality(feature.children)
             assert_statement += " "
-            if feature.parent:
-                assert_statement += "(* " + str(interval.upper) + " " + create_const_name(feature.parent) + ")"  # str(interval.upper * parentInterval.upper)
-            else:
-                assert_statement += str(interval.upper)
+
+            assert_statement += "(* " + str(interval.upper) + " " + create_const_name(feature) + ")"  # str(interval.upper * parentInterval.upper)
             assert_statement += ") "
             assert_statement += ")" # closing and
 
@@ -224,6 +223,12 @@ def declare_constants(features: list) -> str:
 
     return constants
 
+
+def get_all_constants_of_CFM_mulitset(cfm: CFM):
+    constant_list = []
+    for feature in cfm.features:
+        constant_list.append(create_const_name(feature))
+    return constant_list
 
 def create_const_name(feature: Feature) -> str:
     return "Feature_" + feature.name
