@@ -2,7 +2,7 @@ import os
 import sys
 
 from cfmtoolbox import app, CFM
-from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, get_all_constants_of_CFM_mulitset
+from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, get_all_constants_of_CFM_mulitset, create_const_name
 import subprocess
 
 
@@ -56,6 +56,26 @@ def run_smt_solver_with_multisetencoding_minimize_cardinalities(cfm: CFM):
         solver_cmd += "(get-value (" + constant + "))"
         solver_cmd += "(exit)"
         print(callSolverWithEncoding(solver_cmd))
+
+
+@app.command()
+def run_smt_solver_with_multisetencoding_gap_detection(cfm: CFM):
+    list_features = cfm.features
+    encoding = create_smt_multiset_encoding(cfm)
+    for feature in list_features:
+        for interval in feature.instance_cardinality.intervals:
+            for cardinality in range(interval.lower, interval.upper + 1):
+                solver_cmd = encoding
+                solver_cmd += "(assert (= "
+                solver_cmd += create_const_name(feature) + " "
+                solver_cmd += str(cardinality)
+                solver_cmd += "))"
+                solver_cmd += "(check-sat)"
+                solver_cmd += "(exit)"
+                output = callSolverWithEncoding(solver_cmd)
+                if output.__contains__("unsat"):
+                    print("Gap at: " + str(cardinality) + " in Feature: " + str(feature.name))
+
 
 @app.command()
 def encode_to_smt_cloning(cfm: CFM) -> str:
