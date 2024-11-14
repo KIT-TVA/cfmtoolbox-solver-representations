@@ -3,6 +3,7 @@ import sys
 
 from cfmtoolbox import app, CFM
 from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, get_all_constants_of_CFM_mulitset, create_const_name
+from cfmtoolbox_smt_encoder.cloningSMT import create_smt_cloning_encoding
 import subprocess
 
 
@@ -81,6 +82,7 @@ def run_smt_solver_with_multisetencoding_gap_detection(cfm: CFM):
 def encode_to_smt_cloning(cfm: CFM) -> str:
     print("Encoding CFM...")
     encoding = ""
+    encoding += create_smt_cloning_encoding(cfm)
 
 
     print(encoding)
