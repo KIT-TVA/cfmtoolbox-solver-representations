@@ -1,6 +1,6 @@
 from cfmtoolbox import CFM, Feature, Interval
 
-from cfmtoolbox_smt_encoder.mulitsetSMT import create_const_name
+from cfmtoolbox_smt_encoder.mulitsetSMT import create_const_name, create_assert_feature_group_instance_cardinality
 
 
 
@@ -13,6 +13,7 @@ def create_smt_cloning_encoding(cfm: CFM):
     encoding += declare_cloned_constants(cfm.root,1)
     encoding += create_assert_child_parent_connection_cloning(cfm.root)
     encoding += create_assert_feature_group_type_cardinality_cloning(cfm.root)
+    encoding += create_assert_feature_group_instance_cardinality_cloning(cfm.root)
 
     print(encoding)
     return encoding
@@ -68,6 +69,8 @@ def create_assert_child_parent_connection_cloning(feature: Feature) -> str:
 
     return childrenAssert
 
+
+
 def getMaxCardinality(intervals: list[Interval]) -> int:
     max = 1
     for interval in intervals:
@@ -75,9 +78,6 @@ def getMaxCardinality(intervals: list[Interval]) -> int:
             max = interval.upper
 
     return max
-
-
-
 
 
 def create_assert_feature_group_type_cardinality_cloning(feature: Feature):
@@ -130,6 +130,56 @@ def create_amount_of_children_for_group_type_cardinality_cloning(children, root_
         amount += " 1 "
         amount += " 0 "
         amount += " ) "  # closing ite
+    amount += " ) "  # closing +
+
+    return amount
+
+def create_assert_feature_group_instance_cardinality_cloning(feature: Feature):
+    assertStatement = ""
+    if feature.group_instance_cardinality.intervals:
+        assertStatement += "(assert "
+
+        assertStatement += "(and "
+        for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+            if len(feature.group_type_cardinality.intervals) > 1:
+                assertStatement += "(or"
+            for interval in feature.group_instance_cardinality.intervals:
+
+                assertStatement += "(and "
+                assertStatement += "(>= "
+                assertStatement += create_amount_of_children_for_group_instance_cardinality_cloning(feature.children, i)
+                assertStatement += str(interval.lower)
+                assertStatement += ")"
+                if interval.upper is None:
+                    assertStatement += "(= true true)"
+                else:
+                    assertStatement += "(<= "
+                    assertStatement += create_amount_of_children_for_group_instance_cardinality_cloning(feature.children, i)
+                    assertStatement += str(interval.upper)
+                    assertStatement += ")"
+                assertStatement += ")\n"  # closing and
+            if len(feature.group_instance_cardinality.intervals) > 1:
+                assertStatement += ")"  # closing or
+        assertStatement += ")"  # closing outter and
+
+        assertStatement += ")\n"  # closing assert
+
+    for child in feature.children:
+        assertStatement += create_assert_feature_group_instance_cardinality_cloning(child)
+    return assertStatement
+
+
+def create_amount_of_children_for_group_instance_cardinality_cloning(children, root_instance):
+    amount = ""
+
+    amount += "(+ "
+    for feature in children:
+        for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+            amount += "(ite "
+            amount += " " + create_const_name(feature) + "_" + str(root_instance) + "_" + str(i) + " "
+            amount += " 1 "
+            amount += " 0 "
+            amount += " ) "  # closing ite
     amount += " ) "  # closing +
 
     return amount
