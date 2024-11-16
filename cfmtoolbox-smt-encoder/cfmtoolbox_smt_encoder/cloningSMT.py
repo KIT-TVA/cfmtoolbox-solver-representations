@@ -14,6 +14,9 @@ def create_smt_cloning_encoding(cfm: CFM):
     encoding += create_assert_child_parent_connection_cloning(cfm.root)
     encoding += create_assert_feature_group_type_cardinality_cloning(cfm.root)
     encoding += create_assert_feature_group_instance_cardinality_cloning(cfm.root)
+    encoding += create_assert_feature_instance_cardinality_cloning(cfm.features)
+
+
 
     print(encoding)
     return encoding
@@ -183,3 +186,54 @@ def create_amount_of_children_for_group_instance_cardinality_cloning(children, r
     amount += " ) "  # closing +
 
     return amount
+
+
+
+def create_assert_feature_instance_cardinality_cloning(features: list[Feature]):
+    assertStatement = "(assert "
+    assertStatement += "(and "
+
+    for feature in features:
+        if feature.parent is None:
+            parent_cardinality = 1
+        else:
+            parent_cardinality = getMaxCardinality(feature.parent.instance_cardinality.intervals)
+        assertStatement += "(and "
+        for i in range( 1, parent_cardinality + 1):
+            sum_of_feature_instance = create_sum_of_feature_instance(feature, i)
+            assertStatement += "(and "
+            assertStatement += "(<= "
+            assertStatement += str(sum_of_feature_instance) + " "
+            assertStatement += str(getMaxCardinality(feature.instance_cardinality.intervals))
+            assertStatement += ") "
+            assertStatement += "(>= "
+            assertStatement += str(sum_of_feature_instance) + " "
+            assertStatement += str(getMinCardinality(feature.instance_cardinality.intervals))
+            assertStatement += ")"
+            assertStatement += ")\n"
+
+        assertStatement += ") "  # closing and
+
+    assertStatement += ") " # closing and
+    assertStatement += ")\n" # closing  assert
+    return assertStatement
+
+def getMinCardinality(intervals: list[Interval]) -> int:
+    min = 0
+    for interval in intervals:
+        if interval.lower <= min:
+            min = interval.lower
+
+    return min
+
+def create_sum_of_feature_instance(feature: Feature, parent_instance):
+    sum_of_feature_instance = ""
+    sum_of_feature_instance += "(+ "
+    for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+        sum_of_feature_instance += "(ite "
+        sum_of_feature_instance += " " + create_const_name(feature) + "_" + str(parent_instance) + "_" + str(i) + " "
+        sum_of_feature_instance += " 1 "
+        sum_of_feature_instance += " 0 "
+        sum_of_feature_instance += ")"  # closing ite
+    sum_of_feature_instance += ")"
+    return sum_of_feature_instance
