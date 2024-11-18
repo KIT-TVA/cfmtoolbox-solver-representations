@@ -1,3 +1,5 @@
+from pickle import FALSE
+
 from cfmtoolbox import CFM, Feature, Interval
 
 from cfmtoolbox_smt_encoder.mulitsetSMT import create_const_name, create_assert_feature_group_instance_cardinality, \
@@ -8,7 +10,7 @@ def create_smt_cloning_encoding(cfm: CFM):
     print("Encoding CFM...")
     encoding = ""
 
-    encoding += declare_cloned_constants(cfm.root,1)
+    encoding += declare_cloned_constants(cfm.root,1, declaration=True)
     encoding += create_assert_child_parent_connection_cloning(cfm.root)
     encoding += create_assert_feature_group_type_cardinality_cloning(cfm.root)
     encoding += create_assert_feature_group_instance_cardinality_cloning(cfm.root)
@@ -21,17 +23,20 @@ def create_smt_cloning_encoding(cfm: CFM):
     return encoding
 
 
-def declare_cloned_constants(parent: Feature, parentMaxCardinality: int):
+def declare_cloned_constants(parent: Feature, parentMaxCardinality: int, declaration: bool):
     constants = ""
 
     max = getMaxCardinality(parent.instance_cardinality.intervals)
 
     for i in range(1,parentMaxCardinality + 1):
         for j in range(1, max + 1):
-            constants += "(declare-const " + create_const_name(parent) + "_" + str(i) + "_" + str(j) + " Bool)\n"
-
+            if declaration:
+                constants += "(declare-const "
+            constants += create_const_name(parent) + "_" + str(i) + "_" + str(j) + " "
+            if declaration:
+                constants += " Bool)\n"
     for feature in parent.children:
-        constants += declare_cloned_constants(feature, max)
+        constants += declare_cloned_constants(feature, max, declaration)
 
     return constants
 
@@ -287,3 +292,8 @@ def create_constraint_feature_to_intervals_cloning(cardinality_intervals: list[I
         constraints_cloning += ")" # closing or
 
     return constraints_cloning
+
+def get_all_constants_of_CFM_cloning(cfm: CFM):
+    constants = declare_cloned_constants(cfm.root,1,False)
+    constant_list = constants.split(" ")
+    return constant_list
