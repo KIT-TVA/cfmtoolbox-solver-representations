@@ -1,9 +1,7 @@
 from cfmtoolbox import CFM, Feature, Interval
 
-from cfmtoolbox_smt_encoder.mulitsetSMT import create_const_name, create_assert_feature_group_instance_cardinality
-
-
-
+from cfmtoolbox_smt_encoder.mulitsetSMT import create_const_name, create_assert_feature_group_instance_cardinality, \
+    create_assert_constraints
 
 
 def create_smt_cloning_encoding(cfm: CFM):
@@ -15,6 +13,7 @@ def create_smt_cloning_encoding(cfm: CFM):
     encoding += create_assert_feature_group_type_cardinality_cloning(cfm.root)
     encoding += create_assert_feature_group_instance_cardinality_cloning(cfm.root)
     encoding += create_assert_feature_instance_cardinality_cloning(cfm.features)
+    encoding += create_assert_constraints_cloning(cfm)
 
 
 
@@ -208,7 +207,7 @@ def create_assert_feature_instance_cardinality_cloning(features: list[Feature]):
             assertStatement += ") "
             assertStatement += "(>= "
             assertStatement += str(sum_of_feature_instance) + " "
-            assertStatement += str(getMinCardinality(feature.instance_cardinality.intervals))
+            assertStatement += str(get_min_cardinality(feature.instance_cardinality.intervals))
             assertStatement += ")"
             assertStatement += ")\n"
 
@@ -218,7 +217,7 @@ def create_assert_feature_instance_cardinality_cloning(features: list[Feature]):
     assertStatement += ")\n" # closing  assert
     return assertStatement
 
-def getMinCardinality(intervals: list[Interval]) -> int:
+def get_min_cardinality(intervals: list[Interval]) -> int:
     min = 0
     for interval in intervals:
         if interval.lower <= min:
@@ -237,3 +236,54 @@ def create_sum_of_feature_instance(feature: Feature, parent_instance):
         sum_of_feature_instance += ")"  # closing ite
     sum_of_feature_instance += ")"
     return sum_of_feature_instance
+
+def create_assert_constraints_cloning(cfm: CFM):
+    constraints_cloning = ""
+    for constraint in cfm.constraints:
+        constraints_cloning += "(assert "
+        constraints_cloning += "(ite "
+        constraints_cloning += create_constraint_feature_to_intervals_cloning(constraint.first_cardinality.intervals, constraint.first_feature)
+        if not constraint.require:
+            constraints_cloning += "(not "
+
+        constraints_cloning += create_constraint_feature_to_intervals_cloning(constraint.second_cardinality.intervals, constraint.second_feature)
+
+        if not constraint.require:
+            constraints_cloning += " )" # closing not
+
+        constraints_cloning += "(= true true)"
+        constraints_cloning += ")" #closing ite
+        constraints_cloning += ")\n" # closing assert
+
+    return constraints_cloning
+
+def create_constraint_feature_to_intervals_cloning(cardinality_intervals: list[Interval], feature: Feature):
+    constraints_cloning = ""
+
+    sum_assert = ""
+    if getMaxCardinality(feature.parent.instance_cardinality.intervals) > 1:
+        sum_assert += "(+ "
+    for i in range(1, getMaxCardinality(feature.parent.instance_cardinality.intervals) + 1):
+        sum_assert += create_sum_of_feature_instance(feature, i)
+    if getMaxCardinality(feature.parent.instance_cardinality.intervals) > 1:
+        sum_assert += ")"  # closing +
+
+    if len(cardinality_intervals) > 1:
+        constraints_cloning += "(or "
+
+    for interval in cardinality_intervals:
+        constraints_cloning += "(and "
+        constraints_cloning += "(<= "
+        constraints_cloning += sum_assert
+        constraints_cloning += str(interval.upper)
+        constraints_cloning += ")" #closing <=
+        constraints_cloning += "(>= "
+        constraints_cloning += sum_assert
+        constraints_cloning += str(interval.lower)
+        constraints_cloning += ")"  # closing >=
+        constraints_cloning += ")" #closing and
+
+    if len(cardinality_intervals) > 1:
+        constraints_cloning += ")" # closing or
+
+    return constraints_cloning
