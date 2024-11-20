@@ -34,7 +34,7 @@
           ]
         },
         {
-          "name": "cheese-mix",
+          "name": "cheese_mix",
           "instance_cardinality": {
             "intervals": [
               { "lower": 0, "upper": 0 },
@@ -78,9 +78,9 @@
         {
           "name": "ingredients",
           "instance_cardinality": { "intervals": [{ "lower": 0, "upper": 1 }] },
-          "group_type_cardinality": { "intervals": [{ "lower": 1, "upper": 10 }] },
+          "group_type_cardinality": { "intervals": [{ "lower": 5, "upper": 10 }] },
           "group_instance_cardinality": {
-            "intervals": [{ "lower": 1, "upper": 20 }]
+            "intervals": [{ "lower": 1, "upper": 10 }]
           },
           "children": [
             {
@@ -113,7 +113,7 @@
             {
                 "name": "porch",
                 "instance_cardinality": {
-                  "intervals": [{ "lower": 0, "upper": 10 }]
+                  "intervals": [{ "lower": 10, "upper": 10 }]
                 },
                 "group_type_cardinality": { "intervals": [] },
                 "group_instance_cardinality": { "intervals": [] },

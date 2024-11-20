@@ -34,7 +34,7 @@
           ]
         },
         {
-          "name": "cheese-mix",
+          "name": "cheese_mix",
           "instance_cardinality": {
             "intervals": [
               { "lower": 0, "upper": 0 },
