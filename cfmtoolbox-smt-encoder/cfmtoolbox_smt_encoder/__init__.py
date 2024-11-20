@@ -116,7 +116,6 @@ def minimize_or_maximize_all_clones(features: list[Feature], encoding:str, maxim
             else:
                 solver_cmd += "(minimize "
             solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature],i)
-            #print(create_amount_of_children_for_group_instance_cardinality_cloning([feature],i))
             solver_cmd += ")"
             solver_cmd += "(check-sat)"
             solver_cmd += "(get-model)"
@@ -130,9 +129,8 @@ def minimize_or_maximize_all_clones(features: list[Feature], encoding:str, maxim
 def count_cardinality(solver_output, feature, parent_number):
     count = 0
     constants = solver_output.split('-')
-
     for constant in constants:
-        if ("Feature_" + feature.name) in constant:
+        if ("Feature_" + feature.name + "_" + str(parent_number)) in constant:
             if "true" in constant:
                 count += 1
 
@@ -159,14 +157,18 @@ def find_gaps_in_all_clones(features: list[Feature], encoding: str):
                     solver_cmd += "(assert (= "
                     solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature], i) + " "
                     solver_cmd +=  str(j) + "))"
-                    # print(create_amount_of_children_for_group_instance_cardinality_cloning([feature],i))
-                    solver_cmd += ")"
+                    #print(create_amount_of_children_for_group_instance_cardinality_cloning([feature],i))
+                    #solver_cmd += ")"
                     solver_cmd += "(check-sat)"
                     solver_cmd += "(get-model)"
                     solver_cmd += "(exit)"
                     output = callSolverWithEncoding(solver_cmd)
+                    #print(solver_cmd)
+                    #print(output)
                     if "unsat" in output:
-                        print("Gap at: " + str(j) + " in Feature: " + str(feature.name))
+                        print("Gap at: " + str(j) + " in Feature: " + feature.name + " ")
+                    if "error" in output:
+                        print(output)
 
             find_gaps_in_all_clones(feature.children, encoding)
 
