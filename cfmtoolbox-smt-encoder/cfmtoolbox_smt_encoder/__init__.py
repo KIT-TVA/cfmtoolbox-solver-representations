@@ -5,7 +5,8 @@ from pyexpat import features
 from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, get_all_constants_of_CFM_mulitset, create_const_name
 from cfmtoolbox_smt_encoder.cloningSMT import create_smt_cloning_encoding, get_all_constants_of_CFM_cloning, \
-    create_amount_of_children_for_group_instance_cardinality_cloning, getMaxCardinality
+    create_amount_of_children_for_group_instance_cardinality_cloning, getMaxCardinality, \
+    create_parent_list_for_feature_by_name, declare_cloned_constants
 import subprocess
 
 
@@ -97,80 +98,115 @@ def run_smtsolver_with_cloning(cfm: CFM):
 
 @app.command()
 def run_smt_solver_with_cloning_minimize_cardinalities(cfm: CFM):
-    features = cfm.root.children
     encoding = create_smt_cloning_encoding(cfm)
-    minimize_or_maximize_all_clones(features,encoding,False)
+    minimize_or_maximize_all_clones(cfm.root,encoding,False, cfm.root,[])
 
 @app.command()
 def run_smt_solver_with_cloning_maximize_cardinalities(cfm: CFM):
-    features = cfm.root.children
     encoding = create_smt_cloning_encoding(cfm)
-    minimize_or_maximize_all_clones(features,encoding,True)
+    minimize_or_maximize_all_clones(cfm.root,encoding,True, cfm.root,[])
 
-def minimize_or_maximize_all_clones(features: list[Feature], encoding:str, maximize: bool):
-    for feature in features:
-        for i in range(1,getMaxCardinality(feature.parent.instance_cardinality.intervals)+1):
+def minimize_or_maximize_all_clones(feature: Feature, encoding:str, maximize: bool,root: Feature, parent_list: list[int]):
+
+    def helper(depth, current_indices):
+        # Base case: if we've reached the innermost level, execute the code
+        if depth == len(parent_list):
             solver_cmd = encoding
             if maximize:
                 solver_cmd += "(maximize"
             else:
                 solver_cmd += "(minimize "
-            solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature],i)
+            solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature], current_indices)
             solver_cmd += ")"
             solver_cmd += "(check-sat)"
             solver_cmd += "(get-model)"
             solver_cmd += "(exit)"
-            count_cardinality(callSolverWithEncoding(solver_cmd),feature,i)
+            count_cardinality(callSolverWithEncoding(solver_cmd), feature, current_indices)
+            return
 
-            minimize_or_maximize_all_clones(feature.children,encoding,maximize)
+        # Loop through the range based on the current depth value in arr[depth]
+        for i in range(1, parent_list[depth] + 1):  # arr[depth] defines how many times the loop at this level runs
+            current_indices.append(i)  # Add the current index to the list
+            helper(depth + 1, current_indices)  # Recurse to the next depth (next loop)
+            current_indices.pop()
+        return
+
+    helper(0, [])
+
+    if feature.parent is not None:
+        max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
+        parent_list.append(max_cardinality)
+    for feature in feature.children:
+        old_list = parent_list.copy()
+        minimize_or_maximize_all_clones(feature, encoding, maximize, root, old_list)
 
 
 
-def count_cardinality(solver_output, feature, parent_number):
+def count_cardinality(solver_output, feature, indices):
     count = 0
     constants = solver_output.split('-')
     for constant in constants:
-        if ("Feature_" + feature.name + "_" + str(parent_number)) in constant:
-            if "true" in constant:
-                count += 1
+        if len(indices) > 0:
+            if ("Feature_" + feature.name + "_" + "_".join(map(str, indices))) in constant:
+                if "true" in constant:
+                    count += 1
+        else:
+            if ("Feature_" + feature.name + "_" + "1") in constant:
+                if "true" in constant:
+                    count += 1
 
-
-    print(feature.name + "_" + str(parent_number) + ": " + str(count))
+    if len(indices) > 0:
+        print(feature.name + "_" + "_".join(map(str, indices)) + ": " + str(count))
+    else:
+        print(feature.name + "_" + "1" + ": " + str(count))
 
 
 
 
 @app.command()
 def run_smt_solver_with_cloning_gap_detection(cfm: CFM):
-    features = cfm.root.children
     encoding = create_smt_cloning_encoding(cfm)
-    find_gaps_in_all_clones(features,encoding)
+    find_gaps_in_all_clones(cfm.root,encoding,[])
 
 
 
-def find_gaps_in_all_clones(features: list[Feature], encoding: str):
-    for feature in features:
-        for i in range(1, getMaxCardinality(feature.parent.instance_cardinality.intervals) + 1):
+def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[int]):
+
+    def helper(depth, current_indices):
+        # Base case: if we've reached the innermost level, execute the code
+        if depth == len(parent_list):
             for interval in feature.instance_cardinality.intervals:
                 for j in range(interval.lower, interval.upper + 1):
                     solver_cmd = encoding
                     solver_cmd += "(assert (= "
-                    solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature], i) + " "
-                    solver_cmd +=  str(j) + "))"
-                    #print(create_amount_of_children_for_group_instance_cardinality_cloning([feature],i))
-                    #solver_cmd += ")"
+                    solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature], current_indices) + " "
+                    solver_cmd += str(j) + "))"
                     solver_cmd += "(check-sat)"
                     solver_cmd += "(get-model)"
                     solver_cmd += "(exit)"
                     output = callSolverWithEncoding(solver_cmd)
-                    #print(solver_cmd)
-                    #print(output)
                     if "unsat" in output:
                         print("Gap at: " + str(j) + " in Feature: " + feature.name + " ")
                     if "error" in output:
                         print(output)
+            return
 
-            find_gaps_in_all_clones(feature.children, encoding)
+        # Loop through the range based on the current depth value in arr[depth]
+        for i in range(1, parent_list[depth] + 1):  # arr[depth] defines how many times the loop at this level runs
+            current_indices.append(i)  # Add the current index to the list
+            helper(depth + 1, current_indices)  # Recurse to the next depth (next loop)
+            current_indices.pop()
+        return
+
+    helper(0, [])
+
+    if feature.parent is not None:
+        max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
+        parent_list.append(max_cardinality)
+    for feature in feature.children:
+        old_list = parent_list.copy()
+        find_gaps_in_all_clones(feature, encoding, old_list)
+
 
 
 def callSolverWithEncoding(encoding):

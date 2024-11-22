@@ -322,6 +322,9 @@ def create_assert_feature_instance_cardinality_cloning(parent: Feature, parent_l
 
     assertStatement += helper(0, [])
 
+    assertStatement += ") "  # closing and
+    assertStatement += ")\n"  # closing  assert
+
     if parent.parent is not None:
         max_cardinality = getMaxCardinality(parent.instance_cardinality.intervals)
         parent_list.append(max_cardinality)
@@ -329,8 +332,7 @@ def create_assert_feature_instance_cardinality_cloning(parent: Feature, parent_l
         old_list = parent_list.copy()
         assertStatement += create_assert_feature_instance_cardinality_cloning(feature, old_list)
 
-    assertStatement += ") " # closing and
-    assertStatement += ")\n" # closing  assert
+
     return assertStatement
 
 
