@@ -10,7 +10,7 @@ def create_smt_multiset_encoding(cfm: CFM):
     encoding += declare_constants(cfm.features)
     encoding += create_assert_child_parent_connection(cfm.root.children)
     encoding += create_assert_feature_group_type_cardinality(cfm.root)
-    encoding += create_assert_feature_group_instance_cardinality(cfm.root,[Interval(1, 1)])
+    encoding += create_assert_feature_group_instance_cardinality(cfm.root)
     encoding += create_assert_feature_instance_cardinality(cfm.root, [Interval(1, 1)])
     encoding += create_assert_constraints(cfm.constraints)
 
@@ -163,48 +163,42 @@ def create_sum_of_children_for_group_type_cardinality(features: list):
     return sum
 
 
-def create_assert_feature_group_instance_cardinality(feature: Feature, parent_intervals: list[Interval]):
+def create_assert_feature_group_instance_cardinality(feature: Feature):
     assert_statement = ""
     if feature.group_instance_cardinality.intervals:
         assert_statement += "(assert "
 
-        if len(parent_intervals) > 1:
+
+
+        if len(feature.group_instance_cardinality.intervals) > 1:
             assert_statement += "(or"
 
+        for interval in feature.group_instance_cardinality.intervals:
+            assert_statement += "(and "
+            assert_statement += "(>= "
+            assert_statement += create_sum_of_children_for_group_type_cardinality(feature.children)
+            assert_statement += " "
+           # assert_statement += " " + str(interval.lower * parentInterval.lower) + " "
 
-        for parentInterval in parent_intervals:
+            assert_statement += "(* " + str(interval.lower) + " " +  create_const_name(feature) + ")"   #str(interval.lower * parentInterval.lower)
 
-            if len(feature.group_instance_cardinality.intervals) > 1:
-                assert_statement += "(or"
+            assert_statement += ") "
+            assert_statement += "(<= "
+            assert_statement += create_sum_of_children_for_group_type_cardinality(feature.children)
+            assert_statement += " "
+            #assert_statement += " " + str(interval.upper * parentInterval.upper) + " "
+            assert_statement += "(* " + str(interval.upper) + " " + create_const_name(feature) + ")"  # str(interval.upper * parentInterval.upper)
+            assert_statement += ") "
+            assert_statement += ")" # closing and
 
-            for interval in feature.group_instance_cardinality.intervals:
-                assert_statement += "(and "
-                assert_statement += "(>= "
-                assert_statement += create_sum_of_children_for_group_type_cardinality(feature.children)
-                assert_statement += " "
-               # assert_statement += " " + str(interval.lower * parentInterval.lower) + " "
+        if len(feature.group_instance_cardinality.intervals) > 1:
+            assert_statement += ")"  # closing or
 
-                assert_statement += "(* " + str(interval.lower * parentInterval.lower) + " " +  create_const_name(feature) + ")"   #str(interval.lower * parentInterval.lower)
 
-                assert_statement += ") "
-                assert_statement += "(<= "
-                assert_statement += create_sum_of_children_for_group_type_cardinality(feature.children)
-                assert_statement += " "
-                #assert_statement += " " + str(interval.upper * parentInterval.upper) + " "
-                assert_statement += "(* " + str(interval.upper * parentInterval.upper) + " " + create_const_name(feature) + ")"  # str(interval.upper * parentInterval.upper)
-                assert_statement += ") "
-                assert_statement += ")" # closing and
-
-            if len(feature.group_instance_cardinality.intervals) > 1:
-                assert_statement += ")"  # closing or
-
-        if len(parent_intervals) > 1:
-            assert_statement += " )"
         assert_statement += ")\n" # closing assert
 
-    new_intervals = add_new_parent_interval_to_intervals(parent_intervals, feature.instance_cardinality.intervals)
     for child in feature.children:
-        assert_statement += create_assert_feature_group_instance_cardinality(child, new_intervals)
+        assert_statement += create_assert_feature_group_instance_cardinality(child)
 
     return assert_statement
 
