@@ -93,6 +93,7 @@ def create_constraint_feature_to_intervals(intervals: list, feature: Feature):
 
 def create_assert_feature_instance_cardinality(feature: Feature, parent_intervals: list[Interval]):
     assert_statement = ""
+    new_parent_intervals = parent_intervals.copy()
     assert_statement += "(assert "
     if len(parent_intervals) > 1:
         assert_statement += "(or"
@@ -117,11 +118,21 @@ def create_assert_feature_instance_cardinality(feature: Feature, parent_interval
         assert_statement += ")"
     assert_statement += ")\n" # closing assert
 
+    new_intervals =  add_new_parent_interval_to_intervals(new_parent_intervals, feature.instance_cardinality.intervals)
 
     for child in feature.children:
-        assert_statement += create_assert_feature_instance_cardinality(child, feature.instance_cardinality.intervals)
+        assert_statement += create_assert_feature_instance_cardinality(child, new_intervals)
 
     return assert_statement
+
+def add_new_parent_interval_to_intervals(parentIntervals: list[Interval], newIntervals: list[Interval]):
+    output_list = []
+    for interval in parentIntervals:
+        for newInterval in newIntervals:
+            output_list.append(Interval(interval.lower * newInterval.lower,interval.upper * newInterval.upper))
+
+    return output_list
+
 
 def create_amount_of_children_for_group_type_cardinality(features: list, parent: Feature):
     amount = ""
