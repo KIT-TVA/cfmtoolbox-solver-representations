@@ -1,6 +1,6 @@
 {
     "root": {
-      "name": "mulitplayer",
+      "name": "multiplayer",
       "instance_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
       "group_type_cardinality": { "intervals": [{ "lower": 2, "upper": 2 }] },
       "group_instance_cardinality": { "intervals": [{ "lower": 3, "upper": 9 }] },
