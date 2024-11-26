@@ -1,6 +1,6 @@
 import os
+import re
 import sys
-from pyexpat import features
 
 from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, get_all_constants_of_CFM_mulitset, create_const_name
@@ -32,7 +32,6 @@ def run_smtsolver_with_multisetencoding(cfm: CFM):
 def run_smt_solver_with_multisetencoding_maximize_cardinalities(cfm: CFM):
     list_constants = get_all_constants_of_CFM_mulitset(cfm)
     encoding = create_smt_multiset_encoding(cfm)
-    print(len(list_constants))
     for constant in list_constants:
         solver_cmd = encoding
         solver_cmd += "(maximize "
@@ -80,16 +79,23 @@ def run_smt_solver_with_multisetencoding_gap_detection(cfm: CFM):
 
 
 @app.command()
-def encode_to_smt_cloning(cfm: CFM) -> str:
+def encode_to_smt_cloning_base(cfm: CFM) -> str:
     encoding = ""
-    encoding += create_smt_cloning_encoding(cfm)
+    encoding += create_smt_cloning_encoding(cfm, only_boolean_constants=True)
+
+    return encoding
+
+@app.command()
+def encode_to_smt_cloning_with_child_int_constants(cfm: CFM) -> str:
+    encoding = ""
+    encoding += create_smt_cloning_encoding(cfm, only_boolean_constants=False)
 
     return encoding
 
 
 @app.command()
-def run_smtsolver_with_cloning(cfm: CFM):
-    encoding = encode_to_smt_cloning(cfm)
+def run_smtsolver_with_cloning_base(cfm: CFM):
+    encoding = encode_to_smt_cloning_base(cfm)
     encoding += "(check-sat)"
     encoding += "(get-model)"
     encoding += "(exit)"
@@ -97,16 +103,26 @@ def run_smtsolver_with_cloning(cfm: CFM):
 
 
 @app.command()
-def run_smt_solver_with_cloning_minimize_cardinalities(cfm: CFM):
-    encoding = create_smt_cloning_encoding(cfm)
-    minimize_or_maximize_all_clones(cfm.root,encoding,False, cfm.root,[])
+def run_smt_solver_with_cloning_base_minimize_cardinalities(cfm: CFM):
+    encoding = encode_to_smt_cloning_base(cfm)
+    minimize_or_maximize_all_clones(cfm.root,encoding,False, cfm.root,[],True)
 
 @app.command()
-def run_smt_solver_with_cloning_maximize_cardinalities(cfm: CFM):
-    encoding = create_smt_cloning_encoding(cfm)
-    minimize_or_maximize_all_clones(cfm.root,encoding,True, cfm.root,[])
+def run_smt_solver_with_cloning_base_maximize_cardinalities(cfm: CFM):
+    encoding = encode_to_smt_cloning_base(cfm)
+    minimize_or_maximize_all_clones(cfm.root,encoding,True, cfm.root,[],True)
 
-def minimize_or_maximize_all_clones(feature: Feature, encoding:str, maximize: bool,root: Feature, parent_list: list[int]):
+@app.command()
+def run_smt_solver_with_cloning_with_child_int_constants_minimize_cardinalities(cfm: CFM):
+    encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
+    minimize_or_maximize_all_clones(cfm.root,encoding,False, cfm.root,[],False)
+
+@app.command()
+def run_smt_solver_with_cloning_with_child_int_constants_maximize_cardinalities(cfm: CFM):
+    encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
+    minimize_or_maximize_all_clones(cfm.root,encoding,True, cfm.root,[],False)
+
+def minimize_or_maximize_all_clones(feature: Feature, encoding:str, maximize: bool,root: Feature, parent_list: list[int],only_boolean_constants: bool):
 
     def helper(depth, current_indices):
         # Base case: if we've reached the innermost level, execute the code
@@ -116,7 +132,7 @@ def minimize_or_maximize_all_clones(feature: Feature, encoding:str, maximize: bo
                 solver_cmd += "(maximize"
             else:
                 solver_cmd += "(minimize "
-            solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature], current_indices)
+            solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature], current_indices, only_boolean_constants)
             solver_cmd += ")"
             solver_cmd += "(check-sat)"
             solver_cmd += "(get-model)"
@@ -138,22 +154,31 @@ def minimize_or_maximize_all_clones(feature: Feature, encoding:str, maximize: bo
         parent_list.append(max_cardinality)
     for feature in feature.children:
         old_list = parent_list.copy()
-        minimize_or_maximize_all_clones(feature, encoding, maximize, root, old_list)
+        minimize_or_maximize_all_clones(feature, encoding, maximize, root, old_list, only_boolean_constants)
 
 
 
 def count_cardinality(solver_output, feature, indices):
     count = 0
     constants = solver_output.split('-')
+
     for constant in constants:
+
         if len(indices) > 0:
-            if ("Feature_" + feature.name + "_" + "_".join(map(str, indices))) in constant:
+            if ("Feature_" + feature.name + "_" + "_".join(map(str, indices))) in constant: # counts wrong -> for 1_1 it also counts 11_1 and 11_11 etc
                 if "true" in constant:
                     count += 1
+                match = re.search(r'Int\s*(\d+)', constant)
+                if match:
+                    count =  int(match.group(1))
         else:
-            if ("Feature_" + feature.name + "_" + "1") in constant:
+            if ("Feature_" + feature.name ) in constant:
                 if "true" in constant:
                     count += 1
+                if "Int" in constant:
+                    match = re.search(r'Int (\d+)', constant)
+                    if match:
+                        count =  int(match.group(1))
 
     if len(indices) > 0:
         print(feature.name + "_" + "_".join(map(str, indices)) + ": " + str(count))
@@ -164,13 +189,17 @@ def count_cardinality(solver_output, feature, indices):
 
 
 @app.command()
-def run_smt_solver_with_cloning_gap_detection(cfm: CFM):
-    encoding = create_smt_cloning_encoding(cfm)
-    find_gaps_in_all_clones(cfm.root,encoding,[])
+def run_smt_solver_with_cloning_base_gap_detection(cfm: CFM):
+    encoding = encode_to_smt_cloning_base(cfm)
+    find_gaps_in_all_clones(cfm.root,encoding,[],True)
+
+@app.command()
+def run_smt_solver_with_cloning_with_child_int_constants_gap_detection(cfm: CFM):
+    encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
+    find_gaps_in_all_clones(cfm.root,encoding,[],False)
 
 
-
-def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[int]):
+def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[int], only_boolean_constants: bool):
 
     def helper(depth, current_indices):
         # Base case: if we've reached the innermost level, execute the code
@@ -179,7 +208,7 @@ def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[i
                 for j in range(interval.lower, interval.upper + 1):
                     solver_cmd = encoding
                     solver_cmd += "(assert (= "
-                    solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature], current_indices) + " "
+                    solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature], current_indices,only_boolean_constants=only_boolean_constants) + " "
                     solver_cmd += str(j) + "))"
                     solver_cmd += "(check-sat)"
                     solver_cmd += "(get-model)"
@@ -205,7 +234,7 @@ def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[i
         parent_list.append(max_cardinality)
     for feature in feature.children:
         old_list = parent_list.copy()
-        find_gaps_in_all_clones(feature, encoding, old_list)
+        find_gaps_in_all_clones(feature, encoding, old_list, only_boolean_constants)
 
 
 

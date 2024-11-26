@@ -1,33 +1,29 @@
-from audioop import reverse
-
 from cfmtoolbox import CFM, Feature, Interval
 
-from cfmtoolbox_smt_encoder.mulitsetSMT import create_const_name, create_assert_feature_group_instance_cardinality, \
-    create_assert_constraints
+from cfmtoolbox_smt_encoder.mulitsetSMT import create_const_name
 
 
-def create_smt_cloning_encoding(cfm: CFM):
+def create_smt_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
     print("Encoding CFM...")
     encoding = ""
 
-    encoding += declare_cloned_constants(cfm.root,[], declaration=True)
+    encoding += declare_cloned_constants(cfm.root,[], declaration=True, only_boolean_constants=only_boolean_constants)
     encoding += "(assert (= " + create_const_name(cfm.root) + "_1 true))"
-    encoding += create_assert_child_parent_connection_cloning(cfm.root,[])
-    encoding += create_assert_feature_group_cardinality_cloning(cfm.root,[],instance_cardinality=False)
-    encoding += create_assert_feature_group_cardinality_cloning(cfm.root,[], instance_cardinality=True)
-    encoding += create_assert_feature_instance_cardinality_cloning(cfm.root,[])
-    encoding += create_assert_constraints_cloning(cfm)
-
-
+    encoding += create_assert_child_parent_connection_cloning(cfm.root,[], only_boolean_constants=only_boolean_constants)
+    encoding += create_assert_feature_group_cardinality_cloning(cfm.root,[],instance_cardinality=False,only_boolean_constants=only_boolean_constants)
+    encoding += create_assert_feature_group_cardinality_cloning(cfm.root,[], instance_cardinality=True,only_boolean_constants=only_boolean_constants)
+    encoding += create_assert_feature_instance_cardinality_cloning(cfm.root,[],only_boolean_constants=only_boolean_constants)
+    encoding += create_assert_constraints_cloning(cfm,only_boolean_constants=only_boolean_constants)
 
     print(encoding)
     return encoding
 
 
 
-def declare_cloned_constants(parent: Feature, parent_list: list[int], declaration: bool):
+def declare_cloned_constants(parent: Feature, parent_list: list[int], declaration: bool, only_boolean_constants: bool):
     constants = ""
     max = getMaxCardinality(parent.instance_cardinality.intervals)
+
     if parent.parent is None:
         for j in range(1, max + 1):
             if declaration:
@@ -36,7 +32,9 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
             if declaration:
                 constants += " Bool)\n"
     else:
-        parent_list.append(max)
+        if only_boolean_constants or (not only_boolean_constants and len(parent.children) >= 1):
+            parent_list.append(max)
+
 
         # Define the recursive function that generates n nested loops
         def helper(depth, current_indices):
@@ -47,7 +45,11 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
                     constants += "(declare-const "
                 constants += create_const_name(parent) + "_" + "_".join(map(str, current_indices)) + " "
                 if declaration:
-                    constants += " Bool)\n"
+                    if only_boolean_constants or (not only_boolean_constants and len(parent.children) >= 1):
+                        constants += " Bool)\n"
+                    else:
+
+                        constants += " Int)\n"
                 return constants
 
             loop_code = ""
@@ -63,7 +65,8 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
 
     for feature in parent.children:
         old_list = parent_list.copy()
-        constants += declare_cloned_constants(feature, old_list, declaration)
+        constants += declare_cloned_constants(feature, old_list, declaration,only_boolean_constants)
+
 
     return constants
 
@@ -80,7 +83,7 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
 
 
 
-def create_assert_child_parent_connection_cloning(feature: Feature, parent_list: list[int]) -> str:
+def create_assert_child_parent_connection_cloning(feature: Feature, parent_list: list[int],only_boolean_constants: bool) -> str:
     childrenAssert = ""
 
     if feature.children:
@@ -90,7 +93,7 @@ def create_assert_child_parent_connection_cloning(feature: Feature, parent_list:
                 old_list = parent_list.copy()
                 childrenAssert += "(assert "
                 childrenAssert += "(and "
-                childrenAssert += create_assert_child_parent_connection_cloning(feature, old_list)
+                childrenAssert += create_assert_child_parent_connection_cloning(feature, old_list,only_boolean_constants)
                 childrenAssert += ")"
                 childrenAssert += " )\n"  # closing assert
         else:
@@ -106,8 +109,12 @@ def create_assert_child_parent_connection_cloning(feature: Feature, parent_list:
                     asserts += "(= " + create_const_name(feature) + "_" + "_".join(map(str, current_indices)) + " false) "
                     asserts += "(and "
                     for child in children:
-                        for j in range(1, getMaxCardinality(child.instance_cardinality.intervals) + 1):
-                            asserts += "(= " + create_const_name(child) + "_" + "_".join(map(str, current_indices)) + "_" + str(j) + " false)"
+                        if only_boolean_constants or (not only_boolean_constants and len(child.children) >= 1):
+                            for j in range(1, getMaxCardinality(child.instance_cardinality.intervals) + 1):
+                                asserts += "(= " + create_const_name(child) + "_" + "_".join(map(str, current_indices)) + "_" + str(j) + " false)"
+                        else:
+                            asserts += "(= " + create_const_name(child) + "_" + "_".join(
+                                map(str, current_indices))  + " 0)"
                     asserts += ") "
                     asserts += "(= " + "true" + " true)"
                     asserts += ") "  # closing ite
@@ -126,7 +133,7 @@ def create_assert_child_parent_connection_cloning(feature: Feature, parent_list:
             childrenAssert += ")\n " #closing big and of else part
             for child in children:
                 old_list = parent_list.copy()
-                childrenAssert += create_assert_child_parent_connection_cloning(child, old_list)
+                childrenAssert += create_assert_child_parent_connection_cloning(child, old_list,only_boolean_constants)
 
     else:
         childrenAssert = "(= true true)"
@@ -142,7 +149,7 @@ def getMaxCardinality(intervals: list[Interval]) -> int:
     return max
 
 
-def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_list: list[int], instance_cardinality: bool):
+def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_list: list[int], instance_cardinality: bool, only_boolean_constants: bool) -> str:
     assertStatement = ""
     assert_sum_or_amount = ""
 
@@ -171,9 +178,9 @@ def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_lis
                     asserts += "(and "
                     asserts += "(>= "
                     if instance_cardinality:
-                        asserts += create_amount_of_children_for_group_instance_cardinality_cloning(feature.children,indices=current_indices)
+                        asserts += create_amount_of_children_for_group_instance_cardinality_cloning(feature.children,indices=current_indices,only_boolean_constants=only_boolean_constants)
                     else:
-                        asserts += create_amount_of_children_for_group_type_cardinality_cloning(feature.children, indices=current_indices)
+                        asserts += create_amount_of_children_for_group_type_cardinality_cloning(feature.children, indices=current_indices, only_boolean_constants=only_boolean_constants)
                     if feature.parent is not None:
                         asserts += ("(ite " + create_const_name(feature) + "_" + "_".join(map(str, current_indices)) + " " + str(interval.lower) + " " + "0)")
                     else:
@@ -184,11 +191,11 @@ def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_lis
                     else:
                         asserts += "(<= "
                         if instance_cardinality:
-                            asserts += create_amount_of_children_for_group_instance_cardinality_cloning(feature.children,indices=current_indices)
+                            asserts += create_amount_of_children_for_group_instance_cardinality_cloning(feature.children,indices=current_indices, only_boolean_constants=only_boolean_constants)
 
                         else:
                             asserts += create_amount_of_children_for_group_type_cardinality_cloning(feature.children,
-                                                                                                    indices=current_indices)
+                                                                                                    indices=current_indices,only_boolean_constants=only_boolean_constants)
                         if feature.parent is not None:
                             asserts += ("(ite " + create_const_name(feature) + "_" + "_".join(
                                 map(str, current_indices)) + " " + str(interval.upper) + " " + "0)")
@@ -220,51 +227,62 @@ def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_lis
 
     for child in feature.children:
         old_list = parent_list.copy()
-        assertStatement += create_assert_feature_group_cardinality_cloning(child,old_list,instance_cardinality)
+        assertStatement += create_assert_feature_group_cardinality_cloning(child,old_list,instance_cardinality,only_boolean_constants)
     return assertStatement
 
 
 
 
 
-def create_amount_of_children_for_group_type_cardinality_cloning(children, indices):
+def create_amount_of_children_for_group_type_cardinality_cloning(children, indices, only_boolean_constants):
     amount = ""
 
     amount += "(+ "
     for feature in children:
-        amount += "(ite "
-        if getMaxCardinality(feature.instance_cardinality.intervals) > 1:
-            amount += "(or "
-        for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
-            if len(indices) > 0:
-                amount += " " + create_const_name(feature) + "_" +  "_".join(map(str, indices)) + "_" + str(i) + " "
-            else:
-                amount += " " + create_const_name(feature) + "_" + str(i) + " "
-        if getMaxCardinality(feature.instance_cardinality.intervals) > 1:
-            amount += ")" # closing or
-        amount += " 1 "
-        amount += " 0 "
-        amount += " ) "  # closing ite
+        if only_boolean_constants or (not only_boolean_constants and len(feature.children) >= 1):
+            amount += "(ite "
+            if getMaxCardinality(feature.instance_cardinality.intervals) > 1:
+                amount += "(or "
+            for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+                if len(indices) > 0:
+                    amount += " " + create_const_name(feature) + "_" +  "_".join(map(str, indices)) + "_" + str(i) + " "
+                else:
+                    amount += " " + create_const_name(feature) + "_" + str(i) + " "
+            if getMaxCardinality(feature.instance_cardinality.intervals) > 1:
+                amount += ")" # closing or
+            amount += " 1 "
+            amount += " 0 "
+            amount += " ) "  # closing ite
+        else:
+            amount += "(ite "
+            amount += "(> " + create_const_name(feature) + "_" + "_".join(map(str, indices)) + " 0)"
+            amount += " 1 "
+            amount += " 0 "
+            amount += " ) "  # closing ite
+
     amount += " ) "  # closing +
 
     return amount
 
-def create_amount_of_children_for_group_instance_cardinality_cloning(children: list[Feature], indices):
+def create_amount_of_children_for_group_instance_cardinality_cloning(children: list[Feature], indices, only_boolean_constants):
     amount = ""
     if not children:
         return amount
     if len(children) > 1 or getMaxCardinality(children[0].instance_cardinality.intervals) > 1:
         amount += "(+ "
     for feature in children:
-        for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
-            amount += "(ite "
-            if len(indices) > 0:
-                amount += " " + create_const_name(feature) + "_" +  "_".join(map(str, indices)) + "_" + str(i) + " "
-            else:
-                amount += " " + create_const_name(feature) + "_" + str(i) + " "
-            amount += " 1 "
-            amount += " 0 "
-            amount += " ) "  # closing ite
+        if only_boolean_constants or (not only_boolean_constants and len(feature.children) >= 1):
+            for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+                amount += "(ite "
+                if len(indices) > 0:
+                    amount += " " + create_const_name(feature) + "_" +  "_".join(map(str, indices)) + "_" + str(i) + " "
+                else:
+                    amount += " " + create_const_name(feature) + "_" + str(i) + " "
+                amount += " 1 "
+                amount += " 0 "
+                amount += " ) "  # closing ite
+        else:
+            amount += " " + create_const_name(feature) + "_" + "_".join(map(str, indices)) + " "
     if len(children) > 1 or getMaxCardinality(children[0].instance_cardinality.intervals) > 1:
         amount += " ) "  # closing +
 
@@ -272,7 +290,7 @@ def create_amount_of_children_for_group_instance_cardinality_cloning(children: l
 
 
 
-def create_assert_feature_instance_cardinality_cloning(parent: Feature, parent_list: list[int]):
+def create_assert_feature_instance_cardinality_cloning(parent: Feature, parent_list: list[int],only_boolean_constants: bool):
     assertStatement = "(assert "
     assertStatement += "(and "
 
@@ -285,7 +303,7 @@ def create_assert_feature_instance_cardinality_cloning(parent: Feature, parent_l
         if depth == len(parent_list):
             asserts += "(or "
             for interval in parent.instance_cardinality.intervals:
-                sum_of_feature_instance = create_sum_of_feature_instance(parent, current_indices)
+                sum_of_feature_instance = create_sum_of_feature_instance(parent, current_indices, only_boolean_constants)
                 asserts += "(and "
                 asserts += "(<= "
                 asserts += str(sum_of_feature_instance) + " "
@@ -330,7 +348,7 @@ def create_assert_feature_instance_cardinality_cloning(parent: Feature, parent_l
         parent_list.append(max_cardinality)
     for feature in parent.children:
         old_list = parent_list.copy()
-        assertStatement += create_assert_feature_instance_cardinality_cloning(feature, old_list)
+        assertStatement += create_assert_feature_instance_cardinality_cloning(feature, old_list,only_boolean_constants)
 
 
     return assertStatement
@@ -345,31 +363,34 @@ def get_min_cardinality(intervals: list[Interval]) -> int:
 
     return min
 
-def create_sum_of_feature_instance(feature: Feature, indices):
+def create_sum_of_feature_instance(feature: Feature, indices,only_boolean_constants: bool):
     sum_of_feature_instance = ""
     sum_of_feature_instance += "(+ "
-    for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
-        sum_of_feature_instance += "(ite "
-        if len(indices) > 0:
-            sum_of_feature_instance += "(= " + create_const_name(feature) + "_" + "_".join(map(str, indices)) + "_" + str(i) + " true) "
-        else:
-            sum_of_feature_instance += "(= " + create_const_name(feature) +  "_" + str(i) + " true) "
-        sum_of_feature_instance += " 1 "
-        sum_of_feature_instance += " 0 "
-        sum_of_feature_instance += ")"  # closing ite
+    if only_boolean_constants or (not only_boolean_constants and len(feature.children) >= 1):
+        for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+            sum_of_feature_instance += "(ite "
+            if len(indices) > 0:
+                sum_of_feature_instance += "(= " + create_const_name(feature) + "_" + "_".join(map(str, indices)) + "_" + str(i) + " true) "
+            else:
+                sum_of_feature_instance += "(= " + create_const_name(feature) +  "_" + str(i) + " true) "
+            sum_of_feature_instance += " 1 "
+            sum_of_feature_instance += " 0 "
+            sum_of_feature_instance += ")"  # closing ite
+    else:
+        sum_of_feature_instance += " " + create_const_name(feature) + "_" + "_".join(map(str, indices)) + " "
     sum_of_feature_instance += ")"
     return sum_of_feature_instance
 
-def create_assert_constraints_cloning(cfm: CFM):
+def create_assert_constraints_cloning(cfm: CFM, only_boolean_constants: bool):
     constraints_cloning = ""
     for constraint in cfm.constraints:
         constraints_cloning += "(assert "
         constraints_cloning += "(ite "
-        constraints_cloning += create_constraint_feature_to_intervals_cloning(constraint.first_cardinality.intervals, constraint.first_feature, cfm.root)
+        constraints_cloning += create_constraint_feature_to_intervals_cloning(constraint.first_cardinality.intervals, constraint.first_feature, cfm.root,only_boolean_constants)
         if not constraint.require:
             constraints_cloning += "(not "
 
-        constraints_cloning += create_constraint_feature_to_intervals_cloning(constraint.second_cardinality.intervals, constraint.second_feature, cfm.root)
+        constraints_cloning += create_constraint_feature_to_intervals_cloning(constraint.second_cardinality.intervals, constraint.second_feature, cfm.root,only_boolean_constants)
 
         if not constraint.require:
             constraints_cloning += " )" # closing not
@@ -380,7 +401,7 @@ def create_assert_constraints_cloning(cfm: CFM):
 
     return constraints_cloning
 
-def create_constraint_feature_to_intervals_cloning(cardinality_intervals: list[Interval], feature: Feature, root: Feature):
+def create_constraint_feature_to_intervals_cloning(cardinality_intervals: list[Interval], feature: Feature, root: Feature,only_boolean_constants: bool):
     constraints_cloning = ""
 
     parent_list = create_parent_list_for_feature_by_name(root,feature.name, [])
@@ -393,7 +414,7 @@ def create_constraint_feature_to_intervals_cloning(cardinality_intervals: list[I
         asserts = ""
         # Base case: if we've reached the innermost level, execute the code
         if depth == len(parent_list):
-            asserts += create_sum_of_feature_instance(feature, indices=current_indices)
+            asserts += create_sum_of_feature_instance(feature, indices=current_indices, only_boolean_constants=only_boolean_constants)
             return asserts
 
         loop_code = ""
