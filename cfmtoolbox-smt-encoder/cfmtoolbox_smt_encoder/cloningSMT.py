@@ -406,8 +406,8 @@ def create_constraint_feature_to_intervals_cloning(cardinality_intervals: list[I
 
     parent_list = create_parent_list_for_feature_by_name(root,feature.name, [])
     sum_assert = ""
-    if getMaxCardinality(feature.parent.instance_cardinality.intervals) > 1:
-        sum_assert += "(+ "
+
+    sum_assert += "(+ "
 
     # Define the recursive function that generates n nested loops
     def helper(depth, current_indices):
@@ -426,8 +426,8 @@ def create_constraint_feature_to_intervals_cloning(cardinality_intervals: list[I
         return loop_code
 
     sum_assert += helper(0, [])
-    if getMaxCardinality(feature.parent.instance_cardinality.intervals) > 1:
-        sum_assert += ")"  # closing +
+
+    sum_assert += ")"  # closing +
 
     if len(cardinality_intervals) > 1:
         constraints_cloning += "(or "
