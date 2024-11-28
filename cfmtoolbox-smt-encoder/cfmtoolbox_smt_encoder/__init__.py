@@ -4,32 +4,43 @@ import sys
 
 from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, get_all_constants_of_CFM_mulitset, create_const_name
-from cfmtoolbox_smt_encoder.cloningSMT import create_smt_cloning_encoding, get_all_constants_of_CFM_cloning, \
-    create_amount_of_children_for_group_instance_cardinality_cloning, getMaxCardinality, \
-    create_parent_list_for_feature_by_name, declare_cloned_constants
+from cfmtoolbox_smt_encoder.cloningSMT import create_smt_cloning_encoding, \
+    create_amount_of_children_for_group_instance_cardinality_cloning, getMaxCardinality
 import subprocess
+
 
 
 @app.command()
 def encode_to_smt_multiset(cfm: CFM) -> str:
+    """
+    :param cfm: The input Cardinality-based Feature Model that needs to be encoded into SMT multiset format
+    :return: A string representing the SMT multiset encoding of the input CFM object
+    """
     encoding = create_smt_multiset_encoding(cfm)
     return encoding
 
+
+
 @app.command()
 def run_smtsolver_with_multisetencoding(cfm: CFM):
+    """
+    :param cfm: The input Cardinality-based Feature Model that needs to be encoded into SMT multiset format
+    :return: None. The function prints the result of the SMT solver.
+    """
     encoding = create_smt_multiset_encoding(cfm)
     encoding += "(check-sat)"
     encoding += "(get-model)"
     encoding += "(exit)"
     print(callSolverWithEncoding(encoding))
-    #p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
-    #out = p.communicate(input=encoding)
-    #result = out.split('\n')
-    #for lin in result:
-    #    print(lin)
+
+
 
 @app.command()
 def run_smt_solver_with_multisetencoding_maximize_cardinalities(cfm: CFM):
+    """
+    :param cfm: The input Cardinality-based Feature Model, which gets encoded, and all Feature Cardinalities are maximized by the solver
+    :return: Prints the result of the SMT solver for each constant(Feature cardinality) after encoding and maximization procedures.
+    """
     list_constants = get_all_constants_of_CFM_mulitset(cfm)
     encoding = create_smt_multiset_encoding(cfm)
     for constant in list_constants:
@@ -45,6 +56,10 @@ def run_smt_solver_with_multisetencoding_maximize_cardinalities(cfm: CFM):
 
 @app.command()
 def run_smt_solver_with_multisetencoding_minimize_cardinalities(cfm: CFM):
+    """
+    :param cfm: The input Cardinality-based Feature Model, which gets encoded, and all Feature Cardinalities are minimized by the solver
+    :return: Prints the result of the SMT solver for each constant(Feature cardinality) after encoding and minimized procedures.
+    """
     list_constants = get_all_constants_of_CFM_mulitset(cfm)
     encoding = create_smt_multiset_encoding(cfm)
     print(len(list_constants))
@@ -61,6 +76,10 @@ def run_smt_solver_with_multisetencoding_minimize_cardinalities(cfm: CFM):
 
 @app.command()
 def run_smt_solver_with_multisetencoding_gap_detection(cfm: CFM):
+    """
+    :param cfm: The input Cardinality-based Feature Model, which gets encoded
+    :return: Prints the result of the SMT solver for each constant asserted to their possible cardinalities.
+    """
     list_features = cfm.features
     encoding = create_smt_multiset_encoding(cfm)
     for feature in list_features:
@@ -80,6 +99,11 @@ def run_smt_solver_with_multisetencoding_gap_detection(cfm: CFM):
 
 @app.command()
 def encode_to_smt_cloning_base(cfm: CFM) -> str:
+    """
+    :param cfm: The input Cardinality-based Feature Model that needs to be encoded into SMT cloning basic format
+    :return:The function returns the encoding of the CFM in the basis variant of SMT cloning approach.
+        The base cloning approach creates boolean constants for every possible Feature Instance Cardinality.
+    """
     encoding = ""
     encoding += create_smt_cloning_encoding(cfm, only_boolean_constants=True)
 
@@ -87,6 +111,11 @@ def encode_to_smt_cloning_base(cfm: CFM) -> str:
 
 @app.command()
 def encode_to_smt_cloning_with_child_int_constants(cfm: CFM) -> str:
+    """
+   :param cfm: The input Cardinality-based Feature Model that needs to be encoded into SMT cloning format where the leaves are integers constants
+   :return:The function returns the encoding of the CFM in the cloning format where the leaves are integers constants.
+       This cloning approach creates boolean constants for every Feature, possible Feature Instance Cardinality, which are not leaves. The leaves create int constants
+   """
     encoding = ""
     encoding += create_smt_cloning_encoding(cfm, only_boolean_constants=False)
 
@@ -239,7 +268,11 @@ def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[i
 
 
 def callSolverWithEncoding(encoding):
-    path = os.path.join(os.path.abspath(sys.path[0]), "../../z3/z3/build/z3")
+    """
+    :param encoding: A string representing the SMT2 encoding to be passed to the solver.
+    :return: The standard output from the solver as a string.
+    """
+    path = os.path.join(os.path.abspath(sys.path[0]), "../../z3/z3/build/z3") # needs to be moved to env variable
     cmd = [path, '-in', '-smt2']
     p = subprocess.run(cmd, stdout=subprocess.PIPE, input=encoding, encoding='ascii')
     return p.stdout
