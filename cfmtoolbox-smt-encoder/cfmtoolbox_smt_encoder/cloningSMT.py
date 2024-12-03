@@ -1,3 +1,5 @@
+from pickle import FALSE
+
 from cfmtoolbox import CFM, Feature, Interval
 
 from cfmtoolbox_smt_encoder.mulitsetSMT import create_const_name
@@ -5,20 +7,29 @@ from cfmtoolbox_smt_encoder.mulitsetSMT import create_const_name
 
 def create_smt_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
     """
-    :param cfm: An instance of the CFM object which represents a cardinality-based feature model. This model is used as the basis for creating
-                the SMT (Satisfiability Modulo Theories) encoding.
-    :param only_boolean_constants: A boolean flag indicating whether to only create boolean constant for every feature instance or int constants for the leave features
-            This can reduce the overhead of the encoding
+    :param cfm: An instance of the CFM object which represents a cardinality-based feature model.
+                This model is used as the basis for creating the SMT (Satisfiability Modulo
+                Theories) encoding.
+    :param only_boolean_constants: A boolean flag indicating whether to only create boolean constant
+                for every feature instance or int constants for the leave features.This can
+                reduce the overhead of the encoding
     :return: A string that represents the SMT encoding of the provided CFM.
     """
     print("Encoding CFM...")
     encoding = ""
-    encoding += declare_cloned_constants(cfm.root,[], declaration=True, only_boolean_constants=only_boolean_constants)
+    encoding += declare_cloned_constants(cfm.root,[], declaration=True,
+                                         only_boolean_constants=only_boolean_constants)
     encoding += "(assert (= " + create_const_name(cfm.root) + "_1 true))"
-    encoding += create_assert_child_parent_connection_cloning(cfm.root,[], only_boolean_constants=only_boolean_constants)
-    encoding += create_assert_feature_group_cardinality_cloning(cfm.root,[],instance_cardinality=False,only_boolean_constants=only_boolean_constants)
-    encoding += create_assert_feature_group_cardinality_cloning(cfm.root,[], instance_cardinality=True,only_boolean_constants=only_boolean_constants)
-    encoding += create_assert_feature_instance_cardinality_cloning(cfm.root,[],only_boolean_constants=only_boolean_constants)
+    encoding += create_assert_child_parent_connection_cloning(cfm.root,[],
+                                                              only_boolean_constants=only_boolean_constants)
+    encoding += create_assert_feature_group_cardinality_cloning(cfm.root,[],
+                                                                instance_cardinality=False,
+                                                                only_boolean_constants=only_boolean_constants)
+    encoding += create_assert_feature_group_cardinality_cloning(cfm.root,[],
+                                                                instance_cardinality=True,
+                                                                only_boolean_constants=only_boolean_constants)
+    encoding += create_assert_feature_instance_cardinality_cloning(cfm.root,[],
+                                                                   only_boolean_constants=only_boolean_constants)
     encoding += create_assert_constraints_cloning(cfm,only_boolean_constants=only_boolean_constants)
 
     print(encoding)
@@ -26,7 +37,8 @@ def create_smt_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
 
 
 
-def declare_cloned_constants(parent: Feature, parent_list: list[int], declaration: bool, only_boolean_constants: bool):
+def declare_cloned_constants(parent: Feature, parent_list: list[int], declaration: bool,
+                             only_boolean_constants: bool):
     """
     :param parent: The feature node for which constants are being created.
     :param parent_list: A list representing the cardinalities of each parent node encountered in the recursion. Each integer in the list dictates how deeply nested loops should iterate.
@@ -42,7 +54,7 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
         for j in range(1, max + 1):
             if declaration:
                 constants += "(declare-const "
-            constants += create_const_name(parent) + "_" + str(j) + " "
+            constants += create_const_name(parent) + "_" + str(j)
             if declaration:
                 constants += " Bool)\n"
     else:
@@ -59,7 +71,7 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
                 # decides whether only the constants names are created or the declarations for the encoding
                 if declaration:
                     constants += "(declare-const "
-                constants += create_const_name(parent) + "_" + "_".join(map(str, current_indices)) + " "
+                constants += create_const_name(parent) + "_" + "_".join(map(str, current_indices))
                 if declaration:
                     # when it is a leave and not the base cloning approach then add Int datatype, else Bool
                     if only_boolean_constants or (not only_boolean_constants and len(parent.children) >= 1):
@@ -88,7 +100,8 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
     return constants
 
 
-def create_assert_child_parent_connection_cloning(feature: Feature, parent_list: list[int],only_boolean_constants: bool) -> str:
+def create_assert_child_parent_connection_cloning(feature: Feature, parent_list: list[int],
+                                                  only_boolean_constants: bool) -> str:
     childrenAssert = ""
     # when the feature has no children, no more asserts are created
     if feature.children:
@@ -222,13 +235,8 @@ def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_lis
                 loop_code += helper(depth + 1, current_indices)  # Recurse to the next depth (next loop)
                 current_indices.pop()
             return loop_code
-
         assertStatement += helper(0, [])
-
-
-
         assertStatement += ")" # closing outter and
-
         assertStatement += ")\n"  # closing assert
 
     for child in feature.children:
@@ -472,6 +480,6 @@ def create_parent_list_for_feature_by_name(feature: Feature, feature_name: str, 
 
 
 def get_all_constants_of_CFM_cloning(cfm: CFM):
-    constants = declare_cloned_constants(cfm.root,1,False)
+    constants = declare_cloned_constants(cfm.root,[1],False,False)
     constant_list = constants.split(" ")
     return constant_list
