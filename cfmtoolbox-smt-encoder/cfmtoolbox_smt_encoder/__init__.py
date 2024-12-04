@@ -134,56 +134,52 @@ def run_smtsolver_with_cloning_base(cfm: CFM):
 @app.command()
 def run_smt_solver_with_cloning_base_minimize_cardinalities(cfm: CFM):
     encoding = encode_to_smt_cloning_base(cfm)
-    minimize_or_maximize_all_clones(cfm.root,encoding,False, cfm.root,[],True)
+    return minimize_or_maximize_all_clones(cfm.root,encoding,False, cfm.root,[],True)
 
 @app.command()
 def run_smt_solver_with_cloning_base_maximize_cardinalities(cfm: CFM):
     encoding = encode_to_smt_cloning_base(cfm)
-    minimize_or_maximize_all_clones(cfm.root,encoding,True, cfm.root,[],True)
+    return minimize_or_maximize_all_clones(cfm.root,encoding,True, cfm.root,[],True)
 
 @app.command()
 def run_smt_solver_with_cloning_with_child_int_constants_minimize_cardinalities(cfm: CFM):
     encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
-    minimize_or_maximize_all_clones(cfm.root,encoding,False, cfm.root,[],False)
+    return minimize_or_maximize_all_clones(cfm.root,encoding,False, cfm.root,[],False)
 
 @app.command()
 def run_smt_solver_with_cloning_with_child_int_constants_maximize_cardinalities(cfm: CFM):
     encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
-    minimize_or_maximize_all_clones(cfm.root,encoding,True, cfm.root,[],False)
+    return minimize_or_maximize_all_clones(cfm.root,encoding,True, cfm.root,[],False)
 
 def minimize_or_maximize_all_clones(feature: Feature, encoding:str, maximize: bool,root: Feature, parent_list: list[int],only_boolean_constants: bool):
+    max_cardinalities = ""
 
-    def helper(depth, current_indices):
-        # Base case: if we've reached the innermost level, execute the code
-        if depth == len(parent_list):
-            solver_cmd = encoding
-            if maximize:
-                solver_cmd += "(maximize"
-            else:
-                solver_cmd += "(minimize "
-            solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature], current_indices, only_boolean_constants)
-            solver_cmd += ")"
-            solver_cmd += "(check-sat)"
-            solver_cmd += "(get-model)"
-            solver_cmd += "(exit)"
-            count_cardinality(callSolverWithEncoding(solver_cmd), feature, current_indices)
-            return
 
-        # Loop through the range based on the current depth value in arr[depth]
-        for i in range(1, parent_list[depth] + 1):  # arr[depth] defines how many times the loop at this level runs
-            current_indices.append(i)  # Add the current index to the list
-            helper(depth + 1, current_indices)  # Recurse to the next depth (next loop)
-            current_indices.pop()
-        return
-
-    helper(0, [])
+    solver_cmd = encoding
+    if maximize:
+        solver_cmd += "(maximize"
+    else:
+        solver_cmd += "(minimize "
+    solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning(
+        [feature], parent_list, only_boolean_constants)
+    solver_cmd += ")"
+    solver_cmd += "(check-sat)"
+    solver_cmd += "(get-model)"
+    solver_cmd += "(exit)"
+    max_cardinalities += count_cardinality(callSolverWithEncoding(solver_cmd), feature,
+                                         parent_list) + " "
 
     if feature.parent is not None:
         max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
         parent_list.append(max_cardinality)
     for feature in feature.children:
         old_list = parent_list.copy()
-        minimize_or_maximize_all_clones(feature, encoding, maximize, root, old_list, only_boolean_constants)
+        max_cardinalities += minimize_or_maximize_all_clones(feature, encoding, maximize, root, old_list,
+                                        only_boolean_constants)
+    return max_cardinalities
+
+
+
 
 
 
@@ -210,9 +206,13 @@ def count_cardinality(solver_output, feature, indices):
                         count =  int(match.group(1))
 
     if len(indices) > 0:
-        print(feature.name + "_" + "_".join(map(str, indices)) + ": " + str(count))
+        max_cardinality = feature.name + "_" + "_".join(map(str, indices)) + ": " + str(count)
+        print(max_cardinality)
+        return max_cardinality
     else:
-        print(feature.name + "_" + "1" + ": " + str(count))
+        max_cardinality = feature.name + "_" + "1" + ": " + str(count)
+        print(max_cardinality)
+        return max_cardinality
 
 
 
