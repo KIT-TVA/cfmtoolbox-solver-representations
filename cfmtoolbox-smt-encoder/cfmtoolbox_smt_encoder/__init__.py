@@ -220,50 +220,42 @@ def count_cardinality(solver_output, feature, indices):
 @app.command()
 def run_smt_solver_with_cloning_base_gap_detection(cfm: CFM):
     encoding = encode_to_smt_cloning_base(cfm)
-    find_gaps_in_all_clones(cfm.root,encoding,[],True)
+    return find_gaps_in_all_clones(cfm.root,encoding,[],True)
 
 @app.command()
 def run_smt_solver_with_cloning_with_child_int_constants_gap_detection(cfm: CFM):
     encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
-    find_gaps_in_all_clones(cfm.root,encoding,[],False)
+    return find_gaps_in_all_clones(cfm.root,encoding,[],False)
 
 
 def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[int], only_boolean_constants: bool):
+    gaps = ""
 
-    def helper(depth, current_indices):
-        # Base case: if we've reached the innermost level, execute the code
-        if depth == len(parent_list):
-            for interval in feature.instance_cardinality.intervals:
-                for j in range(interval.lower, interval.upper + 1):
-                    solver_cmd = encoding
-                    solver_cmd += "(assert (= "
-                    solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning([feature], current_indices,only_boolean_constants=only_boolean_constants) + " "
-                    solver_cmd += str(j) + "))"
-                    solver_cmd += "(check-sat)"
-                    solver_cmd += "(get-model)"
-                    solver_cmd += "(exit)"
-                    output = callSolverWithEncoding(solver_cmd)
-                    if "unsat" in output:
-                        print("Gap at: " + str(j) + " in Feature: " + feature.name + " ")
-                    if "error" in output:
-                        print(output)
-            return
-
-        # Loop through the range based on the current depth value in arr[depth]
-        for i in range(1, parent_list[depth] + 1):  # arr[depth] defines how many times the loop at this level runs
-            current_indices.append(i)  # Add the current index to the list
-            helper(depth + 1, current_indices)  # Recurse to the next depth (next loop)
-            current_indices.pop()
-        return
-
-    helper(0, [])
+    for interval in feature.instance_cardinality.intervals:
+        for j in range(interval.lower, interval.upper + 1):
+            solver_cmd = encoding
+            solver_cmd += "(assert (= "
+            solver_cmd += create_amount_of_children_for_group_instance_cardinality_cloning(
+                [feature], parent_list, only_boolean_constants=only_boolean_constants) + " "
+            solver_cmd += str(j) + "))"
+            solver_cmd += "(check-sat)"
+            solver_cmd += "(get-model)"
+            solver_cmd += "(exit)"
+            output = callSolverWithEncoding(solver_cmd)
+            if "unsat" in output:
+                gap = "Gap at: " + str(j) + " in Feature: " + feature.name + " "
+                print(gap)
+                gaps += gap
+            if "error" in output:
+                print(output)
 
     if feature.parent is not None:
         max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
         parent_list.append(max_cardinality)
     for feature in feature.children:
         old_list = parent_list.copy()
-        find_gaps_in_all_clones(feature, encoding, old_list, only_boolean_constants)
+        gaps += find_gaps_in_all_clones(feature, encoding, old_list, only_boolean_constants)
+    return gaps
 
 
 
@@ -272,7 +264,9 @@ def callSolverWithEncoding(encoding):
     :param encoding: A string representing the SMT2 encoding to be passed to the solver.
     :return: The standard output from the solver as a string.
     """
-    path = os.path.join(os.path.abspath(sys.path[0]), "../../z3/z3/build/z3") # needs to be moved to env variable
+    path = os.path.join(os.path.abspath(sys.path[0]), "../../../../../z3/z3/build/z3") # needs
+    # to be
+    # moved to env variable
     cmd = [path, '-in', '-smt2']
     p = subprocess.run(cmd, stdout=subprocess.PIPE, input=encoding, encoding='ascii')
     return p.stdout
