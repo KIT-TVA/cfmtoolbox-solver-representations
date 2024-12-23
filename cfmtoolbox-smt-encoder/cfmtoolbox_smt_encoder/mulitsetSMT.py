@@ -107,11 +107,15 @@ def create_assert_feature_instance_cardinality(feature: Feature, parent_interval
             if feature.parent is not None:
                 assert_statement += "(* " + str(interval.lower) + " " + create_const_name(feature.parent) + ")"
             else:
-                assert_statement += str(interval.lower * parentInterval.lower)
+                assert_statement += str(interval.lower)
             assert_statement += ")"
             assert_statement += "(<= "
             assert_statement += create_const_name(feature) + " "
-            assert_statement += str(interval.upper *  parentInterval.upper)
+            if feature.parent is not None:
+                assert_statement += "(* " + str(interval.upper) + " " + create_const_name(
+                    feature.parent) + ")"
+            else:
+                assert_statement += str(interval.upper)
             assert_statement += ") "
             assert_statement += ")" # closing and
 
