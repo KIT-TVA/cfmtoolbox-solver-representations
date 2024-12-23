@@ -106,10 +106,6 @@ def find_actual_min(encoding, feature:Feature, min_parent_cardinality: int):
             feature.instance_cardinality.intervals)) + "\n")
         print("Actual Min Feature Instance Cardinality " + str(actual_min) + "\n")
 
-    print(match.__getitem__(1) + ": ")
-    print("Given feature instance cardinality: " + str(get_min_cardinality(
-        feature.instance_cardinality.intervals)) + "\n")
-    print("Actual Min Feature Instance Cardinality " + str(actual_min) + "\n")
 
     for child in feature.children:
         find_actual_min(encoding, child, min_parent_cardinality)
