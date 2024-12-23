@@ -5,7 +5,8 @@ import sys
 from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, get_all_constants_of_CFM_mulitset, create_const_name
 from cfmtoolbox_smt_encoder.cloningSMT import create_smt_cloning_encoding, \
-    create_amount_of_children_for_group_instance_cardinality_cloning, getMaxCardinality
+    create_amount_of_children_for_group_instance_cardinality_cloning, getMaxCardinality, \
+    get_min_cardinality
 import subprocess
 
 
@@ -41,17 +42,36 @@ def run_smt_solver_with_multisetencoding_maximize_cardinalities(cfm: CFM):
     :param cfm: The input Cardinality-based Feature Model, which gets encoded, and all Feature Cardinalities are maximized by the solver
     :return: Prints the result of the SMT solver for each constant(Feature cardinality) after encoding and maximization procedures.
     """
-    list_constants = get_all_constants_of_CFM_mulitset(cfm)
     encoding = create_smt_multiset_encoding(cfm)
-    for constant in list_constants:
-        solver_cmd = encoding
-        solver_cmd += "(maximize "
-        solver_cmd += constant
-        solver_cmd += ")"
-        solver_cmd += "(check-sat)"
-        solver_cmd += "(get-value (" + constant + "))"
-        solver_cmd += "(exit)"
-        print(callSolverWithEncoding(solver_cmd))
+    find_actual_max(encoding, cfm.root,1)
+
+def find_actual_max(encoding, feature:Feature, max_parent_cardinality: int):
+    solver_cmd = encoding
+    solver_cmd += "(maximize "
+    solver_cmd += create_const_name(feature)
+    solver_cmd += ")"
+    solver_cmd += "(check-sat)"
+    solver_cmd += "(get-value (" + create_const_name(feature) + "))"
+    solver_cmd += "(exit)"
+    result = callSolverWithEncoding(solver_cmd)
+    match = re.search('\(\((\w+_\w+)\s(\d+)\)\)', result)
+
+    if int(match.__getitem__(2)) > 1:
+        actual_max = int(match.__getitem__(2)) / max_parent_cardinality
+        new_max = round(max_parent_cardinality * actual_max, None)
+    else:
+        actual_max = int(match.__getitem__(2))
+        new_max = max_parent_cardinality
+    if actual_max < getMaxCardinality(feature.instance_cardinality.intervals):
+        print(match.__getitem__(1) + ": ")
+        print("Given feature instance cardinality: " + str(getMaxCardinality(
+            feature.instance_cardinality.intervals)) + "\n")
+        print("Actual Max Feature Instance Cardinality " + str(round(actual_max, None)) + "\n")
+
+
+    for child in feature.children:
+        find_actual_max(encoding, child, new_max)
+
 
 
 @app.command()
@@ -60,18 +80,40 @@ def run_smt_solver_with_multisetencoding_minimize_cardinalities(cfm: CFM):
     :param cfm: The input Cardinality-based Feature Model, which gets encoded, and all Feature Cardinalities are minimized by the solver
     :return: Prints the result of the SMT solver for each constant(Feature cardinality) after encoding and minimized procedures.
     """
-    list_constants = get_all_constants_of_CFM_mulitset(cfm)
     encoding = create_smt_multiset_encoding(cfm)
-    print(len(list_constants))
-    for constant in list_constants:
-        solver_cmd = encoding
-        solver_cmd += "(minimize "
-        solver_cmd += constant
-        solver_cmd += ")"
-        solver_cmd += "(check-sat)"
-        solver_cmd += "(get-value (" + constant + "))"
-        solver_cmd += "(exit)"
-        print(callSolverWithEncoding(solver_cmd))
+    find_actual_min(encoding, cfm.root, 1)
+
+
+def find_actual_min(encoding, feature:Feature, min_parent_cardinality: int):
+    solver_cmd = encoding
+    solver_cmd += "(minimize "
+    solver_cmd += create_const_name(feature)
+    solver_cmd += ")"
+    solver_cmd += "(check-sat)"
+    solver_cmd += "(get-value (" + create_const_name(feature) + "))"
+    solver_cmd += "(exit)"
+    result = callSolverWithEncoding(solver_cmd)
+    match = re.search('\(\((\w+_\w+)\s(\d+)\)\)', result)
+
+    if int(match.__getitem__(2)) > 1 and min_parent_cardinality >= 1:
+        actual_min = int(match.__getitem__(2)) / min_parent_cardinality
+        min_parent_cardinality = actual_min if  actual_min > min_parent_cardinality else min_parent_cardinality
+    else:
+        actual_min = int(match.__getitem__(2))
+    if actual_min != get_min_cardinality(feature.instance_cardinality.intervals):
+        print(match.__getitem__(1) + ": ")
+        print("Given feature instance cardinality: " + str(get_min_cardinality(
+            feature.instance_cardinality.intervals)) + "\n")
+        print("Actual Min Feature Instance Cardinality " + str(actual_min) + "\n")
+
+    print(match.__getitem__(1) + ": ")
+    print("Given feature instance cardinality: " + str(get_min_cardinality(
+        feature.instance_cardinality.intervals)) + "\n")
+    print("Actual Min Feature Instance Cardinality " + str(actual_min) + "\n")
+
+    for child in feature.children:
+        find_actual_min(encoding, child, min_parent_cardinality)
+
 
 
 @app.command()
@@ -82,6 +124,7 @@ def run_smt_solver_with_multisetencoding_gap_detection(cfm: CFM):
     """
     list_features = cfm.features
     encoding = create_smt_multiset_encoding(cfm)
+    print("Searching for Gaps...")
     for feature in list_features:
         for interval in feature.instance_cardinality.intervals:
             for cardinality in range(interval.lower, interval.upper + 1):
@@ -220,11 +263,13 @@ def count_cardinality(solver_output, feature, indices):
 @app.command()
 def run_smt_solver_with_cloning_base_gap_detection(cfm: CFM):
     encoding = encode_to_smt_cloning_base(cfm)
+    print("Searching for Gaps...")
     return find_gaps_in_all_clones(cfm.root,encoding,[],True)
 
 @app.command()
 def run_smt_solver_with_cloning_with_child_int_constants_gap_detection(cfm: CFM):
     encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
+    print("Searching for Gaps...")
     return find_gaps_in_all_clones(cfm.root,encoding,[],False)
 
 
@@ -264,7 +309,8 @@ def callSolverWithEncoding(encoding):
     :param encoding: A string representing the SMT2 encoding to be passed to the solver.
     :return: The standard output from the solver as a string.
     """
-    path = os.path.join(os.path.abspath(sys.path[0]), "../../../../../z3/z3/build/z3") # needs
+    path = os.path.join(os.path.abspath(sys.path[0]), "../../z3/z3/build/z3") # needs #
+    # test ../../../../../z3/z3/build/z3
     # to be
     # moved to env variable
     cmd = [path, '-in', '-smt2']
