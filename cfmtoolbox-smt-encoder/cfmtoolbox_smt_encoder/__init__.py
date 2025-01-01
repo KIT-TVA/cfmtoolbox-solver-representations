@@ -55,19 +55,22 @@ def find_actual_max(encoding, feature:Feature, max_parent_cardinality: int):
     solver_cmd += "(exit)"
     result = callSolverWithEncoding(solver_cmd)
     match = re.search('\(\((\w+_\w+)\s(\d+)\)\)', result)
+    if  not "unsat" in result:
 
-    if int(match.__getitem__(2)) > 1:
-        actual_max = int(match.__getitem__(2)) / max_parent_cardinality
-        new_max = round(max_parent_cardinality * actual_max, None)
+        if int(match.__getitem__(2)) > 1:
+            actual_max = int(match.__getitem__(2)) / max_parent_cardinality
+            new_max = round(max_parent_cardinality * actual_max, None)
+        else:
+            actual_max = int(match.__getitem__(2))
+            new_max = max_parent_cardinality
+        if actual_max < getMaxCardinality(feature.instance_cardinality.intervals):
+            print(match.__getitem__(1) + ": ")
+            print("Given feature instance cardinality: " + str(getMaxCardinality(
+                feature.instance_cardinality.intervals)) + "\n")
+            print("Actual Max Feature Instance Cardinality " + str(round(actual_max, None)) + "\n")
     else:
-        actual_max = int(match.__getitem__(2))
+        print("unsat: " + create_const_name(feature) + "" + "\n")
         new_max = max_parent_cardinality
-    if actual_max < getMaxCardinality(feature.instance_cardinality.intervals):
-        print(match.__getitem__(1) + ": ")
-        print("Given feature instance cardinality: " + str(getMaxCardinality(
-            feature.instance_cardinality.intervals)) + "\n")
-        print("Actual Max Feature Instance Cardinality " + str(round(actual_max, None)) + "\n")
-
 
     for child in feature.children:
         find_actual_max(encoding, child, new_max)

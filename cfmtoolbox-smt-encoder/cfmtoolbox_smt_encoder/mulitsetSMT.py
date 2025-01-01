@@ -97,30 +97,30 @@ def create_assert_feature_instance_cardinality(feature: Feature, parent_interval
     assert_statement += "(assert "
     if len(parent_intervals) > 1:
         assert_statement += "(or"
-    for parentInterval in parent_intervals:
-        if len(feature.instance_cardinality.intervals) > 1:
-            assert_statement += "(or"
-        for interval in feature.instance_cardinality.intervals:
-            assert_statement += "(and "
-            assert_statement += "(>= "
-            assert_statement += create_const_name(feature) + " "
-            if feature.parent is not None:
-                assert_statement += "(* " + str(interval.lower) + " " + create_const_name(feature.parent) + ")"
-            else:
-                assert_statement += str(interval.lower)
-            assert_statement += ")"
-            assert_statement += "(<= "
-            assert_statement += create_const_name(feature) + " "
-            if feature.parent is not None:
-                assert_statement += "(* " + str(interval.upper) + " " + create_const_name(
-                    feature.parent) + ")"
-            else:
-                assert_statement += str(interval.upper)
-            assert_statement += ") "
-            assert_statement += ")" # closing and
 
-        if len(feature.instance_cardinality.intervals) > 1:
-            assert_statement += ")"  # closing or
+    if len(feature.instance_cardinality.intervals) > 1:
+        assert_statement += "(or"
+    for interval in feature.instance_cardinality.intervals:
+        assert_statement += "(and "
+        assert_statement += "(>= "
+        assert_statement += create_const_name(feature) + " "
+        if feature.parent is not None:
+            assert_statement += "(* " + str(interval.lower) + " " + create_const_name(feature.parent) + ")"
+        else:
+            assert_statement += str(interval.lower)
+        assert_statement += ")"
+        assert_statement += "(<= "
+        assert_statement += create_const_name(feature) + " "
+        if feature.parent is not None:
+            assert_statement += "(* " + str(interval.upper) + " " + create_const_name(
+                feature.parent) + ")"
+        else:
+            assert_statement += str(interval.upper)
+        assert_statement += ") "
+        assert_statement += ")" # closing and
+
+    if len(feature.instance_cardinality.intervals) > 1:
+        assert_statement += ")"  # closing or
     if len(parent_intervals) > 1:
         assert_statement += ")"
     assert_statement += ")\n" # closing assert
