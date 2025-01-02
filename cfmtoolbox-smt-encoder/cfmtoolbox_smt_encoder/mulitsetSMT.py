@@ -11,7 +11,7 @@ def create_smt_multiset_encoding(cfm: CFM):
     encoding += create_assert_child_parent_connection(cfm.root.children)
     encoding += create_assert_feature_group_type_cardinality(cfm.root)
     encoding += create_assert_feature_group_instance_cardinality(cfm.root)
-    encoding += create_assert_feature_instance_cardinality(cfm.root, [Interval(1, 1)])
+    encoding += create_assert_feature_instance_cardinality(cfm.root)
     encoding += create_assert_constraints(cfm.constraints)
 
     print(encoding)
@@ -91,13 +91,9 @@ def create_constraint_feature_to_intervals(intervals: list, feature: Feature):
         constraint += ")" #closing or
     return constraint
 
-def create_assert_feature_instance_cardinality(feature: Feature, parent_intervals: list[Interval]):
+def create_assert_feature_instance_cardinality(feature: Feature):
     assert_statement = ""
-    new_parent_intervals = parent_intervals.copy()
     assert_statement += "(assert "
-    if len(parent_intervals) > 1:
-        assert_statement += "(or"
-
     if len(feature.instance_cardinality.intervals) > 1:
         assert_statement += "(or"
     for interval in feature.instance_cardinality.intervals:
@@ -121,24 +117,15 @@ def create_assert_feature_instance_cardinality(feature: Feature, parent_interval
 
     if len(feature.instance_cardinality.intervals) > 1:
         assert_statement += ")"  # closing or
-    if len(parent_intervals) > 1:
-        assert_statement += ")"
     assert_statement += ")\n" # closing assert
 
-    new_intervals =  add_new_parent_interval_to_intervals(new_parent_intervals, feature.instance_cardinality.intervals)
 
     for child in feature.children:
-        assert_statement += create_assert_feature_instance_cardinality(child, new_intervals)
+        assert_statement += create_assert_feature_instance_cardinality(child)
 
     return assert_statement
 
-def add_new_parent_interval_to_intervals(parentIntervals: list[Interval], newIntervals: list[Interval]):
-    output_list = []
-    for interval in parentIntervals:
-        for newInterval in newIntervals:
-            output_list.append(Interval(interval.lower * newInterval.lower,interval.upper * newInterval.upper))
 
-    return output_list
 
 
 def create_amount_of_children_for_group_type_cardinality(features: list, parent: Feature):
