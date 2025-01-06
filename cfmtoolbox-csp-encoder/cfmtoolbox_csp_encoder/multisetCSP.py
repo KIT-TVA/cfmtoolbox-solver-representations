@@ -1,4 +1,4 @@
-from cfmtoolbox import CFM, Feature
+from cfmtoolbox import CFM, Feature, Constraint
 from cfmtoolbox.plugins.big_m import get_global_upper_bound
 from ortools.sat.python import cp_model
 from ortools.sat.python.cp_model import CpModel
@@ -19,6 +19,8 @@ def create_multiset_csp_encoding(cfm: CFM):
     create_assert_group_instance_cardinality(cfm.root,model)
 
     create_assert_group_type_cardinality(cfm.root,model)
+
+    create_assert_for_constraints(cfm.constraints,model)
 
     return model
 
@@ -162,6 +164,34 @@ def create_assert_group_type_cardinality(feature: Feature, model: CpModel):
 
         for child in feature.children:
             create_assert_group_type_cardinality(child, model)
+
+
+
+def create_assert_for_constraints(constraints: list[Constraint], model: CpModel):
+
+    for i,constraint in enumerate(constraints):
+        first_interval_constant = model.new_bool_var("constraint_first_interval_literal_" +
+                                                     str(i))
+        first_interval = constraint.first_cardinality.intervals.__getitem__(0)
+        model.add(variables[create_const_name(constraint.first_feature)] >=
+                  first_interval.lower).only_enforce_if(first_interval_constant)
+        model.add(variables[create_const_name(constraint.first_feature)] <= first_interval.upper).only_enforce_if(first_interval_constant)
+
+        second_interval_constant = model.new_bool_var("constraint_second_interval_literal_" +
+                                                     str(i))
+        second_interval = constraint.second_cardinality.intervals.__getitem__(0)
+        model.add(variables[create_const_name(constraint.second_feature)] >=
+                  second_interval.lower).only_enforce_if(second_interval_constant)
+        model.add(variables[create_const_name(constraint.second_feature)] <= second_interval.upper).only_enforce_if(second_interval_constant)
+
+        if constraint.require:
+            model.add_implication(first_interval_constant, second_interval_constant)
+        else:
+            model.add(first_interval_constant + second_interval_constant <= 1)
+
+
+
+
 
 
 
