@@ -8,7 +8,7 @@ def create_smt_multiset_encoding(cfm: CFM):
     encoding = ""
 
     encoding += declare_constants(cfm.features)
-    encoding += create_assert_child_parent_connection(cfm.root.children)
+    #encoding += create_assert_child_parent_connection(cfm.root.children)
     encoding += create_assert_feature_group_type_cardinality(cfm.root)
     encoding += create_assert_feature_group_instance_cardinality(cfm.root)
     encoding += create_assert_feature_instance_cardinality(cfm.root)
@@ -23,7 +23,7 @@ def create_assert_feature_group_type_cardinality(feature: Feature):
     if feature.group_type_cardinality.intervals:
         assertStatement += "(assert "
         if len(feature.group_type_cardinality.intervals) > 1:
-            assertStatement += "(or"
+            assertStatement += "(xor"
         for interval in feature.group_type_cardinality.intervals:
 
             assertStatement += "(and "
