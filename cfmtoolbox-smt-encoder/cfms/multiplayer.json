@@ -54,7 +54,7 @@
         },
         {
             "name": "Team",
-            "instance_cardinality": { "intervals": [{ "lower": 2, "upper": 30 }] },
+            "instance_cardinality": { "intervals": [{"lower":2,  "upper": 30 }] },
             "group_type_cardinality": { "intervals": [{ "lower": 2, "upper": 2 }] },
             "group_instance_cardinality": {
               "intervals": [{ "lower": 2, "upper": 2 }]
