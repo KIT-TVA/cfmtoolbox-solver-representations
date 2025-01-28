@@ -37,10 +37,12 @@ def run_cfmtoolbox(directory, output_file):
 
                 try:
                     # Execute the command and capture output
-                    result = subprocess.run(command, check=True, text=True, capture_output=True)
+                    result = subprocess.run(command, text=True, stdout=subprocess.PIPE,  # Capture standard output
+                        stderr=subprocess.PIPE)    # Capture standard error (timing info))
                     # Write the output to the file
                     output.write(f"Output for {file}:\n")
                     output.write(result.stdout)
+                    output.write(f"Time needed: {result.stderr}")
                     output.write("\n")
                 except subprocess.CalledProcessError as e:
                     error_message = f"Command failed for {file}: {e}\n"
@@ -52,6 +54,6 @@ if __name__ == "__main__":
     # Replace 'output_file_path' with the desired output file path
     directory_path = "cfmtoolbox-smt-encoder/cfms/"
     output_file_path = "./output.txt"
-    analyse_command = "run-csp-with-integer-leaves-gap-detection"
+    analyse_command = "run-csp-solver-maximize-cardinalities"
 
     run_cfmtoolbox(directory_path, output_file_path)
