@@ -1,4 +1,3 @@
-from pickle import FALSE
 
 from cfmtoolbox import CFM, Feature, Interval
 
@@ -19,9 +18,10 @@ def create_smt_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
     encoding = ""
     encoding += declare_cloned_constants(cfm.root,[], declaration=True,
                                          only_boolean_constants=only_boolean_constants)
-    encoding += "(assert (= " + create_const_name(cfm.root) + "_1 true))"
-    encoding += create_assert_child_parent_connection_cloning(cfm.root,[],
-                                                              only_boolean_constants=only_boolean_constants)
+    #encoding += "(assert (= " + create_const_name(cfm.root) + "_1 true))"
+    #encoding += create_assert_child_parent_connection_cloning(cfm.root,[],
+    #
+    #                                                          only_boolean_constants=only_boolean_constants)
     encoding += create_assert_feature_group_cardinality_cloning(cfm.root,[],
                                                                 instance_cardinality=False,
                                                                 only_boolean_constants=only_boolean_constants)
@@ -32,7 +32,9 @@ def create_smt_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
                                                                    only_boolean_constants=only_boolean_constants)
     encoding += create_assert_constraints_cloning(cfm,only_boolean_constants=only_boolean_constants)
 
-    print(encoding)
+    #print(encoding)
+    print("Encoding complete.")
+
     return encoding
 
 
