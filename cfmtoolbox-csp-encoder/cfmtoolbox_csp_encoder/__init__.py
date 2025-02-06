@@ -1,10 +1,9 @@
 from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_csp_encoder.cloningCSP import create_csp_cloning_encoding, \
     create_amount_of_children_for_group_instance_cardinality_cloning_csp, getMaxCardinality
-from cfmtoolbox_ilp_encoder import get_max_interval_value
 from ortools.sat.python import cp_model
 from cfmtoolbox_csp_encoder.multisetCSP import (create_multiset_csp_encoding, create_const_name,
-                                                get_variables, variables)
+                                                get_variables, variables,get_max_interval_value)
 from ortools.sat.python.cp_model import CpModel
 
 
@@ -35,7 +34,7 @@ def maximize_or_minimize(model: CpModel, feature: Feature,maximize: bool,root: F
     status = solver.solve(model)
 
     if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
-        print(feature.name + ": " + str(solver.objective_value))
+        #print(feature.name + ": " + str(solver.objective_value))
         if solver.objective_value < get_max_interval_value(feature.instance_cardinality.intervals):
             print(feature.name + ": ")
             print("Given feature instance cardinality: " + str(get_max_interval_value(
@@ -66,14 +65,15 @@ def run_csp_solver_maximize_cardinalities(cfm: CFM):
     except Exception as e:
         print(f"Model validation failed: {e}")
 
+    """
     solver = cp_model.CpSolver()
     status = solver.solve(model)
 
-
+   
     if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
         for key in variables:
            print(key + ": " + str(solver.Value(variables[key])))
-
+    """
     find_actual_max(model,cfm.root,1)
 
 
@@ -164,7 +164,7 @@ def find_gaps_in_all_clones(feature: Feature, model: CpModel, parent_list: list[
                             only_boolean_constants: bool):
     gaps = ""
 
-    print(feature.name)
+    #print(feature.name)
 
     for interval in feature.instance_cardinality.intervals:
 

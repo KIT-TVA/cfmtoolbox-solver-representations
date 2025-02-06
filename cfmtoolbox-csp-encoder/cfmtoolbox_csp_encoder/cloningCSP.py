@@ -26,7 +26,7 @@ def create_csp_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
 
     global big_m
     big_m = get_global_upper_bound(cfm.root)
-    print(big_m)
+    #print(big_m)
     model = cp_model.CpModel()
     print("Encoding CFM...")
     declare_cloned_constants_csp(model, cfm.root,[],
@@ -265,26 +265,21 @@ def create_amount_of_children_for_group_type_cardinality_cloning_csp(model: CpMo
 
     for feature in children:
         if only_boolean_constants or (not only_boolean_constants and len(feature.children) >= 1):
-            helper_variables = []
+            boolean_variables = []
             for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
-                helper_variable = model.new_bool_var(create_const_name(feature) + "_" +
-                                                     "_".join(map(str, indices)) + "_" + str(
-                                                     i) + "_helper")
-                helper_variables.append(helper_variable)
+
                 if len(indices) > 0:
                     variable_name = create_const_name(feature) + "_" + "_".join(
                         map(str, indices)) + "_" + str(i)
-                    model.add(variables[variable_name] > 0).only_enforce_if(helper_variable)
-                    model.add(variables[variable_name] <= 0).only_enforce_if(helper_variable.Not())
+                    boolean_variables.append(variables[variable_name])
                 else:
                     variable_name = create_const_name(feature) + "_" + str(i)
-                    model.add(variables[variable_name] > 0).only_enforce_if(helper_variable)
-                    model.add(variables[variable_name] <= 0).only_enforce_if(helper_variable.Not())
+                    boolean_variables.append(variables[variable_name])
 
             helper2 = model.new_bool_var(create_const_name(feature) + "_" +
                                                      "_".join(map(str, indices)) + "_helper2")
-            model.add_at_least_one(helper_variables).only_enforce_if(helper2)
-            model.add(sum(helper_variables) <= 0).only_enforce_if(helper2.Not())
+            model.add_at_least_one(boolean_variables).only_enforce_if(helper2)
+            model.add(sum(boolean_variables) <= 0).only_enforce_if(helper2.Not())
             sum_variables.append(helper2)
 
         else:

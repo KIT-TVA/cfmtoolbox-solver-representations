@@ -9,7 +9,7 @@ variables = {}
 def create_multiset_csp_encoding(cfm: CFM):
     global big_m
     big_m = get_global_upper_bound(cfm.root)
-    print(big_m)
+    #print(big_m)
     model = cp_model.CpModel()
 
 
@@ -49,7 +49,7 @@ def create_csp_variables(cfm: CFM, model: CpModel):
         # if a feature is local active it is also global active
         model.add_implication(variables[create_const_name_activ(feature)], variables[
           create_const_name_activ_global(feature)])
-        print(create_const_name_activ(feature)+ "->" + create_const_name_activ_global(feature))
+        #print(create_const_name_activ(feature)+ "->" + create_const_name_activ_global(feature))
 
 
 
@@ -84,12 +84,14 @@ def create_assert_feature_instance_cardinality(feature: Feature, model: CpModel)
     else:
 
         if feature.parent is not None:
+            """
             print(feature_variable.name + ">=" + str(
                 feature.instance_cardinality.intervals.__getitem__(0).lower) + " * " +
                   parent_variable.name)
             print(feature_variable.name + "<=" + str(
                 feature.instance_cardinality.intervals.__getitem__(0).upper) + " * " +
                   parent_variable.name)
+            """
             model.add(feature_variable >=
                       feature.instance_cardinality.intervals.__getitem__(0).lower * parent_variable)
             model.add(feature_variable <=
@@ -97,10 +99,12 @@ def create_assert_feature_instance_cardinality(feature: Feature, model: CpModel)
         else:
             model.add(feature_variable >= feature.instance_cardinality.intervals.__getitem__(
                 0).lower)
+            """
             print(feature_variable.name + ">=" + str(
                 feature.instance_cardinality.intervals.__getitem__(0).lower))
             print(feature_variable.name + "<=" + str(
                 feature.instance_cardinality.intervals.__getitem__(0).upper))
+            """
             model.add(feature_variable <= feature.instance_cardinality.intervals.__getitem__(
                 0).upper)
 
@@ -126,18 +130,18 @@ def create_assert_group_instance_cardinality(feature: Feature, model: CpModel):
             feature.name))
         model.add(total_sum_variables == sum(sum_variables)).only_enforce_if(variables[
                                                                                  create_const_name_activ_global(feature)])
-        print(total_sum_variables.name + "="  + sum(sum_variables).__str__())
+       # print(total_sum_variables.name + "="  + sum(sum_variables).__str__())
 
         parent_variable = variables[create_const_name(feature)]
         model.add(total_sum_variables >= min_lowerbound * parent_variable)
         model.add(total_sum_variables <= max_upperbound * parent_variable)
-
+        """
         print(sum(sum_variables).__str__() + ">="  + str(
             feature.group_instance_cardinality.intervals.__getitem__(0).lower) + " * " + parent_variable.name)
         print(sum(sum_variables).__str__() + "<=" + str(
             feature.group_instance_cardinality.intervals.__getitem__(
                 0).upper) + " * " + parent_variable.name)
-
+        """
         for child in feature.children:
             create_assert_group_instance_cardinality(child, model)
 
@@ -152,7 +156,8 @@ def create_assert_group_type_cardinality(feature: Feature, model: CpModel):
         for child in feature.children:
             local_active_variable = variables[create_const_name_activ(child)]
 
-            x_ge_y = model.NewBoolVar(child.name  + '_ge_' + child.parent.name)  # Represents x >= y
+            x_ge_y = model.NewBoolVar(child.name  + '_ge_' + child.parent.name)  # Represents x
+            # >= y
 
             # if child >= parent than the constant child_active should be true
             model.add(variables[create_const_name(child)] >= variables[create_const_name(
@@ -176,14 +181,14 @@ def create_assert_group_type_cardinality(feature: Feature, model: CpModel):
 
         model.add(type_sum_variables >= min_lowerbound).only_enforce_if(global_active_parent)
         model.add(type_sum_variables <= max_upperbound).only_enforce_if(global_active_parent)
-
+        """
         print(sum(sum_type_variables).__str__() + ">=" + str(
             feature.group_type_cardinality.intervals.__getitem__(
                 0).lower) + " * " + global_active_parent.name)
         print(sum(sum_type_variables).__str__() + "<=" + str(
             feature.group_type_cardinality.intervals.__getitem__(
                 0).upper) + " * " + global_active_parent.name)
-
+        """
         for child in feature.children:
             create_assert_group_type_cardinality(child, model)
 
