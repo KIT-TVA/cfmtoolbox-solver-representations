@@ -1,6 +1,9 @@
+import re
+
 from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_csp_encoder.cloningCSP import create_csp_cloning_encoding, \
-    create_amount_of_children_for_group_instance_cardinality_cloning_csp, getMaxCardinality
+    create_amount_of_children_for_group_instance_cardinality_cloning_csp, getMaxCardinality, \
+    get_all_cloned_variables, get_all_clones_of_feature
 from ortools.sat.python import cp_model
 from cfmtoolbox_csp_encoder.multisetCSP import (create_multiset_csp_encoding, create_const_name,
                                                 get_variables, variables,get_max_interval_value)
@@ -192,3 +195,131 @@ def find_gaps_in_all_clones(feature: Feature, model: CpModel, parent_list: list[
         old_list = parent_list.copy()
         gaps += find_gaps_in_all_clones(feature, model, old_list, only_boolean_constants)
     return gaps
+
+
+@app.command()
+def run_csp_cloning_basis_sampling(cfm: CFM):
+    model = create_csp_cloning_encoding(cfm,True)
+    try:
+        model.Validate()
+        print("Model is valid.")
+    except Exception as e:
+        print(f"Model validation failed: {e}")
+
+    solver = cp_model.CpSolver()
+    solution_printer = VarSolutionPrinter(get_all_cloned_variables())
+    solver.parameters.enumerate_all_solutions = True
+    status = solver.solve(model,solution_printer)
+
+    print(f"Number of solutions found: {solution_printer.solution_count}")
+
+
+@app.command()
+def run_csp_cloning_with_integer_leaves_sampling(cfm: CFM):
+    model = create_csp_cloning_encoding(cfm,False)
+    try:
+        model.Validate()
+        print("Model is valid.")
+    except Exception as e:
+        print(f"Model validation failed: {e}")
+
+    solver = cp_model.CpSolver()
+    solution_printer = VarSolutionPrinter(get_all_cloned_variables())
+    solver.parameters.enumerate_all_solutions = True
+    status = solver.solve(model,solution_printer)
+
+    print(f"Number of solutions found: {solution_printer.solution_count}")
+
+@app.command()
+def run_csp_multiset_with_cloning_sampling(cfm: CFM):
+    model = create_multiset_csp_encoding(cfm)
+    try:
+        model.Validate()
+        print("Model is valid.")
+    except Exception as e:
+        print(f"Model validation failed: {e}")
+
+    solver = cp_model.CpSolver()
+    solution_printer = VarMultisetSolutionPrinter(get_variables(),cfm)
+    solver.parameters.enumerate_all_solutions = True
+    status = solver.solve(model,solution_printer)
+
+    print(f"Number of solutions found: {solution_printer.solution_count}")
+
+
+
+def call_cloning_solver_with_multiset_sample(multi_set_sample,cfm):
+    cloning_model = create_csp_cloning_encoding(cfm, False)
+
+    for name,value in multi_set_sample.items():
+        cloning_model.add(sum(get_all_clones_of_feature(name)) == value)
+        print(str(sum(get_all_clones_of_feature(name))) + " = " + str(value),
+              end="\n")
+
+    try:
+        cloning_model.Validate()
+        print("Model is valid.")
+    except Exception as e:
+        print(f"Model validation failed: {e}")
+
+    solver = cp_model.CpSolver()
+    status = solver.solve(cloning_model)
+
+    if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
+        for v in get_all_cloned_variables():
+            print(f"{v.name}={solver.value(v)}", end=" ")
+    return status
+
+
+class VarSolutionPrinter(cp_model.CpSolverSolutionCallback):
+    """Print intermediate solutions."""
+
+    def __init__(self, variables: list[cp_model.IntVar]):
+        cp_model.CpSolverSolutionCallback.__init__(self)
+        self.__variables = variables
+        self.__solution_count = 0
+
+
+    def on_solution_callback(self) -> None:
+        self.__solution_count += 1
+        for v in self.__variables:
+            print(f"{v}={self.value(v)}", end=" ")
+        print(f"Solution -> {self.__solution_count}",end="\n")
+        print()
+
+    @property
+    def solution_count(self) -> int:
+        return self.__solution_count
+
+class VarMultisetSolutionPrinter(cp_model.CpSolverSolutionCallback):
+    """Print intermediate solutions."""
+
+    def __init__(self, variables,cfm:CFM):
+        cp_model.CpSolverSolutionCallback.__init__(self)
+        self.__variables = variables
+        self.__solution_count = 0
+        self.cfm = cfm
+
+    def on_solution_callback(self) -> None:
+        multiset_sample = {}
+
+        for feature in self.cfm.features:
+            sample_variable = self.__variables[create_const_name(feature)]
+            multiset_sample[feature.name] = self.value(sample_variable)
+            print(f"{feature.name}={self.value(sample_variable)}", end=" \n")
+        print(f"Multiset -> {multiset_sample}",end="\n")
+        status = call_cloning_solver_with_multiset_sample(multiset_sample, self.cfm)
+        if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
+            self.__solution_count += 1
+            print(f"Solution -> {self.__solution_count}", end="\n")
+        else:
+            print(f"no valid configuration for this multiset representation")
+        print()
+
+
+    @property
+    def solution_count(self) -> int:
+        return self.__solution_count
+
+
+

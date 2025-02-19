@@ -9,7 +9,7 @@ variables = {}
 def create_multiset_csp_encoding(cfm: CFM):
     global big_m
     big_m = get_global_upper_bound(cfm.root)
-    #print(big_m)
+   # print("Big-M:" + str(big_m))
     model = cp_model.CpModel()
 
 

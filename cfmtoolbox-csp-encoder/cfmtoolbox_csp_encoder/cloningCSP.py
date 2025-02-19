@@ -1,3 +1,5 @@
+import re
+
 from cfmtoolbox import CFM, Feature, Interval, Constraint
 from cfmtoolbox.plugins.big_m import get_global_upper_bound
 
@@ -394,3 +396,18 @@ def create_parent_list_for_feature_by_name(feature: Feature, feature_name: str, 
             new_list = create_parent_list_for_feature_by_name(child, feature_name,old_list)
             if new_list is not None:
                 return new_list
+
+
+def get_all_cloned_variables():
+    return variables.values()
+
+def get_all_clones_of_feature(feature_name: str):
+    list_of_clones = []
+    for name,clone in variables.items():
+        match = re.match(r"([a-zA-Z]+)_([a-zA-Z]+)((?:_\d+)*)", name)
+        if match:
+            name = match.group(2)
+            if feature_name == name:
+                list_of_clones.append(clone)
+
+    return list_of_clones
