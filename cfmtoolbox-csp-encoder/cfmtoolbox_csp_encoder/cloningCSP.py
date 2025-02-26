@@ -401,6 +401,65 @@ def create_parent_list_for_feature_by_name(feature: Feature, feature_name: str, 
 def get_all_cloned_variables():
     return variables.values()
 
+def add_constraint_to_remove_permutations(model, feature,parent_list: list[
+    int], only_boolean_constants):
+
+
+    def helper(depth, current_indices):
+
+        # Base case: if we've reached the innermost level, execute the code
+        if depth == len(parent_list):
+
+            if only_boolean_constants or (
+                    not only_boolean_constants and len(feature.children) >= 1):
+                for i in range(2, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+                    if feature.parent is not None:
+                        if len(current_indices) > 0:
+                            parent_variable = variables[
+                                create_const_name(feature.parent) + "_" + "_".join(
+                                    map(str, current_indices))]
+                            model.Add(variables[create_const_name(feature) + "_" + "_".join(
+                                map(str, current_indices)) + "_" + str(i - 1)] >= variables[
+                                          create_const_name(feature) + "_" + "_".join(
+                                              map(str, current_indices)) + "_" + str(
+                                              i)]).only_enforce_if(parent_variable)
+                        else:
+                            parent_variable = variables[create_const_name(
+                                feature.parent) + "_" + "1"]
+                            model.Add(variables[create_const_name(feature) + "_" +
+                                                str(i - 1)] >= variables[
+                                          create_const_name(feature) + "_" +
+                                          str(i)]).only_enforce_if(parent_variable)
+                    else:
+                        if len(current_indices) > 0:
+                            model.Add(variables[create_const_name(feature) + "_" + "_".join(
+                                map(str, current_indices)) + "_" + str(i-1)] >= variables[
+                                create_const_name(feature) + "_" + "_".join(
+                                map(str, current_indices)) + "_" + str(i)])
+                        else:
+                            model.Add(variables[create_const_name(feature) + "_" +
+                                                           str(i-1)] >=  variables[create_const_name(feature) + "_" +
+                                                           str(i)])
+
+            return
+
+        # Loop through the range based on the current depth value in arr[depth]
+        for i in range(1, parent_list[
+                              depth] + 1):  # arr[depth] defines how many times the loop at this level runs
+            current_indices.append(i)  # Add the current index to the list
+            helper(depth + 1, current_indices)  # Recurse to the next depth (next loop)
+            current_indices.pop()
+
+
+    helper(0, [])
+
+    if feature.parent is not None:
+        max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
+        parent_list.append(max_cardinality)
+    for feature in feature.children:
+        old_list = parent_list.copy()
+        add_constraint_to_remove_permutations(model, feature, old_list, only_boolean_constants)
+
 def get_all_clones_of_feature(feature_name: str):
     list_of_clones = []
     for name,clone in variables.items():

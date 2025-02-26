@@ -3,7 +3,7 @@ import re
 from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_csp_encoder.cloningCSP import create_csp_cloning_encoding, \
     create_amount_of_children_for_group_instance_cardinality_cloning_csp, getMaxCardinality, \
-    get_all_cloned_variables, get_all_clones_of_feature
+    get_all_cloned_variables, get_all_clones_of_feature, add_constraint_to_remove_permutations
 from ortools.sat.python import cp_model
 from cfmtoolbox_csp_encoder.multisetCSP import (create_multiset_csp_encoding, create_const_name,
                                                 get_variables, variables,get_max_interval_value)
@@ -59,7 +59,7 @@ def maximize_or_minimize(model: CpModel, feature: Feature,maximize: bool,root: F
 
 @app.command()
 def run_csp_solver_maximize_cardinalities(cfm: CFM):
-    model = create_multiset_csp_encoding(cfm)
+    model = create_multiset_csp_encoding(cfm, False)
 
     variables = get_variables()
     try:
@@ -230,9 +230,31 @@ def run_csp_cloning_with_integer_leaves_sampling(cfm: CFM):
 
     print(f"Number of solutions found: {solution_printer.solution_count}")
 
+
+@app.command()
+def run_csp_cloning_with_integer_leaves_sampling_without_permutation(cfm: CFM):
+    model = create_csp_cloning_encoding(cfm,False)
+    add_constraint_to_remove_permutations(model, cfm.root, [],
+    only_boolean_constants = False)
+
+    try:
+        model.Validate()
+        print("Model is valid.")
+    except Exception as e:
+        print(f"Model validation failed: {e}")
+
+    solver = cp_model.CpSolver()
+    solution_printer = VarSolutionPrinter(get_all_cloned_variables())
+    solver.parameters.enumerate_all_solutions = True
+    status = solver.solve(model,solution_printer)
+
+    print(f"Number of solutions found: {solution_printer.solution_count}")
+
+
 @app.command()
 def run_csp_multiset_with_cloning_sampling(cfm: CFM):
-    model = create_multiset_csp_encoding(cfm)
+    model = create_multiset_csp_encoding(cfm, True)
+
     try:
         model.Validate()
         print("Model is valid.")
@@ -244,7 +266,9 @@ def run_csp_multiset_with_cloning_sampling(cfm: CFM):
     solver.parameters.enumerate_all_solutions = True
     status = solver.solve(model,solution_printer)
 
-    print(f"Number of solutions found: {solution_printer.solution_count}")
+    print(f"Number of solutions found: {solution_printer.solution_count} with "
+          f"{solution_printer.multiset_samples}  Multiset "
+          f"Samples")
 
 
 
@@ -298,20 +322,25 @@ class VarMultisetSolutionPrinter(cp_model.CpSolverSolutionCallback):
         cp_model.CpSolverSolutionCallback.__init__(self)
         self.__variables = variables
         self.__solution_count = 0
+        self.__multiset_samples = 0
         self.cfm = cfm
 
     def on_solution_callback(self) -> None:
         multiset_sample = {}
-
+        for variable in self.__variables.values():
+            print(f"{variable}={self.value(variable)}", end=" \n")
         for feature in self.cfm.features:
             sample_variable = self.__variables[create_const_name(feature)]
             multiset_sample[feature.name] = self.value(sample_variable)
-            print(f"{feature.name}={self.value(sample_variable)}", end=" \n")
+            #print(f"{feature.name}={self.value(sample_variable)}", end=" \n")
         print(f"Multiset -> {multiset_sample}",end="\n")
+        self.__multiset_samples += 1
         status = call_cloning_solver_with_multiset_sample(multiset_sample, self.cfm)
         if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
             self.__solution_count += 1
-            print(f"Solution -> {self.__solution_count}", end="\n")
+            print(f"Solution -> {self.__solution_count}: Multiset Sample -> "
+                  f"{self.__multiset_samples}",
+                  end="\n")
         else:
             print(f"no valid configuration for this multiset representation")
         print()
@@ -320,6 +349,10 @@ class VarMultisetSolutionPrinter(cp_model.CpSolverSolutionCallback):
     @property
     def solution_count(self) -> int:
         return self.__solution_count
+
+    @property
+    def multiset_samples(self) -> int:
+        return self.__multiset_samples
 
 
 
