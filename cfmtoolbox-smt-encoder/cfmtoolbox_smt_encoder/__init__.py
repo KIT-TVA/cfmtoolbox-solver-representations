@@ -1,6 +1,7 @@
 import os
 import re
 import sys
+from pyexpat import features
 
 from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, get_all_constants_of_CFM_mulitset, create_const_name
@@ -17,7 +18,7 @@ def encode_to_smt_multiset(cfm: CFM) -> str:
     :param cfm: The input Cardinality-based Feature Model that needs to be encoded into SMT multiset format
     :return: A string representing the SMT multiset encoding of the input CFM object
     """
-    encoding = create_smt_multiset_encoding(cfm)
+    encoding = create_smt_multiset_encoding(cfm,sampling=True)
     return encoding
 
 
@@ -28,7 +29,7 @@ def run_smtsolver_with_multisetencoding(cfm: CFM):
     :param cfm: The input Cardinality-based Feature Model that needs to be encoded into SMT multiset format
     :return: None. The function prints the result of the SMT solver.
     """
-    encoding = create_smt_multiset_encoding(cfm)
+    encoding = create_smt_multiset_encoding(cfm,sampling=True)
     encoding += "(check-sat)"
     encoding += "(get-model)"
     encoding += "(exit)"
@@ -42,7 +43,7 @@ def run_smt_solver_with_multisetencoding_maximize_cardinalities(cfm: CFM):
     :param cfm: The input Cardinality-based Feature Model, which gets encoded, and all Feature Cardinalities are maximized by the solver
     :return: Prints the result of the SMT solver for each constant(Feature cardinality) after encoding and maximization procedures.
     """
-    encoding = create_smt_multiset_encoding(cfm)
+    encoding = create_smt_multiset_encoding(cfm,sampling=False)
     find_actual_max(encoding, cfm.root,1)
 
 def find_actual_max(encoding, feature:Feature, max_parent_cardinality: int):
@@ -83,7 +84,7 @@ def run_smt_solver_with_multisetencoding_minimize_cardinalities(cfm: CFM):
     :param cfm: The input Cardinality-based Feature Model, which gets encoded, and all Feature Cardinalities are minimized by the solver
     :return: Prints the result of the SMT solver for each constant(Feature cardinality) after encoding and minimized procedures.
     """
-    encoding = create_smt_multiset_encoding(cfm)
+    encoding = create_smt_multiset_encoding(cfm,sampling=False)
     find_actual_min(encoding, cfm.root, 1)
 
 
@@ -122,7 +123,7 @@ def run_smt_solver_with_multisetencoding_gap_detection(cfm: CFM):
     :return: Prints the result of the SMT solver for each constant asserted to their possible cardinalities.
     """
     list_features = cfm.features
-    encoding = create_smt_multiset_encoding(cfm)
+    encoding = create_smt_multiset_encoding(cfm,sampling=False)
     print("Searching for Gaps...")
     for feature in list_features:
         for interval in feature.instance_cardinality.intervals:
@@ -229,6 +230,8 @@ def count_cardinality(solver_output, feature, indices):
     count = 0
     constants = solver_output.split('-')
 
+    print(feature.name)
+
     for constant in constants:
 
         if len(indices) > 0:
@@ -249,11 +252,14 @@ def count_cardinality(solver_output, feature, indices):
 
     if len(indices) > 0:
         max_cardinality = feature.name + "_" + "_".join(map(str, indices)) + ": " + str(count)
-        print(max_cardinality)
+        if count  < getMaxCardinality(feature.instance_cardinality.intervals):
+            print(max_cardinality)
         return max_cardinality
     else:
         max_cardinality = feature.name + "_" + "1" + ": " + str(count)
-        print(max_cardinality)
+        if count < getMaxCardinality(feature.instance_cardinality.intervals):
+            print(max_cardinality + " instead of " + str(getMaxCardinality(
+                feature.instance_cardinality.intervals)))
         return max_cardinality
 
 
@@ -302,13 +308,62 @@ def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[i
     return gaps
 
 
+@app.command()
+def run_smt_cloning_basis_sampling(cfm: CFM):
+    encoding = encode_to_smt_cloning_base(cfm)
+
+    amount_samples = count_samples(encoding)
+    print(amount_samples)
+
+@app.command()
+def run_smt_cloning_with_integer_leaves_sampling(cfm: CFM):
+    encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
+
+    amount_samples = count_samples(encoding)
+    print(amount_samples)
+
+@app.command()
+def run_smt_multiset_with_cloning_sampling(cfm: CFM):
+    encoding = encode_to_smt_multiset(cfm)
+
+    amount_samples = count_samples(encoding)
+    print(amount_samples)
+
+
+
+def count_samples(encoding):
+    count = 0
+    new_encoding = encoding
+    new_encoding += "(check-sat)"
+    new_encoding += "(get-model)"
+    new_encoding += "(exit)"
+    output = callSolverWithEncoding(new_encoding)
+    while ("unsat" or "error") not in output:
+        encoding += "(assert (not (and"
+        constants = output.split('-')
+        for constant in constants:
+            if "Feature" in constant:
+                feature_value_split = constant.split(" ")
+                value = feature_value_split[7].split(")")
+                encoding += "(= " + feature_value_split[1] + " " + value[0] + ")"
+                print("(= " + feature_value_split[1] + " " + value[0] + ")\n")
+        encoding += ")))"
+        new_encoding = encoding
+        new_encoding += "(check-sat)"
+        new_encoding += "(get-model)"
+        new_encoding += "(exit)"
+        output = callSolverWithEncoding(new_encoding)
+        count = count + 1
+        print(count)
+    return count
+
 
 def callSolverWithEncoding(encoding):
     """
     :param encoding: A string representing the SMT2 encoding to be passed to the solver.
     :return: The standard output from the solver as a string.
     """
-    path = os.path.join(os.path.abspath(sys.path[0]), "../../z3/z3/build/z3") # needs #
+    path = os.path.join(os.path.abspath(sys.path[0]), "../../../z3/z3/build/z3") # needs #
     # test ../../../../../z3/z3/build/z3
     # to be
     # moved to env variable

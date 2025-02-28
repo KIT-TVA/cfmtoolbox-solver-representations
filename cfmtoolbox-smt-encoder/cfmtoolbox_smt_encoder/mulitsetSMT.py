@@ -3,22 +3,22 @@ from cfmtoolbox import CFM, Feature, Interval, Constraint
 
 
 
-def create_smt_multiset_encoding(cfm: CFM):
+def create_smt_multiset_encoding(cfm: CFM, sampling: bool):
     print("Encoding CFM...")
     encoding = ""
 
     encoding += declare_constants(cfm.features)
     #encoding += create_assert_child_parent_connection(cfm.root.children)
-    encoding += create_assert_feature_group_type_cardinality(cfm.root)
+    encoding += create_assert_feature_group_type_cardinality(cfm.root,sampling)
     encoding += create_assert_feature_group_instance_cardinality(cfm.root)
     encoding += create_assert_feature_instance_cardinality(cfm.root)
     encoding += create_assert_constraints(cfm.constraints)
-
-    print(encoding)
+    print("Encoding complete.")
+    #print(encoding)
     return encoding
 
 
-def create_assert_feature_group_type_cardinality(feature: Feature):
+def create_assert_feature_group_type_cardinality(feature: Feature,sampling: bool):
     assertStatement = ""
     if feature.group_type_cardinality.intervals:
         assertStatement += "(assert "
@@ -28,15 +28,22 @@ def create_assert_feature_group_type_cardinality(feature: Feature):
 
             assertStatement += "(and "
             assertStatement += "(>= "
-            assertStatement += create_amount_of_children_for_group_type_cardinality(feature.children, feature)
+            assertStatement += create_amount_of_children_for_group_type_cardinality(
+                feature.children, feature,sampling)
             assertStatement += str(interval.lower)
             assertStatement += ")"
             if interval.upper is None:
                 assertStatement += "(= true true)"
             else:
                 assertStatement += "(<= "
-                assertStatement += create_amount_of_children_for_group_type_cardinality(feature.children, feature)
-                assertStatement += str(interval.upper)
+                assertStatement += create_amount_of_children_for_group_type_cardinality(
+                    feature.children, feature,sampling)
+                if sampling:
+                    assertStatement += "(* " + create_const_name(feature) + " " + str(
+                        interval.upper) + " )"
+                else:
+                    assertStatement += str(
+                        interval.upper)
                 assertStatement += ")"
             assertStatement += ")"  # closing and
         if len(feature.group_type_cardinality.intervals) > 1:
@@ -44,7 +51,7 @@ def create_assert_feature_group_type_cardinality(feature: Feature):
         assertStatement += ")\n"  # closing assert
 
     for child in feature.children:
-        assertStatement += create_assert_feature_group_type_cardinality(child)
+        assertStatement += create_assert_feature_group_type_cardinality(child,sampling)
     return assertStatement
 
 
@@ -128,15 +135,20 @@ def create_assert_feature_instance_cardinality(feature: Feature):
 
 
 
-def create_amount_of_children_for_group_type_cardinality(features: list, parent: Feature):
+def create_amount_of_children_for_group_type_cardinality(features: list, parent: Feature,
+                                                         sampling:bool):
     amount = ""
 
     amount += "(+ "
     for feature in features:
         amount += "(ite "
         amount += "(>= " + create_const_name(feature) + " "
-        amount += create_const_name(parent) # for group type cardinality in multisets, it is only valid if the feature is in all subtrees -> if the lower and upper bound are equal this is necessary
-        amount +=  ")"                       # for max bounded check this should not change anything
+        if sampling:
+            amount += "1"  # for sampling it is not necessary that there is a clone in every tree
+            # but for maximization it is
+        else:
+            amount += create_const_name(parent) # for group type cardinality in multisets, it is only valid if the feature is in all subtrees -> if the lower and upper bound are equal this is necessary
+        amount +=  ")"                          # for max bounded check this should not change anything
         amount += " 1 "
         amount += " 0 "
         amount += " )" # closing ite
