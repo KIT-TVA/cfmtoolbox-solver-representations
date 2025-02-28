@@ -162,7 +162,7 @@ def create_assert_child_parent_connection_cloning(feature: Feature, parent_list:
 
 
 def getMaxCardinality(intervals: list[Interval]) -> int:
-    max = 1
+    max = intervals[0].upper
     for interval in intervals:
         if interval.upper >= max:
             max = interval.upper
