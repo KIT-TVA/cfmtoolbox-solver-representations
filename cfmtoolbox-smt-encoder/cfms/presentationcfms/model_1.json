@@ -12,16 +12,16 @@
     "group_type_cardinality": {
       "intervals": [
         {
-          "lower": 5,
-          "upper": 6
+          "lower": 4,
+          "upper": 4
         }
       ]
     },
     "group_instance_cardinality": {
       "intervals": [
         {
-          "lower": 109,
-          "upper": 233
+          "lower": 69,
+          "upper": 134
         }
       ]
     },
@@ -32,32 +32,245 @@
           "intervals": [
             {
               "lower": 20,
-              "upper": 27
+              "upper": 34
             }
           ]
         },
         "group_type_cardinality": {
-          "intervals": []
+          "intervals": [
+            {
+              "lower": 2,
+              "upper": 2
+            }
+          ]
         },
         "group_instance_cardinality": {
-          "intervals": []
+          "intervals": [
+            {
+              "lower": 25,
+              "upper": 65
+            }
+          ]
         },
-        "children": []
+        "children": [
+          {
+            "name": "100",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 22,
+                  "upper": 41
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 4,
+                  "upper": 5
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 100,
+                  "upper": 196
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "1000",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 46,
+                      "upper": 49
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1001",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 3,
+                      "upper": 40
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1002",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 43
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1003",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 28,
+                      "upper": 30
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1004",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 23,
+                      "upper": 34
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "101",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 3,
+                  "upper": 24
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 3,
+                  "upper": 3
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 46,
+                  "upper": 79
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "1010",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 5,
+                      "upper": 8
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1011",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 10,
+                      "upper": 35
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1012",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 31,
+                      "upper": 36
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "11",
         "instance_cardinality": {
           "intervals": [
             {
-              "lower": 2,
-              "upper": 50
+              "lower": 8,
+              "upper": 13
             }
           ]
         },
         "group_type_cardinality": {
           "intervals": [
             {
-              "lower": 0,
+              "lower": 1,
               "upper": 1
             }
           ]
@@ -65,8 +278,8 @@
         "group_instance_cardinality": {
           "intervals": [
             {
-              "lower": 0,
-              "upper": 28
+              "lower": 22,
+              "upper": 29
             }
           ]
         },
@@ -76,24 +289,24 @@
             "instance_cardinality": {
               "intervals": [
                 {
-                  "lower": 0,
-                  "upper": 28
+                  "lower": 22,
+                  "upper": 29
                 }
               ]
             },
             "group_type_cardinality": {
               "intervals": [
                 {
-                  "lower": 2,
-                  "upper": 4
+                  "lower": 4,
+                  "upper": 5
                 }
               ]
             },
             "group_instance_cardinality": {
               "intervals": [
                 {
-                  "lower": 67,
-                  "upper": 187
+                  "lower": 64,
+                  "upper": 163
                 }
               ]
             },
@@ -103,8 +316,8 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 17,
-                      "upper": 29
+                      "lower": 3,
+                      "upper": 35
                     }
                   ]
                 },
@@ -121,8 +334,8 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 6,
-                      "upper": 45
+                      "lower": 0,
+                      "upper": 5
                     }
                   ]
                 },
@@ -139,8 +352,8 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 17,
-                      "upper": 37
+                      "lower": 35,
+                      "upper": 41
                     }
                   ]
                 },
@@ -157,8 +370,8 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 25,
-                      "upper": 40
+                      "lower": 23,
+                      "upper": 45
                     }
                   ]
                 },
@@ -175,8 +388,8 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 2,
-                      "upper": 36
+                      "lower": 3,
+                      "upper": 37
                     }
                   ]
                 },
@@ -197,24 +410,24 @@
         "instance_cardinality": {
           "intervals": [
             {
-              "lower": 0,
-              "upper": 16
+              "lower": 28,
+              "upper": 50
             }
           ]
         },
         "group_type_cardinality": {
           "intervals": [
             {
-              "lower": 1,
-              "upper": 1
+              "lower": 6,
+              "upper": 6
             }
           ]
         },
         "group_instance_cardinality": {
           "intervals": [
             {
-              "lower": 22,
-              "upper": 40
+              "lower": 139,
+              "upper": 192
             }
           ]
         },
@@ -224,8 +437,365 @@
             "instance_cardinality": {
               "intervals": [
                 {
-                  "lower": 22,
+                  "lower": 7,
+                  "upper": 7
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 6,
+                  "upper": 6
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 131,
+                  "upper": 210
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "1200",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 36,
+                      "upper": 44
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1201",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 10,
+                      "upper": 28
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1202",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 23,
+                      "upper": 30
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1203",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 18,
+                      "upper": 44
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1204",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 8,
+                      "upper": 15
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1205",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 36,
+                      "upper": 49
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "121",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 44,
+                  "upper": 45
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 3,
+                  "upper": 43
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "1210",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1211",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 3,
+                      "upper": 41
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "122",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 16,
                   "upper": 40
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 5,
+                  "upper": 5
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 70,
+                  "upper": 109
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "1220",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 6,
+                      "upper": 7
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1221",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 13,
+                      "upper": 33
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1222",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 13,
+                      "upper": 27
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1223",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 34,
+                      "upper": 37
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "1224",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 4,
+                      "upper": 5
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "123",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 22,
+                  "upper": 24
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "124",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 39,
+                  "upper": 43
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "125",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 11,
+                  "upper": 33
                 }
               ]
             },
@@ -244,24 +814,24 @@
         "instance_cardinality": {
           "intervals": [
             {
-              "lower": 24,
-              "upper": 42
+              "lower": 13,
+              "upper": 37
             }
           ]
         },
         "group_type_cardinality": {
           "intervals": [
             {
-              "lower": 6,
-              "upper": 6
+              "lower": 3,
+              "upper": 5
             }
           ]
         },
         "group_instance_cardinality": {
           "intervals": [
             {
-              "lower": 159,
-              "upper": 242
+              "lower": 42,
+              "upper": 134
             }
           ]
         },
@@ -271,24 +841,24 @@
             "instance_cardinality": {
               "intervals": [
                 {
-                  "lower": 39,
-                  "upper": 43
+                  "lower": 0,
+                  "upper": 17
                 }
               ]
             },
             "group_type_cardinality": {
               "intervals": [
                 {
-                  "lower": 3,
-                  "upper": 5
+                  "lower": 1,
+                  "upper": 1
                 }
               ]
             },
             "group_instance_cardinality": {
               "intervals": [
                 {
-                  "lower": 54,
-                  "upper": 131
+                  "lower": 1,
+                  "upper": 32
                 }
               ]
             },
@@ -298,80 +868,8 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 0,
-                      "upper": 19
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1301",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 8,
-                      "upper": 9
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1302",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 34,
-                      "upper": 44
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1303",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 12,
-                      "upper": 16
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1304",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 0,
-                      "upper": 43
+                      "lower": 1,
+                      "upper": 32
                     }
                   ]
                 },
@@ -390,24 +888,24 @@
             "instance_cardinality": {
               "intervals": [
                 {
-                  "lower": 15,
-                  "upper": 41
+                  "lower": 26,
+                  "upper": 32
                 }
               ]
             },
             "group_type_cardinality": {
               "intervals": [
                 {
-                  "lower": 2,
-                  "upper": 5
+                  "lower": 4,
+                  "upper": 4
                 }
               ]
             },
             "group_instance_cardinality": {
               "intervals": [
                 {
-                  "lower": 45,
-                  "upper": 155
+                  "lower": 74,
+                  "upper": 109
                 }
               ]
             },
@@ -417,8 +915,8 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 40,
-                      "upper": 46
+                      "lower": 17,
+                      "upper": 21
                     }
                   ]
                 },
@@ -435,8 +933,8 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 0,
-                      "upper": 22
+                      "lower": 40,
+                      "upper": 45
                     }
                   ]
                 },
@@ -453,8 +951,8 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 0,
-                      "upper": 50
+                      "lower": 8,
+                      "upper": 31
                     }
                   ]
                 },
@@ -471,26 +969,8 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 0,
-                      "upper": 20
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1314",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 5,
-                      "upper": 17
+                      "lower": 9,
+                      "upper": 12
                     }
                   ]
                 },
@@ -509,146 +989,52 @@
             "instance_cardinality": {
               "intervals": [
                 {
-                  "lower": 17,
-                  "upper": 24
+                  "lower": 5,
+                  "upper": 43
                 }
               ]
             },
             "group_type_cardinality": {
-              "intervals": [
-                {
-                  "lower": 2,
-                  "upper": 2
-                }
-              ]
+              "intervals": []
             },
             "group_instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 36,
-                  "upper": 49
-                }
-              ]
+              "intervals": []
             },
-            "children": [
-              {
-                "name": "1320",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 10,
-                      "upper": 19
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1321",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 26,
-                      "upper": 30
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              }
-            ]
+            "children": []
           },
           {
             "name": "133",
             "instance_cardinality": {
               "intervals": [
                 {
-                  "lower": 38,
-                  "upper": 47
+                  "lower": 11,
+                  "upper": 38
                 }
               ]
             },
             "group_type_cardinality": {
-              "intervals": [
-                {
-                  "lower": 2,
-                  "upper": 2
-                }
-              ]
+              "intervals": []
             },
             "group_instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 40,
-                  "upper": 80
-                }
-              ]
+              "intervals": []
             },
-            "children": [
-              {
-                "name": "1330",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 30,
-                      "upper": 38
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1331",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 10,
-                      "upper": 42
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              }
-            ]
+            "children": []
           },
           {
             "name": "134",
             "instance_cardinality": {
               "intervals": [
                 {
-                  "lower": 12,
-                  "upper": 48
+                  "lower": 0,
+                  "upper": 4
                 }
               ]
             },
             "group_type_cardinality": {
               "intervals": [
                 {
-                  "lower": 2,
-                  "upper": 2
+                  "lower": 5,
+                  "upper": 5
                 }
               ]
             },
@@ -656,7 +1042,7 @@
               "intervals": [
                 {
                   "lower": 49,
-                  "upper": 72
+                  "upper": 135
                 }
               ]
             },
@@ -667,7 +1053,7 @@
                   "intervals": [
                     {
                       "lower": 9,
-                      "upper": 30
+                      "upper": 23
                     }
                   ]
                 },
@@ -684,480 +1070,7 @@
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 40,
-                      "upper": 42
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "name": "135",
-            "instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 38,
-                  "upper": 39
-                }
-              ]
-            },
-            "group_type_cardinality": {
-              "intervals": [
-                {
-                  "lower": 2,
-                  "upper": 2
-                }
-              ]
-            },
-            "group_instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 22,
-                  "upper": 59
-                }
-              ]
-            },
-            "children": [
-              {
-                "name": "1350",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 20,
-                      "upper": 47
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1351",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 2,
-                      "upper": 12
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "14",
-        "instance_cardinality": {
-          "intervals": [
-            {
-              "lower": 28,
-              "upper": 48
-            }
-          ]
-        },
-        "group_type_cardinality": {
-          "intervals": [
-            {
-              "lower": 3,
-              "upper": 4
-            }
-          ]
-        },
-        "group_instance_cardinality": {
-          "intervals": [
-            {
-              "lower": 25,
-              "upper": 126
-            }
-          ]
-        },
-        "children": [
-          {
-            "name": "140",
-            "instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 2,
-                  "upper": 47
-                }
-              ]
-            },
-            "group_type_cardinality": {
-              "intervals": [
-                {
-                  "lower": 4,
-                  "upper": 4
-                }
-              ]
-            },
-            "group_instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 52,
-                  "upper": 155
-                }
-              ]
-            },
-            "children": [
-              {
-                "name": "1400",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 6,
-                      "upper": 38
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1401",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 2,
-                      "upper": 17
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1402",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 8,
-                      "upper": 50
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1403",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 36,
-                      "upper": 50
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "name": "141",
-            "instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 3,
-                  "upper": 22
-                }
-              ]
-            },
-            "group_type_cardinality": {
-              "intervals": []
-            },
-            "group_instance_cardinality": {
-              "intervals": []
-            },
-            "children": []
-          },
-          {
-            "name": "142",
-            "instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 0,
-                  "upper": 14
-                }
-              ]
-            },
-            "group_type_cardinality": {
-              "intervals": [
-                {
-                  "lower": 1,
-                  "upper": 1
-                }
-              ]
-            },
-            "group_instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 31,
-                  "upper": 45
-                }
-              ]
-            },
-            "children": [
-              {
-                "name": "1420",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 31,
-                      "upper": 45
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "name": "143",
-            "instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 20,
-                  "upper": 43
-                }
-              ]
-            },
-            "group_type_cardinality": {
-              "intervals": [
-                {
-                  "lower": 5,
-                  "upper": 6
-                }
-              ]
-            },
-            "group_instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 130,
-                  "upper": 209
-                }
-              ]
-            },
-            "children": [
-              {
-                "name": "1430",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 0,
-                      "upper": 15
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1431",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 22,
-                      "upper": 25
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1432",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 16,
-                      "upper": 39
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1433",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 50,
-                      "upper": 50
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1434",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 27,
-                      "upper": 31
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1435",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 15,
-                      "upper": 49
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "15",
-        "instance_cardinality": {
-          "intervals": [
-            {
-              "lower": 35,
-              "upper": 50
-            }
-          ]
-        },
-        "group_type_cardinality": {
-          "intervals": [
-            {
-              "lower": 2,
-              "upper": 2
-            }
-          ]
-        },
-        "group_instance_cardinality": {
-          "intervals": [
-            {
-              "lower": 23,
-              "upper": 70
-            }
-          ]
-        },
-        "children": [
-          {
-            "name": "150",
-            "instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 11,
-                  "upper": 30
-                }
-              ]
-            },
-            "group_type_cardinality": {
-              "intervals": [
-                {
-                  "lower": 4,
-                  "upper": 5
-                }
-              ]
-            },
-            "group_instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 99,
-                  "upper": 152
-                }
-              ]
-            },
-            "children": [
-              {
-                "name": "1500",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 19,
+                      "lower": 3,
                       "upper": 32
                     }
                   ]
@@ -1171,12 +1084,12 @@
                 "children": []
               },
               {
-                "name": "1501",
+                "name": "1342",
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 34,
-                      "upper": 43
+                      "lower": 6,
+                      "upper": 18
                     }
                   ]
                 },
@@ -1189,29 +1102,11 @@
                 "children": []
               },
               {
-                "name": "1502",
+                "name": "1343",
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 39,
-                      "upper": 42
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1503",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 7,
+                      "lower": 4,
                       "upper": 13
                     }
                   ]
@@ -1225,95 +1120,12 @@
                 "children": []
               },
               {
-                "name": "1504",
+                "name": "1344",
                 "instance_cardinality": {
                   "intervals": [
                     {
-                      "lower": 0,
-                      "upper": 22
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "name": "151",
-            "instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 12,
-                  "upper": 40
-                }
-              ]
-            },
-            "group_type_cardinality": {
-              "intervals": [
-                {
-                  "lower": 2,
-                  "upper": 3
-                }
-              ]
-            },
-            "group_instance_cardinality": {
-              "intervals": [
-                {
-                  "lower": 43,
-                  "upper": 97
-                }
-              ]
-            },
-            "children": [
-              {
-                "name": "1510",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 0,
-                      "upper": 40
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1511",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 30,
-                      "upper": 37
-                    }
-                  ]
-                },
-                "group_type_cardinality": {
-                  "intervals": []
-                },
-                "group_instance_cardinality": {
-                  "intervals": []
-                },
-                "children": []
-              },
-              {
-                "name": "1512",
-                "instance_cardinality": {
-                  "intervals": [
-                    {
-                      "lower": 13,
-                      "upper": 20
+                      "lower": 27,
+                      "upper": 49
                     }
                   ]
                 },
@@ -1333,22 +1145,43 @@
   },
   "constraints": [
     {
-      "require": false,
-      "first_feature_name": "1433",
+      "require": true,
+      "first_feature_name": "1204",
       "first_cardinality": {
         "intervals": [
           {
-            "lower": 1124100,
-            "upper": 1252800
+            "lower": 79245,
+            "upper": 85725
           }
         ]
       },
-      "second_feature_name": "1304",
+      "second_feature_name": "1313",
       "second_cardinality": {
         "intervals": [
           {
-            "lower": 613458,
-            "upper": 640008
+            "lower": 154197,
+            "upper": 182979
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "1",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 20,
+            "upper": 40
+          }
+        ]
+      },
+      "second_feature_name": "10",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 400,
+            "upper": 1319
           }
         ]
       }

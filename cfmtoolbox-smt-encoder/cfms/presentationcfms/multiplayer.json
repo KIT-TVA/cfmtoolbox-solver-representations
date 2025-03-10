@@ -54,7 +54,7 @@
         },
         {
             "name": "Team",
-            "instance_cardinality": { "intervals": [{"lower":2,  "upper": null}] },
+            "instance_cardinality": { "intervals": [{"lower":2,  "upper": 8}] },
             "group_type_cardinality": { "intervals": [{ "lower": 2, "upper": 2 }] },
             "group_instance_cardinality": {
               "intervals": [{ "lower": 2, "upper": 2 }]
@@ -94,12 +94,12 @@
                   "intervals": [{ "lower": 1, "upper": 1 }]
                 },
                 "group_type_cardinality": { "intervals": [{ "lower": 1, "upper": 2 }] },
-                "group_instance_cardinality": { "intervals": [{ "lower": 1, "upper": null }] },
+                "group_instance_cardinality": { "intervals": [{ "lower": 1, "upper": 8 }] },
                 "children": [
                   {
                       "name": "Player",
                       "instance_cardinality": {
-                        "intervals": [{ "lower": 0, "upper": null }]
+                        "intervals": [{ "lower": 0, "upper": 8 }]
                       },
                       "group_type_cardinality": { "intervals": [] },
                       "group_instance_cardinality": { "intervals": [] },
@@ -143,35 +143,35 @@
         {
             "require": true,
             "first_feature_name": "SpecificStrategy",
-            "first_cardinality": { "intervals": [{ "lower": 1, "upper": null }] },
+            "first_cardinality": { "intervals": [{ "lower": 1, "upper": 8 }] },
             "second_feature_name": "Team",
-            "second_cardinality": { "intervals": [{ "lower": 6, "upper": null }] }
+            "second_cardinality": { "intervals": [{ "lower": 6, "upper": 8 }] }
           },
           {
             "require": false,
             "first_feature_name": "Wifi",
-            "first_cardinality": { "intervals": [{ "lower": 1, "upper": null }] },
+            "first_cardinality": { "intervals": [{ "lower": 1, "upper": 8 }] },
             "second_feature_name": "Player",
             "second_cardinality": { "intervals": [{ "lower": 0, "upper": 5 }] }
           },
           {
             "require": false,
             "first_feature_name": "BT",
-            "first_cardinality": { "intervals": [{ "lower": 1, "upper": null }] },
+            "first_cardinality": { "intervals": [{ "lower": 1, "upper": 8 }] },
             "second_feature_name": "Player",
-            "second_cardinality": { "intervals": [{ "lower": 5, "upper": null }] }
+            "second_cardinality": { "intervals": [{ "lower": 5, "upper": 8 }] }
           },
           {
             "require": true,
             "first_feature_name": "ScatteredStrategy",
-            "first_cardinality": { "intervals": [{ "lower": 1, "upper": null }] },
+            "first_cardinality": { "intervals": [{ "lower": 1, "upper": 8 }] },
             "second_feature_name": "Broadcast",
             "second_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] }
           },
           {
             "require": false,
             "first_feature_name": "ScatteredStrategy",
-            "first_cardinality": { "intervals": [{ "lower": 1, "upper": null }] },
+            "first_cardinality": { "intervals": [{ "lower": 1, "upper": 8 }] },
             "second_feature_name": "Team",
             "second_cardinality": { "intervals": [{ "lower": 5, "upper": 5 }] }
           }

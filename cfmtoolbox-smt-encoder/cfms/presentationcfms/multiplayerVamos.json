@@ -1,0 +1,104 @@
+{
+    "root": {
+      "name": "multiplayer",
+      "instance_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+      "group_type_cardinality": { "intervals": [{ "lower": 1, "upper": 2 }] },
+      "group_instance_cardinality": { "intervals": [{ "lower": 3, "upper": 9 }] },
+      "children": [
+        
+            {
+              "name": "InterTeamCommunication",
+              "instance_cardinality": {
+                "intervals": [{ "lower": 1, "upper": 1 }]
+              },
+              "group_type_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+              "group_instance_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+              "children": [
+                {
+                    "name": "Broadcast",
+                    "instance_cardinality": {
+                      "intervals": [{ "lower": 0, "upper": 1 }]
+                    },
+                    "group_type_cardinality": { "intervals": [] },
+                    "group_instance_cardinality": { "intervals": [] },
+                    "children": []
+                  },
+                  {
+                    "name": "Unicast",
+                    "instance_cardinality": {
+                      "intervals": [{ "lower": 0, "upper": 1 }]
+                    },
+                    "group_type_cardinality": { "intervals": [] },
+                    "group_instance_cardinality": { "intervals": [] },
+                    "children": []
+                  }
+              ]
+        },
+        {
+            "name": "Team",
+            "instance_cardinality": { "intervals": [{"lower":2,  "upper": 2},{"lower":4,  "upper": 8}] },
+            "group_type_cardinality": { "intervals": [{ "lower": 2, "upper": 2 }] },
+            "group_instance_cardinality": {
+              "intervals": [{ "lower": 2, "upper": 9}]
+            },
+            "children": [
+              {
+                "name": "IntraTeamComm",
+                "instance_cardinality": {
+                  "intervals": [{ "lower": 1, "upper": 1 }]
+                },
+                "group_type_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+                "group_instance_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+                "children": [
+                    {
+                        "name": "Wifi",
+                        "instance_cardinality": {
+                          "intervals": [{ "lower": 0, "upper": 1 }]
+                        },
+                        "group_type_cardinality": { "intervals": [] },
+                        "group_instance_cardinality": { "intervals": [] },
+                        "children": []
+                      },
+                      {
+                        "name": "BT",
+                        "instance_cardinality": {
+                          "intervals": [{ "lower": 0, "upper": 1 }]
+                        },
+                        "group_type_cardinality": { "intervals": [] },
+                        "group_instance_cardinality": { "intervals": [] },
+                        "children": []
+                      }
+                ]
+              },
+              {
+                  "name": "Player",
+                  "instance_cardinality": {
+                    "intervals": [{ "lower": 1, "upper": 8 }]
+                  },
+                  "group_type_cardinality": { "intervals": [] },
+                  "group_instance_cardinality": { "intervals": [] },
+                  "children": []
+                
+              }
+            ]
+        }
+         
+      ]
+    },
+    "constraints": [
+        {
+            "require": true,
+            "first_feature_name": "Unicast",
+            "first_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+            "second_feature_name": "Team",
+            "second_cardinality": { "intervals": [{ "lower": 2, "upper": 2 }] }
+          },
+          {
+            "require": false,
+            "first_feature_name": "Broadcast",
+            "first_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+            "second_feature_name": "Team",
+            "second_cardinality": { "intervals": [{ "lower": 2, "upper": 3 }] }
+          }
+    ]
+}
