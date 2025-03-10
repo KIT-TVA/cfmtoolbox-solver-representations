@@ -254,7 +254,7 @@ def run_csp_cloning_with_integer_leaves_sampling_without_permutation(cfm: CFM):
 @app.command()
 def run_csp_multiset_with_cloning_sampling(cfm: CFM):
     model = create_multiset_csp_encoding(cfm, True)
-
+    cloning_model = create_csp_cloning_encoding(cfm, False)
     try:
         model.Validate()
         print("Model is valid.")
@@ -262,7 +262,7 @@ def run_csp_multiset_with_cloning_sampling(cfm: CFM):
         print(f"Model validation failed: {e}")
 
     solver = cp_model.CpSolver()
-    solution_printer = VarMultisetSolutionPrinter(get_variables(),cfm)
+    solution_printer = VarMultisetSolutionPrinter(get_variables(),cfm,cloning_model)
     solver.parameters.enumerate_all_solutions = True
     status = solver.solve(model,solution_printer)
 
@@ -272,14 +272,13 @@ def run_csp_multiset_with_cloning_sampling(cfm: CFM):
 
 
 
-def call_cloning_solver_with_multiset_sample(multi_set_sample,cfm):
-    cloning_model = create_csp_cloning_encoding(cfm, False)
+def call_cloning_solver_with_multiset_sample(multi_set_sample,cfm,cloningModelIn):
+    cloning_model = cloningModelIn.clone()
 
     for name,value in multi_set_sample.items():
+        #print(value)
         cloning_model.add(sum(get_all_clones_of_feature(name)) == value)
-        print(str(sum(get_all_clones_of_feature(name))) + " = " + str(value),
-              end="\n")
-
+        #print(get_all_clones_of_feature(name))
     try:
         cloning_model.Validate()
         print("Model is valid.")
@@ -290,8 +289,10 @@ def call_cloning_solver_with_multiset_sample(multi_set_sample,cfm):
     status = solver.solve(cloning_model)
 
     if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
+        """
         for v in get_all_cloned_variables():
             print(f"{v.name}={solver.value(v)}", end=" ")
+        """
     return status
 
 
@@ -306,8 +307,10 @@ class VarSolutionPrinter(cp_model.CpSolverSolutionCallback):
 
     def on_solution_callback(self) -> None:
         self.__solution_count += 1
+        """
         for v in self.__variables:
             print(f"{v}={self.value(v)}", end=" ")
+        """
         print(f"Solution -> {self.__solution_count}",end="\n")
         print()
 
@@ -318,24 +321,27 @@ class VarSolutionPrinter(cp_model.CpSolverSolutionCallback):
 class VarMultisetSolutionPrinter(cp_model.CpSolverSolutionCallback):
     """Print intermediate solutions."""
 
-    def __init__(self, variables,cfm:CFM):
+    def __init__(self, variables,cfm:CFM,cloningModelIn):
         cp_model.CpSolverSolutionCallback.__init__(self)
         self.__variables = variables
         self.__solution_count = 0
         self.__multiset_samples = 0
         self.cfm = cfm
+        self.cloningModelIn = cloningModelIn
 
     def on_solution_callback(self) -> None:
         multiset_sample = {}
+        """
         for variable in self.__variables.values():
             print(f"{variable}={self.value(variable)}", end=" \n")
+        """
         for feature in self.cfm.features:
             sample_variable = self.__variables[create_const_name(feature)]
             multiset_sample[feature.name] = self.value(sample_variable)
             #print(f"{feature.name}={self.value(sample_variable)}", end=" \n")
-        print(f"Multiset -> {multiset_sample}",end="\n")
+        #print(f"Multiset -> {multiset_sample}",end="\n")
         self.__multiset_samples += 1
-        status = call_cloning_solver_with_multiset_sample(multiset_sample, self.cfm)
+        status = call_cloning_solver_with_multiset_sample(multiset_sample, self.cfm,self.cloningModelIn)
         if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
             self.__solution_count += 1
             print(f"Solution -> {self.__solution_count}: Multiset Sample -> "

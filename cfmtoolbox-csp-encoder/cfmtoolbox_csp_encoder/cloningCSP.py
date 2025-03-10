@@ -463,10 +463,16 @@ def add_constraint_to_remove_permutations(model, feature,parent_list: list[
 def get_all_clones_of_feature(feature_name: str):
     list_of_clones = []
     for name,clone in variables.items():
-        match = re.match(r"([a-zA-Z]+)_([a-zA-Z]+)((?:_\d+)*)", name)
-        if match:
-            name = match.group(2)
-            if feature_name == name:
-                list_of_clones.append(clone)
-
+        match = re.split(r"Feature_", name)
+        if len(match) >= 2:
+            name = match[1]
+            if bool(re.search('[a-zA-Z]', name)):
+                name = re.split(r'_', match[1])
+                if feature_name == name[0]:
+                    list_of_clones.append(clone)
+            else:
+                name = re.split(r'_', match[1])
+                if feature_name == name[0]:
+                    list_of_clones.append(clone)
+    #print(list_of_clones)
     return list_of_clones
