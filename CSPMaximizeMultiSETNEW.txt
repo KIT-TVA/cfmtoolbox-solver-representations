@@ -1,0 +1,767 @@
+Output for model_6.json:
+Model is valid.
+1: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 9
+
+101: 
+Given feature instance cardinality: 36
+
+Actual Max Feature Instance Cardinality 13
+
+1010: 
+Given feature instance cardinality: 49
+
+Actual Max Feature Instance Cardinality 23
+
+102: 
+Given feature instance cardinality: 28
+
+Actual Max Feature Instance Cardinality 7
+
+1020: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 41
+
+1022: 
+Given feature instance cardinality: 42
+
+Actual Max Feature Instance Cardinality 41
+
+1035: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 43
+
+11: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 15
+
+110: 
+Given feature instance cardinality: 32
+
+Actual Max Feature Instance Cardinality 21
+
+1100: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 32
+
+1101: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 32
+
+112: 
+Given feature instance cardinality: 44
+
+Actual Max Feature Instance Cardinality 20
+
+1121: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 34
+
+1122: 
+Given feature instance cardinality: 41
+
+Actual Max Feature Instance Cardinality 34
+
+1123: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 34
+
+12: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 25
+
+120: 
+Given feature instance cardinality: 41
+
+Actual Max Feature Instance Cardinality 13
+
+1202: 
+Given feature instance cardinality: 40
+
+Actual Max Feature Instance Cardinality 31
+
+141: 
+Given feature instance cardinality: 16
+
+Actual Max Feature Instance Cardinality 7
+
+1411: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 33
+
+1412: 
+Given feature instance cardinality: 42
+
+Actual Max Feature Instance Cardinality 33
+
+1420: 
+Given feature instance cardinality: 49
+
+Actual Max Feature Instance Cardinality 7
+
+1421: 
+Given feature instance cardinality: 14
+
+Actual Max Feature Instance Cardinality 7
+
+143: 
+Given feature instance cardinality: 26
+
+Actual Max Feature Instance Cardinality 6
+
+1431: 
+Given feature instance cardinality: 40
+
+Actual Max Feature Instance Cardinality 34
+
+15: 
+Given feature instance cardinality: 24
+
+Actual Max Feature Instance Cardinality 23
+
+150: 
+Given feature instance cardinality: 19
+
+Actual Max Feature Instance Cardinality 14
+
+1500: 
+Given feature instance cardinality: 44
+
+Actual Max Feature Instance Cardinality 31
+
+1501: 
+Given feature instance cardinality: 44
+
+Actual Max Feature Instance Cardinality 31
+
+1502: 
+Given feature instance cardinality: 37
+
+Actual Max Feature Instance Cardinality 31
+
+1503: 
+Given feature instance cardinality: 38
+
+Actual Max Feature Instance Cardinality 31
+
+1504: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 31
+
+1505: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 31
+
+Time needed:         0.80 real         1.35 user         0.07 sys
+
+Output for model_27.json:
+Model is valid.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+Time needed:         0.37 real         0.33 user         0.03 sys
+
+Output for multiplayer.json:
+Model is valid.
+Player: 
+Given feature instance cardinality: 8
+
+Actual Max Feature Instance Cardinality 7
+
+Time needed:         0.31 real         0.27 user         0.04 sys
+
+Output for model_11.json:
+Model is valid.
+1030: 
+Given feature instance cardinality: 49
+
+Actual Max Feature Instance Cardinality 40
+
+1034: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 40
+
+Time needed:         0.95 real         1.09 user         0.07 sys
+
+Output for model_10.json:
+Model is valid.
+110: 
+Given feature instance cardinality: 28
+
+Actual Max Feature Instance Cardinality 0
+
+1100: 
+Given feature instance cardinality: 29
+
+Actual Max Feature Instance Cardinality 0
+
+1101: 
+Given feature instance cardinality: 45
+
+Actual Max Feature Instance Cardinality 0
+
+1102: 
+Given feature instance cardinality: 37
+
+Actual Max Feature Instance Cardinality 0
+
+1103: 
+Given feature instance cardinality: 40
+
+Actual Max Feature Instance Cardinality 0
+
+1104: 
+Given feature instance cardinality: 36
+
+Actual Max Feature Instance Cardinality 0
+
+1402: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 40
+
+1403: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 40
+
+143: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 38
+
+Time needed:         0.72 real         0.77 user         0.06 sys
+
+Output for model_7.json:
+Model is valid.
+Time needed:         0.28 real         0.24 user         0.03 sys
+
+Output for model_26.json:
+Model is valid.
+1111: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 41
+
+1130: 
+Given feature instance cardinality: 39
+
+Actual Max Feature Instance Cardinality 38
+
+1131: 
+Given feature instance cardinality: 45
+
+Actual Max Feature Instance Cardinality 38
+
+1135: 
+Given feature instance cardinality: 42
+
+Actual Max Feature Instance Cardinality 38
+
+Time needed:         0.37 real         0.38 user         0.04 sys
+
+Output for model_17.json:
+Model is valid.
+Time needed:         0.46 real         0.44 user         0.04 sys
+
+Output for model_0.json:
+Model is valid.
+1010: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+1011: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 0
+
+1410: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 49
+
+Time needed:         0.78 real         0.87 user         0.06 sys
+
+Output for model_1.json:
+Model is valid.
+1211: 
+Given feature instance cardinality: 41
+
+Actual Max Feature Instance Cardinality 40
+
+Time needed:         0.64 real         0.67 user         0.06 sys
+
+Output for sandwichBigM.json:
+Model is valid.
+Time needed:         0.31 real         0.27 user         0.04 sys
+
+Output for model_16.json:
+Model is valid.
+11: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 45
+
+1110: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 41
+
+1112: 
+Given feature instance cardinality: 45
+
+Actual Max Feature Instance Cardinality 41
+
+Time needed:         0.41 real         0.40 user         0.04 sys
+
+Output for multiplayerVamos.json:
+Model is valid.
+Time needed:         0.28 real         0.23 user         0.03 sys
+
+Output for model_15.json:
+Model is valid.
+110: 
+Given feature instance cardinality: 4
+
+Actual Max Feature Instance Cardinality 1
+
+Time needed:         0.48 real         0.46 user         0.05 sys
+
+Output for model_2.json:
+Model is valid.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+Time needed:         0.34 real         0.30 user         0.03 sys
+
+Output for model_19.json:
+Model is valid.
+Time needed:         0.44 real         0.35 user         0.05 sys
+
+Output for model_18.json:
+Model is valid.
+1122: 
+Given feature instance cardinality: 27
+
+Actual Max Feature Instance Cardinality 1
+
+1140: 
+Given feature instance cardinality: 47
+
+Actual Max Feature Instance Cardinality 39
+
+1231: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 42
+
+1241: 
+Given feature instance cardinality: 45
+
+Actual Max Feature Instance Cardinality 43
+
+1314: 
+Given feature instance cardinality: 41
+
+Actual Max Feature Instance Cardinality 38
+
+Time needed:         0.73 real         0.80 user         0.06 sys
+
+Output for pizzas.json:
+Model is valid.
+swiss: 
+Given feature instance cardinality: 2
+
+Actual Max Feature Instance Cardinality 1
+
+gouda: 
+Given feature instance cardinality: 3
+
+Actual Max Feature Instance Cardinality 1
+
+ingredients: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+salami: 
+Given feature instance cardinality: 10
+
+Actual Max Feature Instance Cardinality 0
+
+peperoni: 
+Given feature instance cardinality: 5
+
+Actual Max Feature Instance Cardinality 0
+
+onion: 
+Given feature instance cardinality: 15
+
+Actual Max Feature Instance Cardinality 0
+
+porch: 
+Given feature instance cardinality: 10
+
+Actual Max Feature Instance Cardinality 0
+
+corn: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+Time needed:         0.31 real         0.26 user         0.04 sys
+
+Output for model_3.json:
+Model is valid.
+1: 
+Given feature instance cardinality: 31
+
+Actual Max Feature Instance Cardinality 11
+
+1000: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 24
+
+101: 
+Given feature instance cardinality: 47
+
+Actual Max Feature Instance Cardinality 16
+
+1010: 
+Given feature instance cardinality: 44
+
+Actual Max Feature Instance Cardinality 24
+
+1012: 
+Given feature instance cardinality: 42
+
+Actual Max Feature Instance Cardinality 24
+
+1013: 
+Given feature instance cardinality: 42
+
+Actual Max Feature Instance Cardinality 24
+
+1014: 
+Given feature instance cardinality: 45
+
+Actual Max Feature Instance Cardinality 24
+
+1015: 
+Given feature instance cardinality: 27
+
+Actual Max Feature Instance Cardinality 24
+
+102: 
+Given feature instance cardinality: 24
+
+Actual Max Feature Instance Cardinality 23
+
+1020: 
+Given feature instance cardinality: 37
+
+Actual Max Feature Instance Cardinality 17
+
+11: 
+Given feature instance cardinality: 13
+
+Actual Max Feature Instance Cardinality 12
+
+111: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 27
+
+1110: 
+Given feature instance cardinality: 49
+
+Actual Max Feature Instance Cardinality 25
+
+1111: 
+Given feature instance cardinality: 26
+
+Actual Max Feature Instance Cardinality 25
+
+1112: 
+Given feature instance cardinality: 37
+
+Actual Max Feature Instance Cardinality 25
+
+113: 
+Given feature instance cardinality: 39
+
+Actual Max Feature Instance Cardinality 29
+
+1130: 
+Given feature instance cardinality: 38
+
+Actual Max Feature Instance Cardinality 23
+
+1131: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 23
+
+1132: 
+Given feature instance cardinality: 26
+
+Actual Max Feature Instance Cardinality 23
+
+1133: 
+Given feature instance cardinality: 24
+
+Actual Max Feature Instance Cardinality 23
+
+1140: 
+Given feature instance cardinality: 32
+
+Actual Max Feature Instance Cardinality 27
+
+14: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 6
+
+145: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 28
+
+1453: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 45
+
+Time needed:         0.61 real         0.85 user         0.06 sys
+
+Output for model_14.json:
+Model is valid.
+1441: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 45
+
+Time needed:         0.50 real         0.55 user         0.05 sys
+
+Output for model_25.json:
+Model is valid.
+Time needed:         0.54 real         0.55 user         0.05 sys
+
+Output for model_4.json:
+Model is valid.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+No solution found.
+Time needed:         0.27 real         0.23 user         0.03 sys
+
+Output for model_29.json:
+Model is valid.
+Time needed:         0.43 real         0.40 user         0.05 sys
+
+Output for model_8.json:
+Model is valid.
+Time needed:         0.42 real         0.42 user         0.05 sys
+
+Output for model_13.json:
+Model is valid.
+1300: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 39
+
+Time needed:         0.60 real         0.64 user         0.06 sys
+
+Output for model_12.json:
+Model is valid.
+Time needed:         0.57 real         0.60 user         0.05 sys
+
+Output for model_28.json:
+Model is valid.
+100: 
+Given feature instance cardinality: 47
+
+Actual Max Feature Instance Cardinality 47
+
+1002: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 41
+
+1011: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 47
+
+Time needed:         0.46 real         0.49 user         0.05 sys
+
+Output for model_9.json:
+Model is valid.
+Time needed:         0.71 real         0.80 user         0.06 sys
+
+Output for model_5.json:
+Model is valid.
+Time needed:         0.52 real         0.50 user         0.04 sys
+
