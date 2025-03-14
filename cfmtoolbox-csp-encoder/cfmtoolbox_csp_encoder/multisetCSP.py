@@ -8,7 +8,7 @@ variables = {}
 
 def create_multiset_csp_encoding(cfm: CFM, sampling:bool):
     global big_m
-    big_m = 90000
+    big_m = 10000000000000000
    # print("Big-M:" + str(big_m))
     model = cp_model.CpModel()
 
