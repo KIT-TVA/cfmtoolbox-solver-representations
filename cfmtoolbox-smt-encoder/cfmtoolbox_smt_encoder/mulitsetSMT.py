@@ -1,8 +1,6 @@
 from cfmtoolbox import CFM, Feature, Interval, Constraint
 
 
-
-
 def create_smt_multiset_encoding(cfm: CFM, sampling: bool):
     print("Encoding CFM...")
     encoding = ""
@@ -10,6 +8,7 @@ def create_smt_multiset_encoding(cfm: CFM, sampling: bool):
     encoding += declare_constants(cfm.features)
     #encoding += create_assert_child_parent_connection(cfm.root.children)
     encoding += create_assert_feature_group_type_cardinality(cfm.root,sampling)
+    encoding += create_assert_group_type_cardinality_with_less_max_than_features(cfm.root)
     encoding += create_assert_feature_group_instance_cardinality(cfm.root)
     encoding += create_assert_feature_instance_cardinality(cfm.root)
     encoding += create_assert_constraints(cfm.constraints)
@@ -25,7 +24,8 @@ def create_assert_feature_group_type_cardinality(feature: Feature,sampling: bool
         if len(feature.group_type_cardinality.intervals) > 1:
             assertStatement += "(xor"
         for interval in feature.group_type_cardinality.intervals:
-
+            assertStatement += "(ite "
+            assertStatement += "(> " + create_const_name(feature) + " 0)"
             assertStatement += "(and "
             assertStatement += "(>= "
             assertStatement += create_amount_of_children_for_group_type_cardinality(
@@ -39,13 +39,14 @@ def create_assert_feature_group_type_cardinality(feature: Feature,sampling: bool
                 assertStatement += create_amount_of_children_for_group_type_cardinality(
                     feature.children, feature,sampling)
                 if sampling:
-                    assertStatement += "(* " + create_const_name(feature) + " " + str(
-                        interval.upper) + " )"
-                else:
                     assertStatement += str(
                         interval.upper)
+                else:
+                    assertStatement += "(* " + create_const_name(feature) + " " + str(
+                        interval.upper) + " )"
                 assertStatement += ")"
             assertStatement += ")"  # closing and
+            assertStatement += "(= true true))"
         if len(feature.group_type_cardinality.intervals) > 1:
             assertStatement += ")"  # closing or
         assertStatement += ")\n"  # closing assert
@@ -54,8 +55,43 @@ def create_assert_feature_group_type_cardinality(feature: Feature,sampling: bool
         assertStatement += create_assert_feature_group_type_cardinality(child,sampling)
     return assertStatement
 
+def create_assert_group_type_cardinality_with_less_max_than_features(feature: Feature):
+    assertStatement = ""
+
+    if feature.group_type_cardinality.intervals:
+        assertStatement += "(assert "
+        if len(feature.group_type_cardinality.intervals) > 1:
+            assertStatement += "(xor"
+        for interval in feature.group_type_cardinality.intervals:
+            assertStatement += "(ite "
+            assertStatement += "(> " + create_const_name(feature) + " 0)"
+            assertStatement += "(and "
+            assertStatement += "(>= "
+            assertStatement += create_amount_of_children_for_group_type_cardinality(
+                feature.children, feature, True)
+            assertStatement += str(interval.lower)
+            assertStatement += ")"
+            if interval.upper is None:
+                assertStatement += "(= true true)"
+            else:
+                assertStatement += "(<= "
+                assertStatement += create_amount_of_children_for_group_type_cardinality(
+                    feature.children, feature, True)
+
+                assertStatement += str(
+                    interval.upper)
+                assertStatement += ")"
+            assertStatement += ")"  # closing and
+            assertStatement += "(= true true))"
+        if len(feature.group_type_cardinality.intervals) > 1:
+            assertStatement += ")"  # closing or
+        assertStatement += ")\n"  # closing assert
+
+    for child in feature.children:
+        assertStatement += create_assert_group_type_cardinality_with_less_max_than_features(child)
 
 
+    return assertStatement
 
 def create_assert_constraints(constraints):
     assertStatement = ""
