@@ -1,0 +1,1105 @@
+Output for model_6.json:
+Encoding CFM...
+Encoding complete.
+1: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 1
+
+Time needed:        16.25 real        11.40 user         4.79 sys
+
+Output for model_27.json:
+Encoding CFM...
+Encoding complete.
+1: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+10: 
+Given feature instance cardinality: 44
+
+Actual Max Feature Instance Cardinality 0
+
+100: 
+Given feature instance cardinality: 42
+
+Actual Max Feature Instance Cardinality 0
+
+1000: 
+Given feature instance cardinality: 27
+
+Actual Max Feature Instance Cardinality 0
+
+1001: 
+Given feature instance cardinality: 32
+
+Actual Max Feature Instance Cardinality 0
+
+1002: 
+Given feature instance cardinality: 29
+
+Actual Max Feature Instance Cardinality 0
+
+1003: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 0
+
+101: 
+Given feature instance cardinality: 12
+
+Actual Max Feature Instance Cardinality 0
+
+1010: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 0
+
+1011: 
+Given feature instance cardinality: 19
+
+Actual Max Feature Instance Cardinality 0
+
+1012: 
+Given feature instance cardinality: 28
+
+Actual Max Feature Instance Cardinality 0
+
+1013: 
+Given feature instance cardinality: 34
+
+Actual Max Feature Instance Cardinality 0
+
+102: 
+Given feature instance cardinality: 6
+
+Actual Max Feature Instance Cardinality 0
+
+1020: 
+Given feature instance cardinality: 44
+
+Actual Max Feature Instance Cardinality 0
+
+1021: 
+Given feature instance cardinality: 47
+
+Actual Max Feature Instance Cardinality 0
+
+1022: 
+Given feature instance cardinality: 44
+
+Actual Max Feature Instance Cardinality 0
+
+1023: 
+Given feature instance cardinality: 8
+
+Actual Max Feature Instance Cardinality 0
+
+103: 
+Given feature instance cardinality: 23
+
+Actual Max Feature Instance Cardinality 0
+
+1030: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 0
+
+1031: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 0
+
+1032: 
+Given feature instance cardinality: 29
+
+Actual Max Feature Instance Cardinality 0
+
+1033: 
+Given feature instance cardinality: 45
+
+Actual Max Feature Instance Cardinality 0
+
+104: 
+Given feature instance cardinality: 33
+
+Actual Max Feature Instance Cardinality 0
+
+1040: 
+Given feature instance cardinality: 40
+
+Actual Max Feature Instance Cardinality 0
+
+1041: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 0
+
+1042: 
+Given feature instance cardinality: 23
+
+Actual Max Feature Instance Cardinality 0
+
+1043: 
+Given feature instance cardinality: 17
+
+Actual Max Feature Instance Cardinality 0
+
+1044: 
+Given feature instance cardinality: 21
+
+Actual Max Feature Instance Cardinality 0
+
+11: 
+Given feature instance cardinality: 24
+
+Actual Max Feature Instance Cardinality 0
+
+110: 
+Given feature instance cardinality: 7
+
+Actual Max Feature Instance Cardinality 0
+
+1100: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+1101: 
+Given feature instance cardinality: 12
+
+Actual Max Feature Instance Cardinality 0
+
+1102: 
+Given feature instance cardinality: 20
+
+Actual Max Feature Instance Cardinality 0
+
+1103: 
+Given feature instance cardinality: 33
+
+Actual Max Feature Instance Cardinality 0
+
+1104: 
+Given feature instance cardinality: 35
+
+Actual Max Feature Instance Cardinality 0
+
+111: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 0
+
+112: 
+Given feature instance cardinality: 34
+
+Actual Max Feature Instance Cardinality 0
+
+1120: 
+Given feature instance cardinality: 41
+
+Actual Max Feature Instance Cardinality 0
+
+1121: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 0
+
+1122: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 0
+
+1123: 
+Given feature instance cardinality: 37
+
+Actual Max Feature Instance Cardinality 0
+
+1124: 
+Given feature instance cardinality: 22
+
+Actual Max Feature Instance Cardinality 0
+
+113: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 0
+
+1130: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 0
+
+1131: 
+Given feature instance cardinality: 49
+
+Actual Max Feature Instance Cardinality 0
+
+1132: 
+Given feature instance cardinality: 45
+
+Actual Max Feature Instance Cardinality 0
+
+12: 
+Given feature instance cardinality: 25
+
+Actual Max Feature Instance Cardinality 0
+
+120: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 0
+
+1200: 
+Given feature instance cardinality: 39
+
+Actual Max Feature Instance Cardinality 0
+
+1201: 
+Given feature instance cardinality: 15
+
+Actual Max Feature Instance Cardinality 0
+
+1202: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 0
+
+1203: 
+Given feature instance cardinality: 45
+
+Actual Max Feature Instance Cardinality 0
+
+1204: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 0
+
+1205: 
+Given feature instance cardinality: 45
+
+Actual Max Feature Instance Cardinality 0
+
+121: 
+Given feature instance cardinality: 41
+
+Actual Max Feature Instance Cardinality 0
+
+1210: 
+Given feature instance cardinality: 44
+
+Actual Max Feature Instance Cardinality 0
+
+1211: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 0
+
+1212: 
+Given feature instance cardinality: 11
+
+Actual Max Feature Instance Cardinality 0
+
+1213: 
+Given feature instance cardinality: 36
+
+Actual Max Feature Instance Cardinality 0
+
+1214: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 0
+
+1215: 
+Given feature instance cardinality: 32
+
+Actual Max Feature Instance Cardinality 0
+
+122: 
+Given feature instance cardinality: 47
+
+Actual Max Feature Instance Cardinality 0
+
+1220: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 0
+
+1221: 
+Given feature instance cardinality: 35
+
+Actual Max Feature Instance Cardinality 0
+
+123: 
+Given feature instance cardinality: 47
+
+Actual Max Feature Instance Cardinality 0
+
+1230: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 0
+
+1231: 
+Given feature instance cardinality: 13
+
+Actual Max Feature Instance Cardinality 0
+
+1232: 
+Given feature instance cardinality: 24
+
+Actual Max Feature Instance Cardinality 0
+
+13: 
+Given feature instance cardinality: 18
+
+Actual Max Feature Instance Cardinality 0
+
+14: 
+Given feature instance cardinality: 37
+
+Actual Max Feature Instance Cardinality 0
+
+Time needed: WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1741617663.470111  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.470163  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.477511  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.477522  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.485046  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.485055  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.491619  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.491623  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.497992  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.497997  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.504369  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.504374  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.512739  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.512743  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.520226  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.520230  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.527188  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.527195  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.534571  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.534575  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.541295  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.541298  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.549122  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.549132  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.556951  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.556955  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.564113  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.564118  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.572088  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.572097  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.579648  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.579653  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.586410  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.586415  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.593562  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.593567  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.599938  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.599943  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.606397  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.606404  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.612727  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.612733  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.619317  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.619321  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.626376  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.626383  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.632239  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.632246  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.638204  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.638210  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.643758  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.643765  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.649535  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.649541  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.656027  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.656033  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.662792  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.662799  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.669921  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.669926  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.676332  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.676337  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.682849  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.682854  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.688616  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.688621  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.695382  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.695386  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.702252  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.702258  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.708571  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.708578  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.715336  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.715340  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.722705  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.722711  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.729543  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.729549  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.735465  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.735471  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.741292  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.741299  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.748139  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.748143  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.754947  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.754954  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.761793  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.761799  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.768971  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.768978  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.775816  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.775819  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.782276  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.782280  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.789416  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.789423  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.796608  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.796615  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.802385  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.802392  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.809507  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.809513  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.816363  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.816369  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.823470  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.823477  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.830371  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.830377  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.837124  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.837131  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.843726  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.843733  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.849937  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.849943  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.855665  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.855672  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.861619  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.861626  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.868551  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.868557  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.875302  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.875309  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.881348  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.881354  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.888246  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.888253  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.895265  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.895272  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.902526  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.902529  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.909065  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.909072  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.916193  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.916200  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.922226  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.922233  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.929056  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.929063  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.936164  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617663.936171  136658 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+        0.76 real         0.71 user         0.04 sys
+
+Output for multiplayer.json:
+Encoding CFM...
+Encoding complete.
+Player: 
+Given feature instance cardinality: 8
+
+Actual Max Feature Instance Cardinality 8
+
+Time needed:         0.33 real         0.28 user         0.03 sys
+
+Output for model_11.json:
+Encoding CFM...
+Encoding complete.
+Time needed:        40.92 real        30.14 user        10.72 sys
+
+Output for model_10.json:
+Encoding CFM...
+Encoding complete.
+Time needed:        17.49 real        12.73 user         4.74 sys
+
+Output for model_7.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.27 real         0.23 user         0.03 sys
+
+Output for model_26.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         1.18 real         0.79 user         0.38 sys
+
+Output for model_17.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         1.62 real         1.50 user         0.11 sys
+
+Output for model_0.json:
+Encoding CFM...
+Encoding complete.
+1010: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+1011: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 0
+
+Time needed:        16.96 real        13.11 user         3.82 sys
+
+Output for model_1.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         3.73 real         2.69 user         1.03 sys
+
+Output for sandwichBigM.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.29 real         0.25 user         0.03 sys
+
+Output for model_16.json:
+Encoding CFM...
+Encoding complete.
+11: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 45
+
+Time needed:         3.58 real         2.53 user         1.04 sys
+
+Output for multiplayerVamos.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.27 real         0.24 user         0.03 sys
+
+Output for model_15.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         8.68 real         5.66 user         3.00 sys
+
+Output for model_2.json:
+Encoding CFM...
+Encoding complete.
+1: 
+Given feature instance cardinality: 32
+
+Actual Max Feature Instance Cardinality 11
+
+Time needed:        16.27 real        12.37 user         3.87 sys
+
+Output for model_19.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.46 real         0.42 user         0.03 sys
+
+Output for model_18.json:
+Encoding CFM...
+Encoding complete.
+1122: 
+Given feature instance cardinality: 27
+
+Actual Max Feature Instance Cardinality 1
+
+Time needed:        19.67 real        13.58 user         6.06 sys
+
+Output for pizzas.json:
+Encoding CFM...
+Encoding complete.
+swiss: 
+Given feature instance cardinality: 2
+
+Actual Max Feature Instance Cardinality 1
+
+gouda: 
+Given feature instance cardinality: 3
+
+Actual Max Feature Instance Cardinality 1
+
+ingredients: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+salami: 
+Given feature instance cardinality: 10
+
+Actual Max Feature Instance Cardinality 0
+
+peperoni: 
+Given feature instance cardinality: 5
+
+Actual Max Feature Instance Cardinality 0
+
+onion: 
+Given feature instance cardinality: 15
+
+Actual Max Feature Instance Cardinality 0
+
+porch: 
+Given feature instance cardinality: 10
+
+Actual Max Feature Instance Cardinality 0
+
+corn: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+Time needed:         0.30 real         0.26 user         0.03 sys
+
+Output for model_3.json:
+Encoding CFM...
+Encoding complete.
+1: 
+Given feature instance cardinality: 31
+
+Actual Max Feature Instance Cardinality 0
+
+10: 
+Given feature instance cardinality: 21
+
+Actual Max Feature Instance Cardinality 0
+
+100: 
+Given feature instance cardinality: 16
+
+Actual Max Feature Instance Cardinality 0
+
+1000: 
+Given feature instance cardinality: 48
+
+Actual Max Feature Instance Cardinality 0
+
+101: 
+Given feature instance cardinality: 47
+
+Actual Max Feature Instance Cardinality 0
+
+1010: 
+Given feature instance cardinality: 44
+
+Actual Max Feature Instance Cardinality 0
+
+1011: 
+Given feature instance cardinality: 3
+
+Actual Max Feature Instance Cardinality 0
+
+1012: 
+Given feature instance cardinality: 42
+
+Actual Max Feature Instance Cardinality 0
+
+1013: 
+Given feature instance cardinality: 42
+
+Actual Max Feature Instance Cardinality 0
+
+1014: 
+Given feature instance cardinality: 45
+
+Actual Max Feature Instance Cardinality 0
+
+1015: 
+Given feature instance cardinality: 27
+
+Actual Max Feature Instance Cardinality 0
+
+102: 
+Given feature instance cardinality: 24
+
+Actual Max Feature Instance Cardinality 0
+
+1020: 
+Given feature instance cardinality: 37
+
+Actual Max Feature Instance Cardinality 0
+
+103: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 0
+
+11: 
+Given feature instance cardinality: 13
+
+Actual Max Feature Instance Cardinality 0
+
+110: 
+Given feature instance cardinality: 29
+
+Actual Max Feature Instance Cardinality 0
+
+111: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 0
+
+1110: 
+Given feature instance cardinality: 49
+
+Actual Max Feature Instance Cardinality 0
+
+1111: 
+Given feature instance cardinality: 26
+
+Actual Max Feature Instance Cardinality 0
+
+1112: 
+Given feature instance cardinality: 37
+
+Actual Max Feature Instance Cardinality 0
+
+112: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 0
+
+113: 
+Given feature instance cardinality: 39
+
+Actual Max Feature Instance Cardinality 0
+
+1130: 
+Given feature instance cardinality: 38
+
+Actual Max Feature Instance Cardinality 0
+
+1131: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+1132: 
+Given feature instance cardinality: 26
+
+Actual Max Feature Instance Cardinality 0
+
+1133: 
+Given feature instance cardinality: 24
+
+Actual Max Feature Instance Cardinality 0
+
+114: 
+Given feature instance cardinality: 25
+
+Actual Max Feature Instance Cardinality 0
+
+1140: 
+Given feature instance cardinality: 32
+
+Actual Max Feature Instance Cardinality 0
+
+12: 
+Given feature instance cardinality: 41
+
+Actual Max Feature Instance Cardinality 0
+
+13: 
+Given feature instance cardinality: 17
+
+Actual Max Feature Instance Cardinality 0
+
+14: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+140: 
+Given feature instance cardinality: 39
+
+Actual Max Feature Instance Cardinality 0
+
+141: 
+Given feature instance cardinality: 42
+
+Actual Max Feature Instance Cardinality 0
+
+142: 
+Given feature instance cardinality: 33
+
+Actual Max Feature Instance Cardinality 0
+
+143: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1430: 
+Given feature instance cardinality: 13
+
+Actual Max Feature Instance Cardinality 0
+
+1431: 
+Given feature instance cardinality: 28
+
+Actual Max Feature Instance Cardinality 0
+
+1432: 
+Given feature instance cardinality: 32
+
+Actual Max Feature Instance Cardinality 0
+
+1433: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 0
+
+144: 
+Given feature instance cardinality: 25
+
+Actual Max Feature Instance Cardinality 0
+
+145: 
+Given feature instance cardinality: 43
+
+Actual Max Feature Instance Cardinality 0
+
+1450: 
+Given feature instance cardinality: 29
+
+Actual Max Feature Instance Cardinality 0
+
+1451: 
+Given feature instance cardinality: 8
+
+Actual Max Feature Instance Cardinality 0
+
+1452: 
+Given feature instance cardinality: 32
+
+Actual Max Feature Instance Cardinality 0
+
+1453: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 0
+
+Time needed:         0.35 real         0.31 user         0.03 sys
+
+Output for model_14.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         1.97 real         1.47 user         0.49 sys
+
+Output for model_25.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         8.16 real         5.62 user         2.52 sys
+
+Output for model_4.json:
+Encoding CFM...
+Encoding complete.
+1: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+10: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+100: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+101: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1010: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1011: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1012: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1013: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+11: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+110: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1100: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1101: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+111: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1110: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1111: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1112: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1113: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1114: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+112: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1120: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1121: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1122: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1123: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+1124: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+Time needed: WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1741617806.825935  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.825954  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.827142  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.827147  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.828359  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.828363  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.829487  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.829491  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.830638  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.830641  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.831779  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.831783  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.832874  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.832881  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.833989  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.833992  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.835092  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.835095  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.836283  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.836285  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.837478  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.837481  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.838629  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.838632  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.839718  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.839721  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.840837  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.840840  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.841925  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.841928  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.843042  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.843045  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.844135  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.844137  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.845228  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.845231  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.846328  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.846331  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.847462  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.847468  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.848629  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.848632  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.849739  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.849742  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.850898  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.850901  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.852037  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+E0000 00:00:1741617806.852040  137928 linear_solver.cc:2026] No solution exists. MPSolverInterface::result_status_ = MPSOLVER_INFEASIBLE
+        0.28 real         0.24 user         0.03 sys
+
+Output for model_29.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         4.57 real         2.76 user         1.79 sys
+
+Output for model_8.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         2.67 real         1.90 user         0.76 sys
+
+Output for model_13.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         5.76 real         4.41 user         1.34 sys
+
+Output for model_12.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         6.70 real         4.78 user         1.91 sys
+
+Output for model_28.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         4.95 real         3.47 user         1.46 sys
+
+Output for model_9.json:
+Encoding CFM...
+Encoding complete.
+Time needed:        15.82 real        11.72 user         4.08 sys
+
+Output for model_5.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         1.84 real         1.35 user         0.48 sys
+
