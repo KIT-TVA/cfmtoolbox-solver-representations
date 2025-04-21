@@ -63,13 +63,16 @@ def create_assert_group_type_cardinality_with_less_max_than_features(feature: Fe
         if len(feature.group_type_cardinality.intervals) > 1:
             assertStatement += "(xor"
         for interval in feature.group_type_cardinality.intervals:
-            assertStatement += "(ite "
-            assertStatement += "(> " + create_const_name(feature) + " 0)"
             assertStatement += "(and "
             assertStatement += "(>= "
             assertStatement += create_amount_of_children_for_group_type_cardinality(
                 feature.children, feature, True)
+            assertStatement += "(* "
             assertStatement += str(interval.lower)
+            assertStatement += "(ite "
+            assertStatement += "(> " + create_const_name(feature) + " 0)"
+            assertStatement += " 1 0 )"
+            assertStatement += ")"
             assertStatement += ")"
             if interval.upper is None:
                 assertStatement += "(= true true)"
@@ -77,12 +80,14 @@ def create_assert_group_type_cardinality_with_less_max_than_features(feature: Fe
                 assertStatement += "(<= "
                 assertStatement += create_amount_of_children_for_group_type_cardinality(
                     feature.children, feature, True)
-
-                assertStatement += str(
-                    interval.upper)
+                assertStatement += "(* "
+                assertStatement += str(interval.upper)
+                assertStatement += "(ite "
+                assertStatement += "(> " + create_const_name(feature) + " 0)"
+                assertStatement += " 1 0 )"
+                assertStatement += ")"
                 assertStatement += ")"
             assertStatement += ")"  # closing and
-            assertStatement += "(= true true))"
         if len(feature.group_type_cardinality.intervals) > 1:
             assertStatement += ")"  # closing or
         assertStatement += ")\n"  # closing assert
