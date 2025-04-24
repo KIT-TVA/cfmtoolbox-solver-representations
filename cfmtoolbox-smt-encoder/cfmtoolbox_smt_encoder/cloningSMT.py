@@ -1,8 +1,6 @@
 
 from cfmtoolbox import CFM, Feature, Interval
 
-from cfmtoolbox_smt_encoder.mulitsetSMT import create_const_name
-
 
 def create_smt_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
     """
@@ -73,7 +71,9 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
                 # decides whether only the constants names are created or the declarations for the encoding
                 if declaration:
                     constants += "(declare-const "
-                constants += create_const_name(parent) + "_" + "_".join(map(str, current_indices))
+                if len(current_indices) > 0:
+                    constants += create_const_name(parent) + "_" + "_".join(map(str, current_indices))
+                else: constants += create_const_name(parent)
                 if declaration:
                     # when it is a leave and not the base cloning approach then add Int datatype, else Bool
                     if only_boolean_constants or (not only_boolean_constants and len(parent.children) >= 1):
@@ -203,7 +203,8 @@ def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_lis
                     else:
                         asserts += create_amount_of_children_for_group_type_cardinality_cloning(feature.children, indices=current_indices, only_boolean_constants=only_boolean_constants)
                     if feature.parent is not None:
-                        asserts += ("(ite " + create_const_name(feature) + "_" + "_".join(map(str, current_indices)) + " " + str(interval.lower) + " " + "0)")
+                        asserts += "(ite " + create_const_name(feature) + ("_" if (len(current_indices) > 0) else "")
+                        asserts += "_".join(map(str, current_indices)) + " " + str(interval.lower) + " " + "0)"
                     else:
                         asserts += ("(ite " + create_const_name(feature) + "_" + "1" + " " + str(interval.lower) + " " + "0)")
                     asserts += ")"
@@ -218,7 +219,7 @@ def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_lis
                             asserts += create_amount_of_children_for_group_type_cardinality_cloning(feature.children,
                                                                                                     indices=current_indices,only_boolean_constants=only_boolean_constants)
                         if feature.parent is not None:
-                            asserts += ("(ite " + create_const_name(feature) + "_" + "_".join(
+                            asserts += ("(ite " + create_const_name(feature) + ("_" if (len(current_indices) > 0) else "") + "_".join(
                                 map(str, current_indices)) + " " + str(interval.upper) + " " + "0)")
                         else:
                             asserts += ("(ite " + create_const_name(feature) + "_" + "1" + " " + str(
@@ -261,7 +262,8 @@ def create_amount_of_children_for_group_type_cardinality_cloning(children, indic
                 amount += "(or "
             for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
                 if len(indices) > 0:
-                    amount += " " + create_const_name(feature) + "_" +  "_".join(map(str, indices)) + "_" + str(i) + " "
+                    amount += (" " + create_const_name(feature) + "_" + "_".join(map(str, indices))
+                               + "_" + str(i) + " ")
                 else:
                     amount += " " + create_const_name(feature) + "_" + str(i) + " "
             if getMaxCardinality(feature.instance_cardinality.intervals) > 1:
@@ -271,7 +273,8 @@ def create_amount_of_children_for_group_type_cardinality_cloning(children, indic
             amount += " ) "  # closing ite
         else:
             amount += "(ite "
-            amount += "(> " + create_const_name(feature) + "_" + "_".join(map(str, indices)) + " 0)"
+            amount += ("(> " + create_const_name(feature) + ("_" if (len(indices) > 0) else "") +
+                       "_".join(map(str, indices)) + " 0)")
             amount += " 1 "
             amount += " 0 "
             amount += " ) "  # closing ite
@@ -291,14 +294,14 @@ def create_amount_of_children_for_group_instance_cardinality_cloning(children: l
             for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
                 amount += "(ite "
                 if len(indices) > 0:
-                    amount += " " + create_const_name(feature) + "_" +  "_".join(map(str, indices)) + "_" + str(i) + " "
+                    amount += " " + create_const_name(feature) +  "_" + "_".join(map(str, indices)) + "_" + str(i) + " "
                 else:
                     amount += " " + create_const_name(feature) + "_" + str(i) + " "
                 amount += " 1 "
                 amount += " 0 "
                 amount += " ) "  # closing ite
         else:
-            amount += " " + create_const_name(feature) + "_" + "_".join(map(str, indices)) + " "
+            amount += " " + create_const_name(feature) + ("_" if (len(indices) > 0) else "") + "_".join(map(str, indices)) + " "
     if len(children) > 1 or getMaxCardinality(children[0].instance_cardinality.intervals) > 1:
         amount += " ) "  # closing +
 
@@ -393,7 +396,7 @@ def create_sum_of_feature_instance(feature: Feature, indices,only_boolean_consta
             sum_of_feature_instance += " 0 "
             sum_of_feature_instance += ")"  # closing ite
     else:
-        sum_of_feature_instance += " " + create_const_name(feature) + "_" + "_".join(map(str, indices)) + " "
+        sum_of_feature_instance += " " + create_const_name(feature) + ("_" if (len(indices) > 0) else "") + "_".join(map(str, indices)) + " "
     sum_of_feature_instance += ")"
     return sum_of_feature_instance
 
@@ -479,7 +482,8 @@ def create_parent_list_for_feature_by_name(feature: Feature, feature_name: str, 
                 return new_list
 
 
-
+def create_const_name(feature: Feature) -> str:
+    return "Feature_" + feature.name
 
 def get_all_constants_of_CFM_cloning(cfm: CFM):
     constants = declare_cloned_constants(cfm.root,[1],False,False)
