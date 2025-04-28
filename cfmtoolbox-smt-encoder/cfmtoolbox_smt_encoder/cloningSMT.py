@@ -60,7 +60,7 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
     else:
         # if it is a leave then do not append the instance cardinality, because the last constant will be an integer
         if only_boolean_constants or (not only_boolean_constants and len(parent.children) >= 1):
-            parent_list.append(max)
+            parent_list.append(max if (max != 0) else 1)
 
 
         # Define the recursive function that generates n nested loops
@@ -119,7 +119,7 @@ def create_assert_child_parent_connection_cloning(feature: Feature, parent_list:
                 childrenAssert += " )\n"  # closing assert
         else:
             max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
-            parent_list.append(max_cardinality)
+            parent_list.append(max_cardinality if (max_cardinality != 0) else 1)
             childrenAssert += "(and "
             # Define the recursive function that generates n nested loops
             def helper(depth, current_indices, children):
@@ -180,10 +180,10 @@ def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_lis
     else:
         intervals = feature.group_type_cardinality.intervals
 
-    if intervals:
+    if intervals and len(feature.children) != 0:
         if feature.parent is not None:
             max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
-            parent_list.append(max_cardinality)
+            parent_list.append(max_cardinality if (max_cardinality != 0) else 1)
         assertStatement += "(assert "
 
         assertStatement += "(and "
@@ -203,8 +203,8 @@ def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_lis
                     else:
                         asserts += create_amount_of_children_for_group_type_cardinality_cloning(feature.children, indices=current_indices, only_boolean_constants=only_boolean_constants)
                     if feature.parent is not None:
-                        asserts += "(ite " + create_const_name(feature) + ("_" if (len(current_indices) > 0) else "")
-                        asserts += "_".join(map(str, current_indices)) + " " + str(interval.lower) + " " + "0)"
+                        asserts += "(ite " + create_const_name(feature) + ("_" if (len(
+                            current_indices) > 0) else "") + "_".join(map(str, current_indices)) + " " + str(interval.lower) + " " + "0)"
                     else:
                         asserts += ("(ite " + create_const_name(feature) + "_" + "1" + " " + str(interval.lower) + " " + "0)")
                     asserts += ")"
@@ -256,17 +256,20 @@ def create_amount_of_children_for_group_type_cardinality_cloning(children, indic
 
     amount += "(+ "
     for feature in children:
-        if only_boolean_constants or (not only_boolean_constants and len(feature.children) >= 1):
+        maxCardinality = getMaxCardinality(feature.instance_cardinality.intervals)
+        maxCardinality = maxCardinality if (maxCardinality != 0) else 1
+        if (only_boolean_constants or (not only_boolean_constants and len(feature.children) >=
+                                       1)):
             amount += "(ite "
-            if getMaxCardinality(feature.instance_cardinality.intervals) > 1:
+            if maxCardinality > 1:
                 amount += "(or "
-            for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+            for i in range(1, maxCardinality + 1):
                 if len(indices) > 0:
                     amount += (" " + create_const_name(feature) + "_" + "_".join(map(str, indices))
                                + "_" + str(i) + " ")
                 else:
                     amount += " " + create_const_name(feature) + "_" + str(i) + " "
-            if getMaxCardinality(feature.instance_cardinality.intervals) > 1:
+            if maxCardinality > 1:
                 amount += ")" # closing or
             amount += " 1 "
             amount += " 0 "
@@ -278,7 +281,6 @@ def create_amount_of_children_for_group_type_cardinality_cloning(children, indic
             amount += " 1 "
             amount += " 0 "
             amount += " ) "  # closing ite
-
     amount += " ) "  # closing +
 
     return amount
@@ -290,8 +292,11 @@ def create_amount_of_children_for_group_instance_cardinality_cloning(children: l
     if len(children) > 1 or getMaxCardinality(children[0].instance_cardinality.intervals) > 1:
         amount += "(+ "
     for feature in children:
-        if only_boolean_constants or (not only_boolean_constants and len(feature.children) >= 1):
-            for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+        maxCardinality = getMaxCardinality(feature.instance_cardinality.intervals)
+        maxCardinality = maxCardinality if (maxCardinality != 0) else 1
+        if (only_boolean_constants or (not only_boolean_constants and len(feature.children) >=
+                                       1)):
+            for i in range(1, maxCardinality + 1):
                 amount += "(ite "
                 if len(indices) > 0:
                     amount += " " + create_const_name(feature) +  "_" + "_".join(map(str, indices)) + "_" + str(i) + " "
@@ -364,7 +369,7 @@ def create_assert_feature_instance_cardinality_cloning(parent: Feature, parent_l
 
     if parent.parent is not None:
         max_cardinality = getMaxCardinality(parent.instance_cardinality.intervals)
-        parent_list.append(max_cardinality)
+        parent_list.append(max_cardinality if max_cardinality != 0 else 1)
     for feature in parent.children:
         old_list = parent_list.copy()
         assertStatement += create_assert_feature_instance_cardinality_cloning(feature, old_list,only_boolean_constants)
@@ -386,7 +391,9 @@ def create_sum_of_feature_instance(feature: Feature, indices,only_boolean_consta
     sum_of_feature_instance = ""
     sum_of_feature_instance += "(+ "
     if only_boolean_constants or (not only_boolean_constants and len(feature.children) >= 1):
-        for i in range(1, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+        max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
+        max_cardinality = max_cardinality if max_cardinality != 0 else 1
+        for i in range(1,max_cardinality  + 1):
             sum_of_feature_instance += "(ite "
             if len(indices) > 0:
                 sum_of_feature_instance += "(= " + create_const_name(feature) + "_" + "_".join(map(str, indices)) + "_" + str(i) + " true) "
@@ -474,7 +481,8 @@ def create_parent_list_for_feature_by_name(feature: Feature, feature_name: str, 
         return parent_list
     else:
         if feature.parent is not None:
-            parent_list.append(getMaxCardinality(feature.instance_cardinality.intervals))
+            parent_list.append(getMaxCardinality(feature.instance_cardinality.intervals) if
+                               getMaxCardinality(feature.instance_cardinality.intervals) > 0 else 1)
         for child in feature.children:
             old_list = parent_list.copy()
             new_list = create_parent_list_for_feature_by_name(child, feature_name,old_list)
