@@ -1,10 +1,8 @@
 import os
 import re
 import sys
-from pyexpat import features
-
 from cfmtoolbox import app, CFM, Feature
-from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, get_all_constants_of_CFM_mulitset, create_const_name
+from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, create_const_name
 from cfmtoolbox_smt_encoder.cloningSMT import create_smt_cloning_encoding, \
     create_amount_of_children_for_group_instance_cardinality_cloning, getMaxCardinality, \
     get_min_cardinality
@@ -20,6 +18,27 @@ def encode_to_smt_multiset(cfm: CFM) -> str:
     """
     encoding = create_smt_multiset_encoding(cfm,sampling=True)
     return encoding
+
+@app.command()
+def get_smt_multiset_stats(cfm: CFM):
+    encoding = create_smt_multiset_encoding(cfm,sampling=False)
+    print_encoding_stats(encoding)
+
+@app.command()
+def get_smt_cloning_basis_stats(cfm: CFM):
+    encoding = create_smt_cloning_encoding(cfm,only_boolean_constants=True)
+    print_encoding_stats(encoding)
+
+@app.command()
+def get_smt_cloning_integer_leaves_stats(cfm: CFM):
+    encoding = create_smt_cloning_encoding(cfm,only_boolean_constants=False)
+    print_encoding_stats(encoding)
+
+def print_encoding_stats(encoding):
+    encoding += "(get-info :assertion-stack-size)"
+    encoding += "(get-info :decls)"
+    output = callSolverWithEncoding(encoding)
+    print(output)
 
 
 
@@ -281,6 +300,7 @@ def run_smt_solver_with_cloning_with_child_int_constants_gap_detection(cfm: CFM)
 def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[int], only_boolean_constants: bool):
     gaps = ""
 
+    print(feature.name)
     for interval in feature.instance_cardinality.intervals:
         for j in range(interval.lower, interval.upper + 1):
             solver_cmd = encoding
@@ -296,11 +316,12 @@ def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[i
                 gap = "Gap at: " + str(j) + " in Feature: " + feature.name + " "
                 print(gap)
                 gaps += gap
-            if "error" in output:
+            if ("error" in output) and not("unsat" in output):
                 print(output)
 
     if feature.parent is not None:
         max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
+        max_cardinality = max_cardinality if (max_cardinality != 0) else 1
         parent_list.append(max_cardinality)
     for feature in feature.children:
         old_list = parent_list.copy()
@@ -346,7 +367,7 @@ def count_samples(encoding):
                 feature_value_split = constant.split(" ")
                 value = feature_value_split[7].split(")")
                 encoding += "(= " + feature_value_split[1] + " " + value[0] + ")"
-                print("(= " + feature_value_split[1] + " " + value[0] + ")\n")
+                #print("(= " + feature_value_split[1] + " " + value[0] + ")\n")
         encoding += ")))"
         new_encoding = encoding
         new_encoding += "(check-sat)"
@@ -363,7 +384,7 @@ def callSolverWithEncoding(encoding):
     :param encoding: A string representing the SMT2 encoding to be passed to the solver.
     :return: The standard output from the solver as a string.
     """
-    path = os.path.join(os.path.abspath(sys.path[0]), "../../../z3/z3/build/z3") # needs #
+    path = os.path.join(os.path.abspath(sys.path[0]), "../../z3/z3/build/z3") # needs #
     # test ../../../../../z3/z3/build/z3
     # to be
     # moved to env variable
