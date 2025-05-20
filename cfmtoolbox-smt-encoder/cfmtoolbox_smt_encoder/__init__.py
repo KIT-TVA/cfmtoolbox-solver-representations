@@ -5,7 +5,7 @@ from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_smt_encoder.mulitsetSMT import create_smt_multiset_encoding, create_const_name
 from cfmtoolbox_smt_encoder.cloningSMT import create_smt_cloning_encoding, \
     create_amount_of_children_for_group_instance_cardinality_cloning, getMaxCardinality, \
-    get_min_cardinality
+    get_min_cardinality, add_constraint_to_remove_permutations
 import subprocess
 
 
@@ -22,21 +22,28 @@ def encode_to_smt_multiset(cfm: CFM) -> str:
 @app.command()
 def get_smt_multiset_stats(cfm: CFM):
     encoding = create_smt_multiset_encoding(cfm,sampling=False)
-    print_encoding_stats(encoding)
+    #print_encoding_stats(encoding)
 
 @app.command()
 def get_smt_cloning_basis_stats(cfm: CFM):
     encoding = create_smt_cloning_encoding(cfm,only_boolean_constants=True)
-    print_encoding_stats(encoding)
+    #print_encoding_stats(encoding)
 
 @app.command()
 def get_smt_cloning_integer_leaves_stats(cfm: CFM):
     encoding = create_smt_cloning_encoding(cfm,only_boolean_constants=False)
-    print_encoding_stats(encoding)
+    #print_encoding_stats(encoding)
 
 def print_encoding_stats(encoding):
+   ## print(encoding)
+
+    encoding += "(set-option :stats true)"
+    encoding += "(check-sat)"
+    encoding += "(get-model)"
+    encoding += "(get-info :all-statistics)"
     encoding += "(get-info :assertion-stack-size)"
     encoding += "(get-info :decls)"
+    
     output = callSolverWithEncoding(encoding)
     print(output)
 
@@ -316,12 +323,13 @@ def find_gaps_in_all_clones(feature: Feature, encoding: str, parent_list: list[i
                 gap = "Gap at: " + str(j) + " in Feature: " + feature.name + " "
                 print(gap)
                 gaps += gap
-            if ("error" in output) and not("unsat" in output):
-                print(output)
+            if ("error" in output) and not("unsat" in output) and not("sat" in output):
+                print("error")
+                #print(output)
 
     if feature.parent is not None:
         max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
-        max_cardinality = max_cardinality if (max_cardinality != 0) else 1
+        #max_cardinality = max_cardinality if (max_cardinality != 0) else 1
         parent_list.append(max_cardinality)
     for feature in feature.children:
         old_list = parent_list.copy()
@@ -342,6 +350,15 @@ def run_smt_cloning_with_integer_leaves_sampling(cfm: CFM):
 
     amount_samples = count_samples(encoding)
     print(amount_samples)
+
+@app.command()
+def run_smt_cloning_with_integer_leaves_sampling_without_permutation(cfm: CFM):
+    encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
+    encoding += add_constraint_to_remove_permutations(cfm.root,[],False)
+    print(encoding)
+    amount_samples = count_samples(encoding)
+    print(amount_samples)
+
 
 @app.command()
 def run_smt_multiset_with_cloning_sampling(cfm: CFM):
