@@ -1,10 +1,16 @@
 from cfmtoolbox import CFM, Feature, Interval, Constraint
 
 
+global assertCount
+global variableCount
+
 def create_smt_multiset_encoding(cfm: CFM, sampling: bool):
     print("Encoding CFM...")
     encoding = ""
-
+    global assertCount
+    global variableCount
+    assertCount = 0
+    variableCount = 0
     encoding += declare_constants(cfm.features)
     #encoding += create_assert_child_parent_connection(cfm.root.children)
     encoding += create_assert_feature_group_type_cardinality(cfm.root,sampling)
@@ -13,13 +19,18 @@ def create_smt_multiset_encoding(cfm: CFM, sampling: bool):
     encoding += create_assert_feature_instance_cardinality(cfm.root)
     encoding += create_assert_constraints(cfm.constraints)
     print("Encoding complete.")
+
+    print("Variable count: " + str(variableCount))
+    print("Assert count: " + str(assertCount))
     #print(encoding)
     return encoding
 
 
 def create_assert_feature_group_type_cardinality(feature: Feature,sampling: bool):
     assertStatement = ""
+    global assertCount
     if feature.group_type_cardinality.intervals:
+        assertCount += 1
         assertStatement += "(assert "
         if len(feature.group_type_cardinality.intervals) > 1:
             assertStatement += "(xor"
@@ -57,8 +68,9 @@ def create_assert_feature_group_type_cardinality(feature: Feature,sampling: bool
 
 def create_assert_group_type_cardinality_with_less_max_than_features(feature: Feature):
     assertStatement = ""
-
+    global assertCount
     if feature.group_type_cardinality.intervals:
+        assertCount += 1
         assertStatement += "(assert "
         if len(feature.group_type_cardinality.intervals) > 1:
             assertStatement += "(xor"
@@ -100,7 +112,9 @@ def create_assert_group_type_cardinality_with_less_max_than_features(feature: Fe
 
 def create_assert_constraints(constraints):
     assertStatement = ""
+    global assertCount
     for constraint in constraints:
+        assertCount += 1
         assertStatement += "(assert "
         assertStatement += "(ite "
         assertStatement += create_constraint_feature_to_intervals(constraint.first_cardinality.intervals, constraint.first_feature)
@@ -141,6 +155,8 @@ def create_constraint_feature_to_intervals(intervals: list, feature: Feature):
 
 def create_assert_feature_instance_cardinality(feature: Feature):
     assert_statement = ""
+    global assertCount
+    assertCount += 1
     assert_statement += "(assert "
     if len(feature.instance_cardinality.intervals) > 1:
         assert_statement += "(or"
@@ -212,7 +228,9 @@ def create_sum_of_children_for_group_type_cardinality(features: list):
 
 def create_assert_feature_group_instance_cardinality(feature: Feature):
     assert_statement = ""
+    global assertCount
     if feature.group_instance_cardinality.intervals:
+        assertCount += 1
         assert_statement += "(assert "
 
 
@@ -252,9 +270,10 @@ def create_assert_feature_group_instance_cardinality(feature: Feature):
 
 def create_assert_child_parent_connection(features: list) -> str:
     childrenAssert = ""
-
+    global assertCount
     if len(features) != 0:
         if features.__getitem__(0).parent.parent is None:
+            assertCount += 1
             childrenAssert += "(assert "
             childrenAssert += "(and "
             for feature in features:
@@ -281,8 +300,9 @@ def create_assert_child_parent_connection(features: list) -> str:
 
 def declare_constants(features: list) -> str:
     constants = ""
-
+    global  variableCount
     for feature in features:
+        variableCount += 1
         constants += "(declare-const " + create_const_name(feature) + " Int)\n"
 
     return constants
