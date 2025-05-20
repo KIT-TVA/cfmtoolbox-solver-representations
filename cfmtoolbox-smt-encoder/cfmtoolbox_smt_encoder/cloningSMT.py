@@ -1,6 +1,8 @@
 
 from cfmtoolbox import CFM, Feature, Interval
 
+global assertCount
+global variableCount
 
 def create_smt_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
     """
@@ -13,6 +15,10 @@ def create_smt_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
     :return: A string that represents the SMT encoding of the provided CFM.
     """
     print("Encoding CFM...")
+    global assertCount
+    global variableCount
+    assertCount = 0
+    variableCount = 0
     encoding = ""
     encoding += declare_cloned_constants(cfm.root,[], declaration=True,
                                          only_boolean_constants=only_boolean_constants)
@@ -30,6 +36,8 @@ def create_smt_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
                                                                    only_boolean_constants=only_boolean_constants)
     encoding += create_assert_constraints_cloning(cfm,only_boolean_constants=only_boolean_constants)
 
+    print("Variable count: " + str(variableCount))
+    print("Assert count: " + str(assertCount))
     #print(encoding)
     print("Encoding complete.")
 
@@ -49,10 +57,12 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
     """
     constants = ""
     max = getMaxCardinality(parent.instance_cardinality.intervals)
+    global variableCount
 
     if parent.parent is None:
         for j in range(1, max + 1):
             if declaration:
+                variableCount += 1
                 constants += "(declare-const "
             constants += create_const_name(parent) + "_" + str(j)
             if declaration:
@@ -66,10 +76,12 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
         # Define the recursive function that generates n nested loops
         def helper(depth, current_indices):
             constants = ""
+            global variableCount
             # Base case: if we've reached the innermost level, execute the code
             if depth == len(parent_list):
                 # decides whether only the constants names are created or the declarations for the encoding
                 if declaration:
+                    variableCount += 1
                     constants += "(declare-const "
                 if len(current_indices) > 0:
                     constants += create_const_name(parent) + "_" + "_".join(map(str, current_indices))
@@ -105,6 +117,7 @@ def declare_cloned_constants(parent: Feature, parent_list: list[int], declaratio
 def create_assert_child_parent_connection_cloning(feature: Feature, parent_list: list[int],
                                                   only_boolean_constants: bool) -> str:
     childrenAssert = ""
+    global assertCount
     # when the feature has no children, no more asserts are created
     if feature.children:
         children = feature.children
@@ -112,6 +125,7 @@ def create_assert_child_parent_connection_cloning(feature: Feature, parent_list:
         if feature.parent is None:
             for feature in children:
                 old_list = parent_list.copy()
+                assertCount += 1
                 childrenAssert += "(assert " # one assert for all parent child connection of a children of the root feature
                 childrenAssert += "(and "
                 childrenAssert += create_assert_child_parent_connection_cloning(feature, old_list,only_boolean_constants)
@@ -173,7 +187,7 @@ def getMaxCardinality(intervals: list[Interval]) -> int:
 def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_list: list[int], instance_cardinality: bool, only_boolean_constants: bool) -> str:
     assertStatement = ""
     assert_sum_or_amount = ""
-
+    global assertCount
     if instance_cardinality:
         intervals = feature.group_instance_cardinality.intervals
 
@@ -184,6 +198,7 @@ def create_assert_feature_group_cardinality_cloning(feature: Feature, parent_lis
         if feature.parent is not None:
             max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
             parent_list.append(max_cardinality if (max_cardinality != 0) else 1)
+        assertCount += 1
         assertStatement += "(assert "
 
         assertStatement += "(and "
@@ -315,6 +330,8 @@ def create_amount_of_children_for_group_instance_cardinality_cloning(children: l
 
 
 def create_assert_feature_instance_cardinality_cloning(parent: Feature, parent_list: list[int],only_boolean_constants: bool):
+    global assertCount
+    assertCount += 1
     assertStatement = "(assert "
     assertStatement += "(and "
 
@@ -409,7 +426,9 @@ def create_sum_of_feature_instance(feature: Feature, indices,only_boolean_consta
 
 def create_assert_constraints_cloning(cfm: CFM, only_boolean_constants: bool):
     constraints_cloning = ""
+    global assertCount
     for constraint in cfm.constraints:
+        assertCount += 1
         constraints_cloning += "(assert "
         constraints_cloning += "(ite "
         constraints_cloning += create_constraint_feature_to_intervals_cloning(constraint.first_cardinality.intervals, constraint.first_feature, cfm.root,only_boolean_constants)
@@ -490,6 +509,53 @@ def create_parent_list_for_feature_by_name(feature: Feature, feature_name: str, 
                 return new_list
 
 
+def add_constraint_to_remove_permutations(feature, parent_list: list[
+    int], only_boolean_constants):
+    assertStatement = ""
+
+    def helper(depth, current_indices):
+        assertStatement = ""
+        # Base case: if we've reached the innermost level, execute the code
+        if depth == len(parent_list):
+
+            if only_boolean_constants or (
+                    not only_boolean_constants and len(feature.children) >= 2):
+                assertStatement += "(assert (and"
+                for i in range(2, getMaxCardinality(feature.instance_cardinality.intervals) + 1):
+
+                        if len(current_indices) > 0:
+                            assertStatement += "(>= " + create_const_name(feature) + "_" + "_".join(
+                                map(str, current_indices)) + "_" + str(i-1) + "  " + create_const_name(feature) + "_" + "_".join(
+                                map(str, current_indices)) + "_" + str(i) + ")"
+                        else:
+                            assertStatement += "(>= " + create_const_name(feature) + "_" + str(
+                                i-1) + " " +  create_const_name(feature) + "_" +  str(i) + ")"
+
+                assertStatement += "))\n"
+
+            return assertStatement
+
+        # Loop through the range based on the current depth value in arr[depth]
+        for i in range(1, parent_list[
+                              depth] + 1):  # arr[depth] defines how many times the loop at this level runs
+            current_indices.append(i)  # Add the current index to the list
+            assertStatement += helper(depth + 1, current_indices)  # Recurse to the next depth (next
+            # loop)
+            current_indices.pop()
+        return assertStatement
+
+    assertStatement += helper(0, [])
+
+    if feature.parent is not None:
+        max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
+        parent_list.append(max_cardinality)
+    for feature in feature.children:
+        old_list = parent_list.copy()
+        assertStatement += add_constraint_to_remove_permutations(feature, old_list,
+                                                              only_boolean_constants)
+    return assertStatement
+
+
 def create_const_name(feature: Feature) -> str:
     return "Feature_" + feature.name
 
@@ -497,3 +563,4 @@ def get_all_constants_of_CFM_cloning(cfm: CFM):
     constants = declare_cloned_constants(cfm.root,[1],False,False)
     constant_list = constants.split(" ")
     return constant_list
+
