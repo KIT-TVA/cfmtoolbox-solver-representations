@@ -28,7 +28,7 @@ def create_csp_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
 
     global big_m
     big_m = get_global_upper_bound(cfm.root)
-    #print(big_m)
+    print("Big M: " + str(big_m))
     model = cp_model.CpModel()
     print("Encoding CFM...")
     declare_cloned_constants_csp(model, cfm.root,[],
@@ -48,6 +48,9 @@ def create_csp_cloning_encoding(cfm: CFM,only_boolean_constants: bool):
 
 
     print("Encoding complete.")
+
+
+
 
     return model
 

@@ -8,8 +8,8 @@ variables = {}
 
 def create_multiset_csp_encoding(cfm: CFM, sampling:bool):
     global big_m
-    big_m = 10000000000000000
-   # print("Big-M:" + str(big_m))
+    big_m = get_global_upper_bound(cfm.root)
+    print("Big-M:" + str(get_global_upper_bound(cfm.root)))
     model = cp_model.CpModel()
 
 
@@ -20,6 +20,8 @@ def create_multiset_csp_encoding(cfm: CFM, sampling:bool):
     create_assert_group_instance_cardinality(cfm.root,model)
 
     create_assert_group_type_cardinality(cfm.root,model,sampling)
+
+    create_assert_group_type_cardinality_with_less_max_than_features(cfm.root,model)
 
     create_assert_for_constraints(cfm.constraints,model)
 
@@ -33,7 +35,14 @@ def get_variables():
 
 def create_csp_variables(cfm: CFM, model: CpModel):
     for feature in cfm.features:
-        variables[create_const_name(feature)] = model.new_int_var(0, big_m, create_const_name(
+
+        if feature.parent is not None:
+            max_cardinality = get_max_interval_value(feature.parent.instance_cardinality.intervals)
+        else:
+            max_cardinality = 1
+
+        variables[create_const_name(feature)] = model.new_int_var(0, big_m * max_cardinality,
+                                                                  create_const_name(
             feature))
         variables[create_const_name_activ(feature)] = model.new_bool_var(create_const_name_activ(feature))
         variables[create_const_name_activ_global(feature)] = model.new_bool_var(create_const_name_activ_global(feature))
@@ -161,12 +170,13 @@ def create_assert_group_type_cardinality(feature: Feature, model: CpModel,sampli
             # >= y
 
             if sampling:
-                # if child >= parent than the constant child_active should be true
+                # if child >= 1 than the constant child_active should be true
                 model.add(variables[create_const_name(child)] >= 1).only_enforce_if(x_ge_y)
 
-                # else if child < parent the constant child_active should be false
+                # else if child < 1 the constant child_active should be false
                 model.add(variables[create_const_name(child)] < 1).only_enforce_if(x_ge_y.Not())
             else:
+
                 # if child >= parent than the constant child_active should be true
                 model.add(variables[create_const_name(child)] >= variables[create_const_name(
                     child.parent)]).only_enforce_if(x_ge_y)
@@ -190,8 +200,8 @@ def create_assert_group_type_cardinality(feature: Feature, model: CpModel,sampli
 
         if sampling:
             model.add(type_sum_variables >= min_lowerbound).only_enforce_if(global_active_parent)
-            model.add(type_sum_variables <= max_upperbound * variables[create_const_name(
-                feature)]).only_enforce_if(global_active_parent)
+            model.add(type_sum_variables <= max_upperbound ).only_enforce_if(
+                global_active_parent) #* variables[create_const_name(feature)]
         else:
             model.add(type_sum_variables >= min_lowerbound).only_enforce_if(global_active_parent)
             model.add(type_sum_variables <= max_upperbound).only_enforce_if(global_active_parent)
@@ -206,6 +216,56 @@ def create_assert_group_type_cardinality(feature: Feature, model: CpModel,sampli
         for child in feature.children:
             create_assert_group_type_cardinality(child, model, sampling)
 
+
+def create_assert_group_type_cardinality_with_less_max_than_features(feature: Feature,
+                                                                    model: CpModel):
+    max_upperbound = get_max_interval_value(feature.group_type_cardinality.intervals)
+    min_lowerbound = get_min_interval_value(feature.group_type_cardinality.intervals)
+
+    if len(feature.children) > 0:
+        global_active_parent = variables[create_const_name_activ_global(feature)]
+        sum_type_variables = []
+        for child in feature.children:
+            local_active_grouptype_variable = model.NewBoolVar(child.name  + '_grouptype_' +
+                                                               child.parent.name)  # Represents x
+
+            x_ge_y = model.NewBoolVar(child.name  + '_geGT_' + child.parent.name)  # Represents x
+            # >= y
+
+
+            model.add(variables[create_const_name(child)] >= 1).only_enforce_if(x_ge_y)
+
+            # else if child < 1 the constant child_active should be false
+            model.add(variables[create_const_name(child)] < 1).only_enforce_if(x_ge_y.Not())
+
+
+
+            model.AddBoolAnd([x_ge_y, global_active_parent]).OnlyEnforceIf(local_active_grouptype_variable)
+            model.AddBoolOr([x_ge_y.Not(), global_active_parent.Not()]).OnlyEnforceIf(local_active_grouptype_variable.Not())
+
+
+
+
+            sum_type_variables.append(local_active_grouptype_variable)
+
+        type_sum_variables = model.new_int_var(0, len(sum_type_variables),
+                                               "type_sum_grouptype_variables" + str(
+            feature.name))
+        model.add(type_sum_variables == sum(sum_type_variables)).only_enforce_if(global_active_parent)
+
+
+        model.add(type_sum_variables >= min_lowerbound).only_enforce_if(global_active_parent)
+        model.add(type_sum_variables <= max_upperbound).only_enforce_if(global_active_parent)
+        """
+        print(sum(sum_type_variables).__str__() + ">=" + str(
+            feature.group_type_cardinality.intervals.__getitem__(
+                0).lower) + " * " + global_active_parent.name)
+        print(sum(sum_type_variables).__str__() + "<=" + str(
+            feature.group_type_cardinality.intervals.__getitem__(
+                0).upper) + " * " + global_active_parent.name)
+        """
+        for child in feature.children:
+            create_assert_group_type_cardinality_with_less_max_than_features(child, model)
 
 
 def create_assert_for_constraints(constraints: list[Constraint], model: CpModel):
