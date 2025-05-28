@@ -134,7 +134,7 @@ def find_actual_min(encoding, feature:Feature, min_parent_cardinality: int):
         min_parent_cardinality = actual_min if  actual_min > min_parent_cardinality else min_parent_cardinality
     else:
         actual_min = int(match.__getitem__(2))
-    if actual_min != get_min_cardinality(feature.instance_cardinality.intervals):
+    if actual_min > get_min_cardinality(feature.instance_cardinality.intervals):
         print(match.__getitem__(1) + ": ")
         print("Given feature instance cardinality: " + str(get_min_cardinality(
             feature.instance_cardinality.intervals)) + "\n")
