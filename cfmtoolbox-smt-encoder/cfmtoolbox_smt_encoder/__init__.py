@@ -61,7 +61,11 @@ def run_smtsolver_with_multisetencoding(cfm: CFM):
     encoding += "(exit)"
     print(callSolverWithEncoding(encoding))
 
-
+@app.command()
+def run_smtsolver_with_multiset_bound_analysis(cfm: CFM):
+    encoding = create_smt_multiset_encoding(cfm, sampling=False)
+    find_actual_max(encoding, cfm.root, 1)
+    find_actual_min(encoding, cfm.root, 1)
 
 @app.command()
 def run_smt_solver_with_multisetencoding_maximize_cardinalities(cfm: CFM):
