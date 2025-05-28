@@ -6,7 +6,8 @@ from cfmtoolbox_csp_encoder.cloningCSP import create_csp_cloning_encoding, \
     get_all_cloned_variables, get_all_clones_of_feature, add_constraint_to_remove_permutations
 from ortools.sat.python import cp_model
 from cfmtoolbox_csp_encoder.multisetCSP import (create_multiset_csp_encoding, create_const_name,
-                                                get_variables, variables,get_max_interval_value)
+                                                get_variables, variables, get_max_interval_value,
+                                                get_min_interval_value)
 from ortools.sat.python.cp_model import CpModel
 
 
@@ -14,6 +15,29 @@ from ortools.sat.python.cp_model import CpModel
 def run_csp_solver_cloning(cfm: CFM):
     model = create_csp_cloning_encoding(cfm,True)
     model.ExportToFile('raw_model.txt')
+
+@app.command()
+def get_csp_multiset_stats(cfm: CFM):
+    model = create_multiset_csp_encoding(cfm,False)
+    print_model_stats(model)
+
+@app.command()
+def get_csp_cloning_basis_stats(cfm: CFM):
+    model = create_csp_cloning_encoding(cfm,True)
+    print_model_stats(model)
+
+@app.command()
+def get_csp_cloning_integer_leaves_stats(cfm: CFM):
+    model = create_csp_cloning_encoding(cfm,False)
+    print_model_stats(model)
+
+
+def print_model_stats(model):
+    proto = model.Proto()
+    print(f"Model statistics:")
+    print(f"- Variables: {len(proto.variables)}")
+    print(f"- Constraints: {len(proto.constraints)}")
+
 
 @app.command()
 def run_csp_solver_cloning_maximize_basis(cfm: CFM):
@@ -77,13 +101,25 @@ def run_csp_solver_maximize_cardinalities(cfm: CFM):
         for key in variables:
            print(key + ": " + str(solver.Value(variables[key])))
     """
-    find_actual_max(model,cfm.root,1)
+    find_actual_max(model,cfm.root,1,cfm.features)
 
-
-
-def find_actual_max(model, feature: Feature, max_parent_cardinality: int):
+@app.command()
+def run_csp_multiset_bound_analysis(cfm: CFM):
+    model = create_multiset_csp_encoding(cfm,False)
     variables = get_variables()
+    try:
+        model.Validate()
+        print("Model is valid.")
+    except Exception as e:
+        print(f"Model validation failed: {e}")
 
+    find_actual_min(model,cfm.root,cfm.features)
+    find_actual_max(model,cfm.root,1,cfm.features)
+
+
+
+def find_actual_max(model, feature: Feature, max_parent_cardinality: int, features):
+    variables = get_variables()
 
     model.maximize(variables[create_const_name(feature)])
     model.ExportToFile('raw_model.txt')
@@ -92,23 +128,30 @@ def find_actual_max(model, feature: Feature, max_parent_cardinality: int):
 
 
     solver = cp_model.CpSolver()
+    status = solver.solve(model)
    # solver.parameters.log_search_progress = True
    # solver.parameters.cp_model_probing_level = 0  # Enable presolve (default)
    # solver.parameters.cp_model_presolve = True
     #solver.parameters.num_search_workers = 1  # Single-threaded for deterministic debugging
-    status = solver.solve(model)
 
 
 
-
+    print(cp_model.MODEL_INVALID)
+    print(status)
     if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
-        #print(solver.objective_value)
+        """for value in features:
+            sample_variable = variables[create_const_name(value)]
+            print(f"{value.name}={solver.Value(sample_variable)}", end=" \n")
+        print(solver.objective_value)"""
         if int(solver.objective_value) > 1:
             actual_max = int(solver.objective_value) / max_parent_cardinality
             new_max = round(max_parent_cardinality * actual_max, None)
         else:
+            print(feature.name + ": ")
+            print(str(solver.objective_value) + "\n")
             actual_max = int(solver.objective_value)
             new_max = max_parent_cardinality
+        print(actual_max, get_max_interval_value(feature.instance_cardinality.intervals))
         if actual_max < get_max_interval_value(feature.instance_cardinality.intervals):
             print(feature.name + ": ")
             print("Given feature instance cardinality: " + str(get_max_interval_value(
@@ -121,6 +164,10 @@ def find_actual_max(model, feature: Feature, max_parent_cardinality: int):
         new_max = 0
 
 
+    for child in feature.children:
+       # new_max = new_max if new_max != 0 else 1
+        find_actual_max(model, child, new_max, features)
+
     '''
     print("\nStatistics")
     print(f"  status   : {solver.status_name(status)}")
@@ -128,12 +175,43 @@ def find_actual_max(model, feature: Feature, max_parent_cardinality: int):
     print(f"  branches : {solver.num_branches}")
     print(f"  wall time: {solver.wall_time} s")
     '''
+
+
+def find_actual_min(model, feature: Feature, features):
+    variables = get_variables()
+
+    model.minimize(variables[create_const_name(feature)])
+    model.ExportToFile('raw_model.txt')
+
+    solver = cp_model.CpSolver()
+    status = solver.solve(model)
+    # solver.parameters.log_search_progress = True
+    # solver.parameters.cp_model_probing_level = 0  # Enable presolve (default)
+    # solver.parameters.cp_model_presolve = True
+    # solver.parameters.num_search_workers = 1  # Single-threaded for deterministic debugging
+
+    print(cp_model.MODEL_INVALID)
+    print(status)
+    if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
+        """for value in features:
+            sample_variable = variables[create_const_name(value)]
+            print(f"{value.name}={solver.Value(sample_variable)}", end=" \n")
+        print(solver.objective_value)"""
+        if solver.objective_value > get_min_interval_value(feature.instance_cardinality.intervals):
+            print(feature.name + ": ")
+            print("Given feature instance cardinality: " + str(get_min_interval_value(
+                feature.instance_cardinality.intervals)) + "\n")
+            print("Actual Min Feature Instance Cardinality " + str(round(solver.objective_value, None)) + "\n")
+        # for key in variables:
+        #    print(key + ": " + str(solver.Value(variables[key])))
+    else:
+        print("No solution found.")
+
+
     for child in feature.children:
-        find_actual_max(model, child, new_max)
 
+        find_actual_min(model, child, features)
 
-    #        for variable in solver.variables():
-       #     print(f"{variable.name()} = {variable.solution_value()}")
 
 @app.command()
 def run_csp_basis_gap_detection(cfm: CFM):
@@ -235,7 +313,7 @@ def run_csp_cloning_with_integer_leaves_sampling(cfm: CFM):
 def run_csp_cloning_with_integer_leaves_sampling_without_permutation(cfm: CFM):
     model = create_csp_cloning_encoding(cfm,False)
     add_constraint_to_remove_permutations(model, cfm.root, [],
-    only_boolean_constants = False)
+                                          only_boolean_constants=False)
 
     try:
         model.Validate()
@@ -253,7 +331,7 @@ def run_csp_cloning_with_integer_leaves_sampling_without_permutation(cfm: CFM):
 
 @app.command()
 def run_csp_multiset_with_cloning_sampling(cfm: CFM):
-    model = create_multiset_csp_encoding(cfm, True)
+    model = create_multiset_csp_encoding(cfm, False)
     cloning_model = create_csp_cloning_encoding(cfm, False)
     try:
         model.Validate()
@@ -338,7 +416,7 @@ class VarMultisetSolutionPrinter(cp_model.CpSolverSolutionCallback):
         for feature in self.cfm.features:
             sample_variable = self.__variables[create_const_name(feature)]
             multiset_sample[feature.name] = self.value(sample_variable)
-            #print(f"{feature.name}={self.value(sample_variable)}", end=" \n")
+            print(f"{feature.name}={self.value(sample_variable)}", end=" \n")
         #print(f"Multiset -> {multiset_sample}",end="\n")
         self.__multiset_samples += 1
         status = call_cloning_solver_with_multiset_sample(multiset_sample, self.cfm,self.cloningModelIn)
