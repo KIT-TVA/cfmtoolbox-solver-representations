@@ -113,7 +113,7 @@ def run_csp_multiset_bound_analysis(cfm: CFM):
     except Exception as e:
         print(f"Model validation failed: {e}")
 
-    find_actual_min(model,cfm.root,cfm.features)
+    find_actual_min(model,cfm.root,cfm.features,1)
     find_actual_max(model,cfm.root,1,cfm.features)
 
 
@@ -177,7 +177,7 @@ def find_actual_max(model, feature: Feature, max_parent_cardinality: int, featur
     '''
 
 
-def find_actual_min(model, feature: Feature, features):
+def find_actual_min(model, feature: Feature, features, min_parent_cardinality: int):
     variables = get_variables()
 
     model.minimize(variables[create_const_name(feature)])
@@ -197,11 +197,20 @@ def find_actual_min(model, feature: Feature, features):
             sample_variable = variables[create_const_name(value)]
             print(f"{value.name}={solver.Value(sample_variable)}", end=" \n")
         print(solver.objective_value)"""
-        if solver.objective_value > get_min_interval_value(feature.instance_cardinality.intervals):
+        if solver.objective_value > 1:
+            actual_min = int(solver.objective_value) / min_parent_cardinality
+            actual_min = round(actual_min)
+            min_parent_cardinality = actual_min if actual_min > min_parent_cardinality else (
+                min_parent_cardinality)
+        else:
+            actual_min = solver.objective_value
+
+        if round(solver.objective_value) > get_min_interval_value(
+                feature.instance_cardinality.intervals):
             print(feature.name + ": ")
             print("Given feature instance cardinality: " + str(get_min_interval_value(
                 feature.instance_cardinality.intervals)) + "\n")
-            print("Actual Min Feature Instance Cardinality " + str(round(solver.objective_value, None)) + "\n")
+            print("Actual Min Feature Instance Cardinality " + str(round(actual_min)) + "\n")
         # for key in variables:
         #    print(key + ": " + str(solver.Value(variables[key])))
     else:
@@ -210,7 +219,7 @@ def find_actual_min(model, feature: Feature, features):
 
     for child in feature.children:
 
-        find_actual_min(model, child, features)
+        find_actual_min(model, child, features, min_parent_cardinality)
 
 
 @app.command()
