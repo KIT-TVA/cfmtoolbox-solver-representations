@@ -128,10 +128,13 @@ def find_actual_min(encoding, feature:Feature, min_parent_cardinality: int):
     solver_cmd += "(exit)"
     result = callSolverWithEncoding(solver_cmd)
     match = re.search('\(\((\w+_\w+)\s(\d+)\)\)', result)
-
+    print(feature.name + " " +  str(min_parent_cardinality) + " " + str(int(match.__getitem__(
+        2))) + "\n")
     if int(match.__getitem__(2)) > 1 and min_parent_cardinality >= 1:
+
         actual_min = int(match.__getitem__(2)) / min_parent_cardinality
-        min_parent_cardinality = actual_min if  actual_min > min_parent_cardinality else min_parent_cardinality
+        min_parent_cardinality = round(min_parent_cardinality * actual_min, None)
+
     else:
         actual_min = int(match.__getitem__(2))
     if actual_min > get_min_cardinality(feature.instance_cardinality.intervals):
