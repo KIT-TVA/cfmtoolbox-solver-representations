@@ -246,6 +246,17 @@ def getMaxCardinality(intervals: list[Interval]) -> int:
     return max
 
 
+def getMinCardinality(intervals: list[Interval]) -> int:
+    if len(intervals) == 0:
+        return 0
+    else:
+        min_lowerbound = intervals[0].lower
+        for interval in intervals:
+            if interval.lower < min_lowerbound:
+                min_lowerbound = interval.lower
+        return min_lowerbound
+
+
 def create_amount_of_children_for_group_instance_cardinality_cloning_csp(children:
                                                                 list[Feature], indices, only_boolean_constants):
 
@@ -284,7 +295,7 @@ def create_amount_of_children_for_group_type_cardinality_cloning_csp(model: CpMo
             helper2 = model.new_bool_var(create_const_name(feature) + "_" +
                                                      "_".join(map(str, indices)) + "_helper2")
             model.add_at_least_one(boolean_variables).only_enforce_if(helper2)
-            model.add(sum(boolean_variables) <= 0).only_enforce_if(helper2.Not())
+            model.add(sum(boolean_variables) == 0).only_enforce_if(helper2.Not())
             sum_variables.append(helper2)
 
         else:
@@ -293,7 +304,7 @@ def create_amount_of_children_for_group_type_cardinality_cloning_csp(model: CpMo
             helper_int = model.new_bool_var(create_const_name(feature) + "_" +
                                          "_".join(map(str, indices)) + "_helper_int")
             model.add(feature_int_variable > 0).only_enforce_if(helper_int)
-            model.add(feature_int_variable <= 0).only_enforce_if(helper_int.Not())
+            model.add(feature_int_variable == 0).only_enforce_if(helper_int.Not())
             sum_variables.append(helper_int)
 
     return sum_variables
