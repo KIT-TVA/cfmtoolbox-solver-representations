@@ -3,7 +3,9 @@ import re
 from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_csp_encoder.cloningCSP import create_csp_cloning_encoding, \
     create_amount_of_children_for_group_instance_cardinality_cloning_csp, getMaxCardinality, \
-    get_all_cloned_variables, get_all_clones_of_feature, add_constraint_to_remove_permutations
+    get_all_cloned_variables, get_all_clones_of_feature, add_constraint_to_remove_permutations, \
+    getMinCardinality
+from cfmtoolbox_smt_encoder import get_min_cardinality
 from ortools.sat.python import cp_model
 from cfmtoolbox_csp_encoder.multisetCSP import (create_multiset_csp_encoding, create_const_name,
                                                 get_variables, variables, get_max_interval_value,
@@ -105,7 +107,7 @@ def run_csp_solver_maximize_cardinalities(cfm: CFM):
 
 @app.command()
 def run_csp_multiset_bound_analysis(cfm: CFM):
-    model = create_multiset_csp_encoding(cfm,False)
+    model = create_multiset_csp_encoding(cfm,True)
     variables = get_variables()
     try:
         model.Validate()
@@ -114,6 +116,7 @@ def run_csp_multiset_bound_analysis(cfm: CFM):
         print(f"Model validation failed: {e}")
 
     find_actual_min(model,cfm.root,cfm.features,1)
+    model = create_multiset_csp_encoding(cfm, False)
     find_actual_max(model,cfm.root,1,cfm.features)
 
 
@@ -134,10 +137,6 @@ def find_actual_max(model, feature: Feature, max_parent_cardinality: int, featur
    # solver.parameters.cp_model_presolve = True
     #solver.parameters.num_search_workers = 1  # Single-threaded for deterministic debugging
 
-
-
-    print(cp_model.MODEL_INVALID)
-    print(status)
     if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
         """for value in features:
             sample_variable = variables[create_const_name(value)]
@@ -147,11 +146,8 @@ def find_actual_max(model, feature: Feature, max_parent_cardinality: int, featur
             actual_max = int(solver.objective_value) / max_parent_cardinality
             new_max = round(max_parent_cardinality * actual_max, None)
         else:
-            print(feature.name + ": ")
-            print(str(solver.objective_value) + "\n")
             actual_max = int(solver.objective_value)
             new_max = max_parent_cardinality
-        print(actual_max, get_max_interval_value(feature.instance_cardinality.intervals))
         if actual_max < get_max_interval_value(feature.instance_cardinality.intervals):
             print(feature.name + ": ")
             print("Given feature instance cardinality: " + str(get_max_interval_value(
@@ -190,8 +186,6 @@ def find_actual_min(model, feature: Feature, features, min_parent_cardinality: i
     # solver.parameters.cp_model_presolve = True
     # solver.parameters.num_search_workers = 1  # Single-threaded for deterministic debugging
 
-    print(cp_model.MODEL_INVALID)
-    print(status)
     if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
         """for value in features:
             sample_variable = variables[create_const_name(value)]
@@ -200,12 +194,11 @@ def find_actual_min(model, feature: Feature, features, min_parent_cardinality: i
         if solver.objective_value > 1:
             actual_min = int(solver.objective_value) / min_parent_cardinality
             actual_min = round(actual_min)
-            min_parent_cardinality = actual_min if actual_min > min_parent_cardinality else (
-                min_parent_cardinality)
+            min_parent_cardinality = round(min_parent_cardinality * actual_min, None)
         else:
             actual_min = solver.objective_value
 
-        if round(solver.objective_value) > get_min_interval_value(
+        if actual_min > get_min_interval_value(
                 feature.instance_cardinality.intervals):
             print(feature.name + ": ")
             print("Given feature instance cardinality: " + str(get_min_interval_value(
@@ -240,6 +233,8 @@ def run_csp_basis_gap_detection(cfm: CFM):
 def run_csp_with_integer_leaves_gap_detection(cfm: CFM):
 
     model = create_csp_cloning_encoding(cfm,False)
+    add_constraint_to_remove_permutations(model, cfm.root, [],
+                                          only_boolean_constants=False)
     model.ExportToFile('raw_model.txt')
     try:
         model.Validate()
@@ -254,14 +249,14 @@ def find_gaps_in_all_clones(feature: Feature, model: CpModel, parent_list: list[
                             only_boolean_constants: bool):
     gaps = ""
 
-    #print(feature.name)
 
     for interval in feature.instance_cardinality.intervals:
-
         for j in range(interval.lower, interval.upper + 1):
+
             new_model = model.clone()
             sum_variables = create_amount_of_children_for_group_instance_cardinality_cloning_csp(
                 [feature], parent_list, only_boolean_constants=only_boolean_constants)
+
             new_model.add(sum(sum_variables) == j)
 
             solver = cp_model.CpSolver()
@@ -270,14 +265,17 @@ def find_gaps_in_all_clones(feature: Feature, model: CpModel, parent_list: list[
             # solver.parameters.cp_model_presolve = True
             # solver.parameters.num_search_workers = 1  # Single-threaded for deterministic debugging
             status = solver.solve(new_model)
+
+
             if status == cp_model.INFEASIBLE:
                 gap = "Gap at: " + str(j) + " in Feature: " + feature.name + " "
                 print(gap)
                 gaps += gap
 
     if feature.parent is not None:
-        max_cardinality = getMaxCardinality(feature.instance_cardinality.intervals)
-        parent_list.append(max_cardinality)
+        min_cardinality = getMinCardinality(feature.instance_cardinality.intervals) if (
+            getMinCardinality(feature.instance_cardinality.intervals)) > 0 else 1
+        parent_list.append(min_cardinality)
     for feature in feature.children:
         old_list = parent_list.copy()
         gaps += find_gaps_in_all_clones(feature, model, old_list, only_boolean_constants)
