@@ -4,7 +4,7 @@ from cfmtoolbox import app, CFM, Feature
 from cfmtoolbox_csp_encoder.cloningCSP import create_csp_cloning_encoding, \
     create_amount_of_children_for_group_instance_cardinality_cloning_csp, getMaxCardinality, \
     get_all_cloned_variables, get_all_clones_of_feature, add_constraint_to_remove_permutations, \
-    getMinCardinality
+    getMinCardinality, constraint_to_remove_symmetry
 from cfmtoolbox_smt_encoder import get_min_cardinality
 from ortools.sat.python import cp_model
 from cfmtoolbox_csp_encoder.multisetCSP import (create_multiset_csp_encoding, create_const_name,
@@ -51,6 +51,18 @@ def run_csp_solver_cloning_maximize_basis(cfm: CFM):
     except Exception as e:
         print(f"Model validation failed: {e}")
 
+    maximize_or_minimize(model,cfm.root,True,cfm.root,[],True)
+
+@app.command()
+def run_csp_solver_cloning_with_integer_leaves_bound_analysis(cfm: CFM):
+    model = create_csp_cloning_encoding(cfm,False)
+
+    try:
+        model.Validate()
+        print("Model is valid.")
+    except Exception as e:
+        print(f"Model validation failed: {e}")
+    maximize_or_minimize(model, cfm.root, False, cfm.root, [], True)
     maximize_or_minimize(model,cfm.root,True,cfm.root,[],True)
 
 
@@ -316,12 +328,52 @@ def run_csp_cloning_with_integer_leaves_sampling(cfm: CFM):
     print(f"Number of solutions found: {solution_printer.solution_count}")
 
 
+
+@app.command()
+def run_csp_cloning_basis_sampling_without_permutation(cfm: CFM):
+    model = create_csp_cloning_encoding(cfm,True)
+    add_constraint_to_remove_permutations(model, cfm.root, [],
+                                          only_boolean_constants=False)
+    try:
+        model.Validate()
+        print("Model is valid.")
+    except Exception as e:
+        print(f"Model validation failed: {e}")
+
+    solver = cp_model.CpSolver()
+    solution_printer = VarSolutionPrinter(get_all_cloned_variables())
+    solver.parameters.enumerate_all_solutions = True
+    status = solver.solve(model,solution_printer)
+
+    print(f"Number of solutions found: {solution_printer.solution_count}")
+
 @app.command()
 def run_csp_cloning_with_integer_leaves_sampling_without_permutation(cfm: CFM):
     model = create_csp_cloning_encoding(cfm,False)
     add_constraint_to_remove_permutations(model, cfm.root, [],
                                           only_boolean_constants=False)
 
+    try:
+        model.Validate()
+        print("Model is valid.")
+    except Exception as e:
+        print(f"Model validation failed: {e}")
+
+    solver = cp_model.CpSolver()
+    solution_printer = VarSolutionPrinter(get_all_cloned_variables())
+    solver.parameters.enumerate_all_solutions = True
+    status = solver.solve(model,solution_printer)
+
+    print(f"Number of solutions found: {solution_printer.solution_count}")
+
+
+@app.command()
+def run_csp_cloning_with_integer_leaves_sampling_without_permutation_and_symmetry(cfm: CFM):
+    model = create_csp_cloning_encoding(cfm,False)
+    print(get_all_cloned_variables())
+    add_constraint_to_remove_permutations(model, cfm.root, [],
+                                          only_boolean_constants=False)
+    constraint_to_remove_symmetry(model, cfm.root.children)
     try:
         model.Validate()
         print("Model is valid.")
