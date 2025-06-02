@@ -358,7 +358,12 @@ def run_smt_cloning_basis_sampling(cfm: CFM):
     amount_samples = count_samples(encoding)
     print(amount_samples)
 
-
+@app.command()
+def run_smt_cloning_basis_sampling_without_permutation(cfm: CFM):
+    encoding = encode_to_smt_cloning_base(cfm)
+    encoding += add_constraint_to_remove_permutations(cfm.root, [], True)
+    amount_samples = count_samples(encoding)
+    print(amount_samples)
 
 
 @app.command()
