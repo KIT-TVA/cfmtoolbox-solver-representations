@@ -474,6 +474,90 @@ def add_constraint_to_remove_permutations(model, feature,parent_list: list[
         old_list = parent_list.copy()
         add_constraint_to_remove_permutations(model, feature, old_list, only_boolean_constants)
 
+
+def constraint_to_remove_symmetry(model, secondlevelFeatures: list[Feature]):
+
+    for feature in secondlevelFeatures:
+
+        instance_interval = feature.instance_cardinality.intervals
+        if getMaxCardinality(instance_interval) > 1:
+            helper_variables = []
+            minCardinality = getMinCardinality(instance_interval) if getMinCardinality(
+                instance_interval) >= 1 else 1
+            if feature.children is not None:
+                for i in range(minCardinality,
+                               getMaxCardinality(instance_interval)):
+                    helper_variables = []
+
+                    helper_variables.append(create_symmetry_constraint_for_symmetry(model,
+                                                                                    feature,[],i))
+                    helper_variables = flatten(helper_variables)
+
+                    parent1 = variables[ create_const_name(feature) + "_" + str(i)]
+                    parent2 = variables[ create_const_name(feature) + "_" + str(i + 1)]
+                    model.add_at_least_one(helper_variables).only_enforce_if([parent1, parent2])
+            else:
+                helper_variables.append(create_symmetry_constraint_for_symmetry(model, feature,
+                                                                                [],1))
+                helper_variables = flatten(helper_variables)
+                parent = variables[create_const_name(feature) + "_" + str(1)]
+
+                model.add_at_least_one(helper_variables).only_enforce_if(parent)
+
+
+
+def create_symmetry_constraint_for_symmetry(model, feature, parentCloneList: list[int],
+                                            parent: int):
+    helper_list = []
+
+    if parentCloneList != []:
+
+        variable_name = "symmetry_" + feature.name + "_" + str(parent) +  "_" +  "_".join(map(str,
+                                                                               parentCloneList))
+        variable = model.new_bool_var(variable_name)
+        variables[variable_name] = variable
+
+
+        helper_list.append(variable)
+        if len(parentCloneList) > 0:
+
+            variableParent1 = variables[
+                create_const_name(feature) + "_" + str(parent) + "_" + "_".join(
+                    map(str,
+                        parentCloneList))]
+            variableParent2 = variables[create_const_name(feature) + "_" + str(parent + 1) + "_" +
+                                        "_".join(
+                                            map(str, parentCloneList))]
+        else:
+            variableParent1 = variables[create_const_name(feature) + "_" + str(parent)]
+            variableParent2 = variables[create_const_name(feature) + "_" + str(parent + 1)]
+        model.Add(variableParent1 != variableParent2).only_enforce_if(variable)
+        model.Add(variableParent1 == variableParent2).only_enforce_if(variable.Not())
+
+
+
+    for child in feature.children:
+        child_instance_interval = child.instance_cardinality.intervals
+        minCardinality = getMinCardinality(child_instance_interval) if getMinCardinality(
+            child_instance_interval) >= 1 else 1
+        if child.children:
+
+            for i in range(minCardinality,getMaxCardinality(child_instance_interval) + 1):
+
+                parentList = parentCloneList.copy()
+                parentList.append(i)
+                helper_list.append(create_symmetry_constraint_for_symmetry(model, child,
+                                                                           parentList,
+                                                                           parent))
+        else:
+            parentList = parentCloneList.copy()
+            helper_list.append(create_symmetry_constraint_for_symmetry(model, child,
+                                                                       parentList,parent))
+
+    return helper_list
+
+
+
 def get_all_clones_of_feature(feature_name: str):
     list_of_clones = []
     for name,clone in variables.items():
@@ -490,3 +574,13 @@ def get_all_clones_of_feature(feature_name: str):
                     list_of_clones.append(clone)
     #print(list_of_clones)
     return list_of_clones
+
+
+def flatten(lst):
+    flat = []
+    for item in lst:
+        if isinstance(item, list):
+            flat.extend(flatten(item))  # Recursive call
+        else:
+            flat.append(item)
+    return flat
