@@ -218,6 +218,13 @@ def run_smt_solver_with_cloning_base_maximize_cardinalities(cfm: CFM):
     return minimize_or_maximize_all_clones(cfm.root,encoding,True, cfm.root,[],True)
 
 @app.command()
+def run_smtsolver_with_cloning_with_child_int_constants_bound_analysis(cfm: CFM):
+    encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
+    minimize_or_maximize_all_clones(cfm.root,encoding,False, cfm.root,[],False)
+    minimize_or_maximize_all_clones(cfm.root, encoding, True, cfm.root, [], False)
+
+
+@app.command()
 def run_smt_solver_with_cloning_with_child_int_constants_minimize_cardinalities(cfm: CFM):
     encoding = encode_to_smt_cloning_with_child_int_constants(cfm)
     return minimize_or_maximize_all_clones(cfm.root,encoding,False, cfm.root,[],False)
@@ -350,6 +357,9 @@ def run_smt_cloning_basis_sampling(cfm: CFM):
 
     amount_samples = count_samples(encoding)
     print(amount_samples)
+
+
+
 
 @app.command()
 def run_smt_cloning_with_integer_leaves_sampling(cfm: CFM):
