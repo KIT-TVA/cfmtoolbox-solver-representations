@@ -62,8 +62,8 @@ def run_csp_solver_cloning_with_integer_leaves_bound_analysis(cfm: CFM):
         print("Model is valid.")
     except Exception as e:
         print(f"Model validation failed: {e}")
-    maximize_or_minimize(model, cfm.root, False, cfm.root, [], True)
-    maximize_or_minimize(model,cfm.root,True,cfm.root,[],True)
+    maximize_or_minimize(model, cfm.root, False, cfm.root, [], False)
+    maximize_or_minimize(model,cfm.root,True,cfm.root,[],False)
 
 
 def maximize_or_minimize(model: CpModel, feature: Feature,maximize: bool,root: Feature, parent_list: list[int],only_boolean_constants: bool):
@@ -160,7 +160,7 @@ def find_actual_max(model, feature: Feature, max_parent_cardinality: int, featur
         else:
             actual_max = int(solver.objective_value)
             new_max = max_parent_cardinality
-        if actual_max < get_max_interval_value(feature.instance_cardinality.intervals):
+        if round(actual_max) < get_max_interval_value(feature.instance_cardinality.intervals):
             print(feature.name + ": ")
             print("Given feature instance cardinality: " + str(get_max_interval_value(
                 feature.instance_cardinality.intervals)) + "\n")
@@ -333,7 +333,7 @@ def run_csp_cloning_with_integer_leaves_sampling(cfm: CFM):
 def run_csp_cloning_basis_sampling_without_permutation(cfm: CFM):
     model = create_csp_cloning_encoding(cfm,True)
     add_constraint_to_remove_permutations(model, cfm.root, [],
-                                          only_boolean_constants=False)
+                                          only_boolean_constants=True)
     try:
         model.Validate()
         print("Model is valid.")
