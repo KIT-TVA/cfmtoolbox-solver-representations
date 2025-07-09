@@ -27,7 +27,7 @@ def run_cfmtoolbox(directory, output_file):
 
                 # Construct the command
                 command = [
-                    "time", "python3", "-m", "cfmtoolbox",
+                    "timeout", "12h","time", "python3", "-m", "cfmtoolbox",
                     "--import", json_path, analyse_command
                     
                 ]
@@ -52,8 +52,8 @@ def run_cfmtoolbox(directory, output_file):
 if __name__ == "__main__":
     # Replace 'your_directory_path' with the path to your directory containing JSON files
     # Replace 'output_file_path' with the desired output file path
-    directory_path = "cfmtoolbox-smt-encoder/cfms/"
+    directory_path = "cfmtoolbox-smt-encoder/cfms/presentationcfms"
     output_file_path = "./output.txt"
-    analyse_command = "run-csp-solver-maximize-cardinalities"
+    analyse_command = "run-smt-solver-with-cloning-with-child-int-constants-gap-detection"
 
     run_cfmtoolbox(directory_path, output_file_path)

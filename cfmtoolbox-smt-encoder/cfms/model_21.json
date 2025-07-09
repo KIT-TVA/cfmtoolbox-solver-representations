@@ -5,7 +5,7 @@
       "intervals": [
         {
           "lower": 0,
-          "upper": null
+          "upper": 1
         }
       ]
     },
@@ -21,7 +21,7 @@
       "intervals": [
         {
           "lower": 0,
-          "upper": null
+          "upper": 1
         }
       ]
     },
@@ -32,7 +32,7 @@
           "intervals": [
             {
               "lower": 0,
-              "upper": null
+              "upper": 1
             }
           ]
         },
@@ -50,7 +50,7 @@
           "intervals": [
             {
               "lower": 0,
-              "upper": null
+              "upper": 1
             }
           ]
         },
@@ -68,7 +68,7 @@
           "intervals": [
             {
               "lower": 0,
-              "upper": null
+              "upper": 1
             }
           ]
         },
@@ -86,7 +86,7 @@
           "intervals": [
             {
               "lower": 0,
-              "upper": null
+              "upper": 1
             }
           ]
         },
@@ -104,7 +104,7 @@
           "intervals": [
             {
               "lower": 0,
-              "upper": null
+              "upper": 1
             }
           ]
         },

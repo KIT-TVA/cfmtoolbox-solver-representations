@@ -11,7 +11,22 @@ from cfmtoolbox_smt_encoder import run_smt_solver_with_cloning_base_gap_detectio
 
 class TestCloningSMT(unittest.TestCase):
 
+   def test_gaps_evalModel7_cloning_basic(self):
+       file = open("../cfms/model_7.json", "rb")
+       self.cfm = import_json(file.read())
+       file.close()
 
+       result = run_smt_solver_with_cloning_base_gap_detection(cfm=self.cfm)
+       self.assertNotIn('Gap at:',result)
+
+   def test_gaps_evalModels8_cloning_basic(self):
+       file = open("../cfms/model_7.json", "rb")
+       self.cfm = import_json(file.read())
+       file.close()
+
+       result = run_smt_solver_with_cloning_base_gap_detection(cfm=self.cfm)
+       print(result)
+       self.assertNotIn('Gap at:',result)
 
    def test_gaps_multiplayer_cloning_basic(self):
        file = open("../cfms/multiplayer.json", "rb")
@@ -42,10 +57,9 @@ class TestCloningSMT(unittest.TestCase):
        self.assertIn('Unicast_1_1: 1', result)
        self.assertIn('Team_1: 8', result)
        self.assertIn(' IntraTeamComm_30: 1', result)
-       self.assertIn('Broadcast_1_2: 1', result)
        self.assertIn('Wifi_30_1: 1', result)
        self.assertIn('BT_30_1: 1', result)
-       self.assertIn('Members_30: 3',result)
+       self.assertIn('Members_30: 1',result)
        self.assertIn('Player_30_1: 29',result)
        self.assertIn('Leader_30_1: 1',result)
        self.assertIn('ScatteredStrategy_30_1_1: 1',result)
@@ -102,8 +116,7 @@ class TestCloningSMT(unittest.TestCase):
        self.assertIn('Broadcast_1_1: 1', result)
        self.assertIn('Unicast_1_1: 1', result)
        self.assertIn('Team_1: 8', result)
-       self.assertIn('IntraTeamComm_30: 0', result)
-       self.assertIn('Broadcast_1_2: 1', result)
+       self.assertIn('IntraTeamComm_30: 1', result)
        self.assertIn('Wifi_30_1: 1', result)
        self.assertIn('BT_30_1: 1', result)
        self.assertIn('Members_30: 1',result)

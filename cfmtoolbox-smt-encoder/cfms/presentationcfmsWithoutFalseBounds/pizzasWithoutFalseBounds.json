@@ -100,13 +100,6 @@
         "first_cardinality": { "intervals": [{ "lower": 3, "upper": 3 }] },
         "second_feature_name": "sourdough",
         "second_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] }
-      },
-      {
-        "require": false,
-        "first_feature_name": "peperoni",
-        "first_cardinality": { "intervals": [{ "lower": 4, "upper": 5 }] },
-        "second_feature_name": "onion",
-        "second_cardinality": { "intervals": [{ "lower": 0, "upper": 1 }] }
       }
     ]
   }

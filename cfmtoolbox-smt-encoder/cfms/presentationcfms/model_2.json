@@ -4,8 +4,8 @@
     "instance_cardinality": {
       "intervals": [
         {
-          "lower": 11,
-          "upper": 32
+          "lower": 1,
+          "upper": 1
         }
       ]
     },
