@@ -1,0 +1,529 @@
+Output for model_6.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         5.10 real         4.55 user         0.22 sys
+
+Output for model_27.json:
+Encoding CFM...
+Encoding complete.
+unsat: Feature_1
+
+unsat: Feature_10
+
+unsat: Feature_100
+
+unsat: Feature_1000
+
+unsat: Feature_1001
+
+unsat: Feature_1002
+
+unsat: Feature_1003
+
+unsat: Feature_101
+
+unsat: Feature_1010
+
+unsat: Feature_1011
+
+unsat: Feature_1012
+
+unsat: Feature_1013
+
+unsat: Feature_102
+
+unsat: Feature_1020
+
+unsat: Feature_1021
+
+unsat: Feature_1022
+
+unsat: Feature_1023
+
+unsat: Feature_103
+
+unsat: Feature_1030
+
+unsat: Feature_1031
+
+unsat: Feature_1032
+
+unsat: Feature_1033
+
+unsat: Feature_104
+
+unsat: Feature_1040
+
+unsat: Feature_1041
+
+unsat: Feature_1042
+
+unsat: Feature_1043
+
+unsat: Feature_1044
+
+unsat: Feature_11
+
+unsat: Feature_110
+
+unsat: Feature_1100
+
+unsat: Feature_1101
+
+unsat: Feature_1102
+
+unsat: Feature_1103
+
+unsat: Feature_1104
+
+unsat: Feature_111
+
+unsat: Feature_112
+
+unsat: Feature_1120
+
+unsat: Feature_1121
+
+unsat: Feature_1122
+
+unsat: Feature_1123
+
+unsat: Feature_1124
+
+unsat: Feature_113
+
+unsat: Feature_1130
+
+unsat: Feature_1131
+
+unsat: Feature_1132
+
+unsat: Feature_12
+
+unsat: Feature_120
+
+unsat: Feature_1200
+
+unsat: Feature_1201
+
+unsat: Feature_1202
+
+unsat: Feature_1203
+
+unsat: Feature_1204
+
+unsat: Feature_1205
+
+unsat: Feature_121
+
+unsat: Feature_1210
+
+unsat: Feature_1211
+
+unsat: Feature_1212
+
+unsat: Feature_1213
+
+unsat: Feature_1214
+
+unsat: Feature_1215
+
+unsat: Feature_122
+
+unsat: Feature_1220
+
+unsat: Feature_1221
+
+unsat: Feature_123
+
+unsat: Feature_1230
+
+unsat: Feature_1231
+
+unsat: Feature_1232
+
+unsat: Feature_13
+
+unsat: Feature_14
+
+Time needed:         0.87 real         0.64 user         0.20 sys
+
+Output for multiplayer.json:
+Encoding CFM...
+Encoding complete.
+Feature_Player: 
+Given feature instance cardinality: 8
+
+Actual Max Feature Instance Cardinality 7
+
+Time needed:         0.36 real         0.29 user         0.07 sys
+
+Output for model_11.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         5.73 real         5.41 user         0.27 sys
+
+Output for model_10.json:
+Encoding CFM...
+Encoding complete.
+unsat: Feature_1
+
+unsat: Feature_10
+
+unsat: Feature_11
+
+unsat: Feature_110
+
+unsat: Feature_1100
+
+unsat: Feature_1101
+
+unsat: Feature_1102
+
+unsat: Feature_1103
+
+unsat: Feature_1104
+
+unsat: Feature_12
+
+unsat: Feature_120
+
+unsat: Feature_13
+
+unsat: Feature_130
+
+unsat: Feature_1300
+
+unsat: Feature_1301
+
+unsat: Feature_1302
+
+unsat: Feature_1303
+
+unsat: Feature_1304
+
+unsat: Feature_131
+
+unsat: Feature_1310
+
+unsat: Feature_1311
+
+unsat: Feature_1312
+
+unsat: Feature_1313
+
+unsat: Feature_1314
+
+unsat: Feature_132
+
+unsat: Feature_1320
+
+unsat: Feature_1321
+
+unsat: Feature_133
+
+unsat: Feature_1330
+
+unsat: Feature_1331
+
+unsat: Feature_134
+
+unsat: Feature_1340
+
+unsat: Feature_1341
+
+unsat: Feature_135
+
+unsat: Feature_1350
+
+unsat: Feature_1351
+
+unsat: Feature_14
+
+unsat: Feature_140
+
+unsat: Feature_1400
+
+unsat: Feature_1401
+
+unsat: Feature_1402
+
+unsat: Feature_1403
+
+unsat: Feature_141
+
+unsat: Feature_142
+
+unsat: Feature_1420
+
+unsat: Feature_143
+
+unsat: Feature_1430
+
+unsat: Feature_1431
+
+unsat: Feature_1432
+
+unsat: Feature_1433
+
+unsat: Feature_1434
+
+unsat: Feature_1435
+
+unsat: Feature_15
+
+unsat: Feature_150
+
+unsat: Feature_1500
+
+unsat: Feature_1501
+
+unsat: Feature_1502
+
+unsat: Feature_1503
+
+unsat: Feature_1504
+
+unsat: Feature_151
+
+unsat: Feature_1510
+
+unsat: Feature_1511
+
+unsat: Feature_1512
+
+Time needed:         1.38 real         1.16 user         0.19 sys
+
+Output for model_7.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.33 real         0.26 user         0.05 sys
+
+Output for model_26.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.51 real         0.41 user         0.09 sys
+
+Output for model_17.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         1.38 real         1.24 user         0.13 sys
+
+Output for model_0.json:
+Encoding CFM...
+Encoding complete.
+Feature_1010: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_1011: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 0
+
+Time needed:         3.26 real         3.02 user         0.21 sys
+
+Output for model_1.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         2.15 real         1.95 user         0.18 sys
+
+Output for sandwichBigM.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.33 real         0.26 user         0.06 sys
+
+Output for model_16.json:
+Encoding CFM...
+Encoding complete.
+Feature_11: 
+Given feature instance cardinality: 46
+
+Actual Max Feature Instance Cardinality 45
+
+Time needed:         1.27 real         1.14 user         0.11 sys
+
+Output for multiplayerVamos.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.30 real         0.24 user         0.05 sys
+
+Output for model_15.json:
+Encoding CFM...
+Encoding complete.
+Feature_110: 
+Given feature instance cardinality: 4
+
+Actual Max Feature Instance Cardinality 1
+
+Time needed:         1.03 real         0.88 user         0.14 sys
+
+Output for model_2.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         2.99 real         2.77 user         0.19 sys
+
+Output for model_19.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.52 real         0.39 user         0.12 sys
+
+Output for model_18.json:
+Encoding CFM...
+Encoding complete.
+Feature_1122: 
+Given feature instance cardinality: 27
+
+Actual Max Feature Instance Cardinality 1
+
+Time needed:         1.93 real         1.71 user         0.20 sys
+
+Output for pizzas.json:
+Encoding CFM...
+Encoding complete.
+Feature_swiss: 
+Given feature instance cardinality: 2
+
+Actual Max Feature Instance Cardinality 1
+
+Feature_gouda: 
+Given feature instance cardinality: 3
+
+Actual Max Feature Instance Cardinality 1
+
+Feature_ingredients: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_salami: 
+Given feature instance cardinality: 10
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_peperoni: 
+Given feature instance cardinality: 5
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_onion: 
+Given feature instance cardinality: 15
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_porch: 
+Given feature instance cardinality: 10
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_corn: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+Time needed:         0.34 real         0.27 user         0.07 sys
+
+Output for model_3.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         2.10 real         1.93 user         0.15 sys
+
+Output for model_14.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         1.51 real         1.35 user         0.15 sys
+
+Output for model_25.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         1.84 real         1.65 user         0.16 sys
+
+Output for model_4.json:
+Encoding CFM...
+Encoding complete.
+unsat: Feature_1
+
+unsat: Feature_10
+
+unsat: Feature_100
+
+unsat: Feature_101
+
+unsat: Feature_1010
+
+unsat: Feature_1011
+
+unsat: Feature_1012
+
+unsat: Feature_1013
+
+unsat: Feature_11
+
+unsat: Feature_110
+
+unsat: Feature_1100
+
+unsat: Feature_1101
+
+unsat: Feature_111
+
+unsat: Feature_1110
+
+unsat: Feature_1111
+
+unsat: Feature_1112
+
+unsat: Feature_1113
+
+unsat: Feature_1114
+
+unsat: Feature_112
+
+unsat: Feature_1120
+
+unsat: Feature_1121
+
+unsat: Feature_1122
+
+unsat: Feature_1123
+
+unsat: Feature_1124
+
+Time needed:         0.39 real         0.29 user         0.09 sys
+
+Output for model_29.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.88 real         0.76 user         0.11 sys
+
+Output for model_8.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.98 real         0.84 user         0.12 sys
+
+Output for model_13.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         2.61 real         2.41 user         0.18 sys
+
+Output for model_12.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         1.69 real         1.52 user         0.16 sys
+
+Output for model_28.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         1.24 real         1.10 user         0.13 sys
+
+Output for model_9.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         2.39 real         2.16 user         0.21 sys
+
+Output for model_5.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.88 real         0.75 user         0.11 sys
+

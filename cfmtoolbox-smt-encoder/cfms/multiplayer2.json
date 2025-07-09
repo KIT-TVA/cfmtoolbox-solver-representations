@@ -1,0 +1,216 @@
+{
+  "root": {
+    "name": "multiplayer",
+    "instance_cardinality": {
+      "intervals": [
+        {
+          "lower": 1,
+          "upper": 1
+        }
+      ]
+    },
+    "group_type_cardinality": {
+      "intervals": [
+        {
+          "lower": 1,
+          "upper": 1
+        }
+      ]
+    },
+    "group_instance_cardinality": {
+      "intervals": [
+        {
+          "lower": 2,
+          "upper": 8
+        }
+      ]
+    },
+    "children": [
+      {
+        "name": "Team",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 7,
+              "upper": 7
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 1
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 1
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "Members",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 9
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Player",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 8
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Leader",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "ScatteredStrategy",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "SpecificStrategy",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": [
+    {
+      "require": true,
+      "first_feature_name": "SpecificStrategy",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 8
+          }
+        ]
+      },
+      "second_feature_name": "Team",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 6,
+            "upper": 8
+          }
+        ]
+      }
+    },
+    {
+      "require": false,
+      "first_feature_name": "ScatteredStrategy",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 8
+          }
+        ]
+      },
+      "second_feature_name": "Team",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 5,
+            "upper": 5
+          }
+        ]
+      }
+    }
+  ]
+}

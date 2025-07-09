@@ -1,0 +1,158 @@
+Output for model_6.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         6.06 real         5.45 user         0.38 sys
+
+Output for multiplayer.json:
+Encoding CFM...
+Encoding complete.
+Feature_Player: 
+Given feature instance cardinality: 8
+
+Actual Max Feature Instance Cardinality 7
+
+Time needed:         0.64 real         0.38 user         0.15 sys
+
+Output for model_0.json:
+Encoding CFM...
+Encoding complete.
+Feature_101: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_1010: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_1011: 
+Given feature instance cardinality: 50
+
+Actual Max Feature Instance Cardinality 0
+
+Time needed:        27.27 real        26.59 user         0.59 sys
+
+Output for model_1.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         8.41 real         7.89 user         0.36 sys
+
+Output for sandwichBigM.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         0.52 real         0.31 user         0.09 sys
+
+Output for model_2.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         3.68 real         3.36 user         0.29 sys
+
+Output for pizzas.json:
+Encoding CFM...
+Encoding complete.
+Feature_swiss: 
+Given feature instance cardinality: 2
+
+Actual Max Feature Instance Cardinality 1
+
+Feature_gouda: 
+Given feature instance cardinality: 3
+
+Actual Max Feature Instance Cardinality 1
+
+Feature_ingredients: 
+Given feature instance cardinality: 1
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_salami: 
+Given feature instance cardinality: 10
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_peperoni: 
+Given feature instance cardinality: 5
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_onion: 
+Given feature instance cardinality: 15
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_porch: 
+Given feature instance cardinality: 10
+
+Actual Max Feature Instance Cardinality 0
+
+Feature_corn: 
+Given feature instance cardinality: 30
+
+Actual Max Feature Instance Cardinality 0
+
+Time needed:         0.42 real         0.31 user         0.09 sys
+
+Output for model_3.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         2.60 real         2.35 user         0.23 sys
+
+Output for model_4.json:
+Encoding CFM...
+Encoding complete.
+unsat: Feature_1
+
+unsat: Feature_10
+
+unsat: Feature_100
+
+unsat: Feature_101
+
+unsat: Feature_1010
+
+unsat: Feature_1011
+
+unsat: Feature_1012
+
+unsat: Feature_1013
+
+unsat: Feature_11
+
+unsat: Feature_110
+
+unsat: Feature_1100
+
+unsat: Feature_1101
+
+unsat: Feature_111
+
+unsat: Feature_1110
+
+unsat: Feature_1111
+
+unsat: Feature_1112
+
+unsat: Feature_1113
+
+unsat: Feature_1114
+
+unsat: Feature_112
+
+unsat: Feature_1120
+
+unsat: Feature_1121
+
+unsat: Feature_1122
+
+unsat: Feature_1123
+
+unsat: Feature_1124
+
+Time needed:         0.49 real         0.35 user         0.12 sys
+
+Output for model_5.json:
+Encoding CFM...
+Encoding complete.
+Time needed:         1.04 real         0.88 user         0.15 sys
+

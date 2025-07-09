@@ -1,0 +1,133 @@
+{
+    "root": {
+        "name": "Smartphone",
+        "instance_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+        "group_type_cardinality": { "intervals": [{ "lower": 2, "upper": 2}] },
+        "group_instance_cardinality": { "intervals": [{ "lower": 3, "upper": 9}] },
+        "children": [
+            {
+                "name": "Hardware",
+                "instance_cardinality": { "intervals": [{ "lower": 2, "upper": 2 }] },
+                "group_type_cardinality": { "intervals": [{ "lower": 2, "upper": 2 }] },
+                "group_instance_cardinality": {
+                    "intervals": [{ "lower": 2, "upper": 2}]
+                },
+                "children": [
+                    {
+                        "name": "CommunicationHardware",
+                        "instance_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+                        "group_type_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+                        "group_instance_cardinality": {
+                            "intervals": [{ "lower": 1, "upper": 1 }]
+                        },
+                        "children": [{
+                            "name": "WiFi",
+                            "instance_cardinality": { "intervals": [{ "lower": 0, "upper": 1 }] },
+                            "group_type_cardinality": { "intervals": [] },
+                            "group_instance_cardinality": {
+                                "intervals": []
+                            },
+                            "children": []
+                        },
+                        {
+                            "name": "BT",
+                            "instance_cardinality": { "intervals": [{ "lower": 0, "upper": 1 }] },
+                            "group_type_cardinality": { "intervals": [] },
+                            "group_instance_cardinality": {
+                                "intervals": []
+                            },
+                            "children": []
+                        }]
+                    },
+                    {
+                        "name": "ComputingHardware",
+                        "instance_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+                        "group_type_cardinality": { "intervals": [{ "lower": 2, "upper": 2 }] },
+                        "group_instance_cardinality": {
+                            "intervals": [{ "lower": 1, "upper": 2 }]
+                        },
+                        "children": [
+                            {
+                                "name": "CPU",
+                                "instance_cardinality": { "intervals": [{ "lower": 1, "upper": 2 }] },
+                                "group_type_cardinality": { "intervals": [] },
+                                "group_instance_cardinality": {
+                                    "intervals": []
+                                },
+                                "children": []
+                            },
+                            {
+                                "name": "RAM",
+                                "instance_cardinality": { "intervals": [{ "lower": 0, "upper": 2 }] },
+                                "group_type_cardinality": { "intervals": [] },
+                                "group_instance_cardinality": {
+                                    "intervals": []
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Software",
+                "instance_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+                "group_type_cardinality": { "intervals": [{ "lower": 1, "upper": 2 }] },
+                "group_instance_cardinality": {
+                    "intervals": [{ "lower": 1, "upper": 2 }]
+                },
+                "children": [
+                    {
+                        "name": "IOS",
+                        "instance_cardinality": { "intervals": [{ "lower": 0, "upper": 1 }] },
+                        "group_type_cardinality": { "intervals": [] },
+                        "group_instance_cardinality": {
+                            "intervals": []
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Android",
+                        "instance_cardinality": { "intervals": [{ "lower": 0, "upper": 1 }] },
+                        "group_type_cardinality": { "intervals": [] },
+                        "group_instance_cardinality": {
+                            "intervals": []
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "constraints": [
+        {
+          "require": true,
+          "first_feature_name": "IOS",
+          "first_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+          "second_feature_name": "CPU",
+          "second_cardinality": { "intervals": [{ "lower": 3, "upper": 2 }] }
+        },
+        {
+            "require": true,
+            "first_feature_name": "IOS",
+            "first_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+            "second_feature_name": "RAM",
+            "second_cardinality": { "intervals": [{ "lower": 3, "upper": 2 }] }
+          },
+        {
+          "require": false,
+          "first_feature_name": "WiFi",
+          "first_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+          "second_feature_name": "CPU",
+          "second_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] }
+        },
+        {
+          "require": true,
+          "first_feature_name": "BT",
+          "first_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+          "second_feature_name": "CPU",
+          "second_cardinality": { "intervals": [{ "lower": 2, "upper": 2 }] }
+        }
+      ]
+
+}
