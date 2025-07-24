@@ -1,0 +1,4106 @@
+{
+  "root": {
+    "name": "BankingSoftware",
+    "instance_cardinality": {
+      "intervals": [
+        {
+          "lower": 1,
+          "upper": 1
+        }
+      ]
+    },
+    "group_type_cardinality": {
+      "intervals": [
+        {
+          "lower": 0,
+          "upper": 2
+        }
+      ]
+    },
+    "group_instance_cardinality": {
+      "intervals": [
+        {
+          "lower": 1,
+          "upper": 2
+        }
+      ]
+    },
+    "children": [
+      {
+        "name": "BankingSoftware_0",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 1
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 1
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "CoreBanking",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 10,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "CoreBanking_0",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 10,
+                      "upper": 10
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 10,
+                      "upper": 10
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "OpenAccount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "AccountType",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Saving",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Current",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "ATMLogin",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "UserType",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Customer",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "BankEmployeeLogin",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "UserType_1",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Employee",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 4
+                                }
+                              ]
+                            },
+                            "children": [
+                              {
+                                "name": "Cleark",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "Manager",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "AssitManager",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "Accountent",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "BankingMode",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "ATM",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Bank",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Online",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "OnlineCustomerLogin",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ScanSignatureToAccount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ScanSignatureToAccount_1",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CreditInterestToAccount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "LoadCashInATM",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "DebitAnnualChargesOnDebitCard",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "CoreBanking_1",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 50
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 50
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "ActivateAccount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ReactivateAccount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CloseAccount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "FreezeAccount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Manual",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Automatic",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AddBeneficiary",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "InterBank",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "IntraBank",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "ChangeATMPin",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ChangeMaxLimitForOnlineTransfer",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ChangePassword",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CheckingBalance",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CheckingMoneyExchangeRate",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CreateDemandDraft",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CreateDemandDraftOnline",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CreditCardPayment",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CurrencyExchange",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "DepositMoney",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "FastWithdrawal",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "InterBankTransfer",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "InternationalTransfer",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "IntraBankTransfer",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "LanguageSelection",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "MobileTopUp",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "MoneyExchange",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "PayBills",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "PrintingBalanceAfterWithdraw",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "PrintingBankStatement",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "RemoveBeneficiary",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "UpdateContactDetails",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "UserInterface",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "WithdrawMoney",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ChequeClearance",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "RegisterMobileNoForBanking",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "AddAccountHolder",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "DeleteAccountHolder",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "IssueChequeBook",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 2,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 2,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "ChequeBookType",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Regular",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Multicity",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Size",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 4
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "a15",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "a30",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "a50",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "a100",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "CreateStandingInstruction",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "DeleteStandingInstruction",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CreateECSTransaction",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "DeleteECSTransaction",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CreatePayOrder",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CreditThroughRTGS",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CreditThroughNEFT",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ReconcilingCardsTransactions",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "CardType",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 3
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "MasterCard",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "VisaCard",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "MastroCard",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "ReconcilingATMTransactions",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "MapDebitCardToAccount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "MapChequeBookToAccount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "AutoATMPinForDebitCard",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CloseFixedDeposit",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "PreclosureFixedDeposit",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CancelDemandDraft",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CancelPayOrder",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "BankingSoftware_1",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 2
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 2
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "Loan",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 13,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Loan_0",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 13,
+                      "upper": 13
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 13,
+                      "upper": 13
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "ApplyForLoanOnline",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "EMICalculator",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "LoanEligibilityChecker",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "UploadLoanDocuments",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "VerifyLoanDocuments",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "LoanType",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 6
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Personal",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "GoldLoan",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "HomeLoan",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "VehicleLoan",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "LoanAgainstFD",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "LoanAgainstProperty",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "SanctionLoan",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "DisburseLoanAmount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "LoanRepayment",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "LoanRepayment_0",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "RepaymentMode",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 3
+                                }
+                              ]
+                            },
+                            "children": [
+                              {
+                                "name": "Cheque",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "ECS",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "Cash",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "LoanRepayment_1",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "LoanRepaymentEMI",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "LoanRepaymentForecloser",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AddCoBorrower",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "VerifyLoanEligibility",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "InitiateDefaulterProcess",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "SendNotice",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "InsureLoanWithThirdParty",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Loan_1",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "AssetVerification",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "CreditCards",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 13,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "CreditCards_0",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 13,
+                      "upper": 13
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 13,
+                      "upper": 13
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "CardType_1",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 9
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 9
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "PlatinumCard",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "TitaniumCard",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "DinersClubCard",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "JetPrivilegeCard",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "InfiniaCard",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "RegaliaCard",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "SuperiaCard",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "TitaniumEdgeCard",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "SolitaireCard",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "PaymentMode",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 4
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 4
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Visa",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Mastro",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Master",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "AmericanExpress",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "ApplyForCrediCardOnline",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CheckCreditCardStatus",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "EligibilityChecker",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "UploadDocuments",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "VerifyDocuments",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ViewAccountSummary",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ApplyInterestOnOutstandingAmount",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ApplyAnnualCharges",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "MarkDefaulter",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "UnmarkDefaulter",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "InitiateSettlementProcess",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "CreditCards_1",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 22
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 22
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "CreditRewardPoints",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "RedemRewardPoints",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ConvertTransactionToEMI",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "PayCreditCardBill",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "PaymentChannel",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 4
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 4
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Cheque_1",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Cash_1",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Online_1",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 2
+                                }
+                              ]
+                            },
+                            "children": [
+                              {
+                                "name": "NetBanking",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "DebitCard",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "ATM_1",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "PayUtilityBills",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "AddPayee",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CreateStandingInstructionOnCreditCard",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ViewUnbilledTransaction",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "eStatement",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "SendSMSAlerts",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "SendEmailAlerts",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "GenerateOTP",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "RegisterForEstatement",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ApplyLateFees",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ApplyBalanceTransfer",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ApplyProcessingFees",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CreditBTAmountToOtherCard",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CashWithdrawalFromCreditCard",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ApplyChargesForCashWithdrawal",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ReverseTransaction",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "CancelStandingInstructionOnCreditCard",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "RequestDuplicateEstatement",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": [
+    {
+      "require": true,
+      "first_feature_name": "CoreBanking",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "CoreBanking_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "CoreBanking",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "CoreBanking_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "LoanRepayment",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "LoanRepayment_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "LoanRepayment",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "LoanRepayment_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Loan",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Loan_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Loan",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Loan_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "CreditCards",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "CreditCards_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "CreditCards",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "CreditCards_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "BankingSoftware",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "BankingSoftware_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "BankingSoftware",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "BankingSoftware_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "HomeLoan",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "AssetVerification",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "AssetVerification",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "HomeLoan",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "LoanAgainstFD",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "AssetVerification",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "AssetVerification",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "LoanAgainstFD",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "GoldLoan",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "AssetVerification",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "AssetVerification",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "GoldLoan",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,6036 @@
+{
+  "root": {
+    "name": "STANDARD_MODEL_NAME",
+    "instance_cardinality": {
+      "intervals": [
+        {
+          "lower": 1,
+          "upper": 1
+        }
+      ]
+    },
+    "group_type_cardinality": {
+      "intervals": [
+        {
+          "lower": 0,
+          "upper": 7
+        }
+      ]
+    },
+    "group_instance_cardinality": {
+      "intervals": [
+        {
+          "lower": 0,
+          "upper": 7
+        }
+      ]
+    },
+    "children": [
+      {
+        "name": "STANDARD_MODEL_NAME_0",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 31
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 31
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "Affiliates299",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Associated_assets",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Documents63",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Media_files64",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Image66",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 6
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 6
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Different_perspectives72",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Gallery73",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Thumbnail68",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "a2D_image69",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "a360_degrees_image71",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "a3D_image70",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sound75",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Video74",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Availability",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Browsing92",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Category_page",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Index_page95",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Sorting_filters96",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 5
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 5
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Custom_filter102",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Manufacturer_name101",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Price98",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Price_Quality_ratio_100",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Quality99",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Cart_save_after_session120",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Cart_summary_page119",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Categories",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Categories84",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Multi_level85",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Multiple_classification86",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Content_approval324",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Custom_fields",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Custom_views103",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Personalized_views105",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Seasonal_product_views104",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Customer_reviews",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Customer_service",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 4
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 4
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Order_status_review192",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Order_status_review192_0",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Request_order_hardcopy198",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Order_status_review192_1",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Order_date196",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Order_number195",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Order_status197",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Product_returns191",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Question_and_feedback_forms189",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Question_and_feedback_tracking190",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Shipment_status_tracking_199",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Internal_tracking201",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Partner_tracking202",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Detailed_information",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "External_systems_integration313",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 4
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 4
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "External_distributor_system318",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Fulfillment_system",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Inventory_management_system316",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Procurement_system",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Fraud_detection171",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Home_page",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Dynamic_content8",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Dynamic_content8_0",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Personalized16",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Time_dependent15",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Dynamic_content8_1",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Special_offers",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Welcome_message11",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Static_content_7",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Inventory_tracking",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Allow_backorders303",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Multiple_catalogs87",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Payment_gateways172",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 7
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 7
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Authorize_Net174",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Custom_payment_gateway180",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "CyberSource175",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "LinkPoint176",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Paradata177",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "SkipJack178",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Verisign_Payflow_Pro179",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Procurement",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Automatic",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Product_variants",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Complex_product_configuration77",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Registration",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Registration_0",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 10
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 10
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Billing_address27",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Multiple_billing_addresses28",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Credit_card_information29",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Security_information33",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Custom_fields48",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Demographics34",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 4
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 4
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Age36",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Custom_Demographic_field39",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Education38",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Income37",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Personal_Information40",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Preferences",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Language45",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "List_size44",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Site_layout43",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Quick_checkout_profile",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Reminders46",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Shipping_address",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Multiple_shipping_addresses26",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "User_behaviour_tracking_information",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Registration_1",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "None22",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Register_to_browse20",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Register_to_buy",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Reporting_and_analysis",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Searching88",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Advanced_search91",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Basic_search90",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Shipping_options",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 4
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 4
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Carrier_selection130",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Gift_options131",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Multiple_shipments132",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Quality_of_service_selection129",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Size",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Targeting239",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 4
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 4
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Targeting239_0",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Campaigns298",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Targeting239_1",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Advertisements253",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Advertisements253_0",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Advertisement_response_tracking263",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Context_sensitive_ads264",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Advertisements253_1",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Banner_ads256",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Pop_up_ads257",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Advertisements253_2",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "House_advertisements260",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Paid_advertisements261",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Discounts",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Discounts_0",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 4
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 4
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Coupons282",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Customer_segments276",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Purchase_value_scope269",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Shipping_address277",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Discounts_1",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 3
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 3
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Fixed_discount273",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Free_item274",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Percentage_discount272",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Discounts_2",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Purchase_value280",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Quantity281",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sell_strategies284",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Cross_selling289",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Product_kitting286",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Up_selling287",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Targeting239_2",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Assignment_to_page_types_for_display293",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "E_mails295",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Personalized",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Response_tracking297",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Product_flagging294",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Targeting239_3",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 9
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 9
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Custom_target_criteria250",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Customer_preferences",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Date_and_time249",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Demographics244",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Personal_information243",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Previously_visited_pages",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Shopping_cart_content246",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Wish_list_content",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "targeting_criteria_previous_purchases",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "User_behaviour_tracking",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 3
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 3
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "External_referring_pages",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Locally_visited_pages",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Previous_purchases",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Warranty_information",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Weight",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Wish_list",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 4
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 4
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "E_mail_wish_list",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Multiple_wish_lists109",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Permissions",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Private_access114",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Public_access112",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Restricted_access113",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Wish_list_save_after_session",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "STANDARD_MODEL_NAME_1",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 9
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 9
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "COD162",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Credit_card163",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Custom_payment_type170",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Debit_card164",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Eletronic_cheque165",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Fax_mail_order166",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Gift_certificate168",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Phone_order169",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Purchase_order167",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "STANDARD_MODEL_NAME_2",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 2
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 2
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "Custom_taxation136",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Custom_taxation136_0",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Fixed_rate_taxation139",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Rule_based_taxation140",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Billing144",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Resolution145",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 3
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 3
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "City149",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Country147",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Region148",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Custom_taxation136_1",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Percentage153",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Surcharge152",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Tax_gateways154",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 3
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 3
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "CertiTAX156",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Custom_tax_gateway158",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "CyberSource157",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "STANDARD_MODEL_NAME_3",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 4
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 4
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "E_mail184",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Eletronic_page183",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Mail186",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Phone185",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "STANDARD_MODEL_NAME_4",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 3
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 3
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "Eletronic_goods",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Physical_goods",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Services",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "STANDARD_MODEL_NAME_5",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 3
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 3
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "Eletronic_goods_fulfillment",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Physical_goods_fulfillment",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Custom_shipping_method217",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Rate_factors220",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 4
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 4
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Order_total223",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Product_classification225",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Quantity_purchased222",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Weight224",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Shipping_gateways226",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 5
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 5
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Canada_Post231",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Custom_shipping_gateway232",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "FedEX228",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "UPS229",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "USPS230",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Services_fulfillment",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Appointment_scheduling237",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Resource_planning238",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "STANDARD_MODEL_NAME_6",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 2
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 2
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "Guest_checkout127",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "Registered_checkout",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "Quick_checkout",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Enable_profile_update_on_checkout_126",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": [
+    {
+      "require": true,
+      "first_feature_name": "Order_status_review192",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Order_status_review192_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Order_status_review192",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Order_status_review192_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Dynamic_content8",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Dynamic_content8_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Dynamic_content8",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Dynamic_content8_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Registration",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Registration_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Registration",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Registration_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Advertisements253",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Advertisements253_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Advertisements253",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Advertisements253_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Advertisements253",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Advertisements253_2",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Discounts",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Discounts_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Discounts",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Discounts_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Discounts",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Discounts_2",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Targeting239",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Targeting239_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Targeting239",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Targeting239_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Targeting239",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Targeting239_2",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Targeting239",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Targeting239_3",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Custom_taxation136",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Custom_taxation136_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Custom_taxation136",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Custom_taxation136_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "STANDARD_MODEL_NAME",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "STANDARD_MODEL_NAME_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "STANDARD_MODEL_NAME",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "STANDARD_MODEL_NAME_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "STANDARD_MODEL_NAME",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "STANDARD_MODEL_NAME_2",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "STANDARD_MODEL_NAME",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "STANDARD_MODEL_NAME_3",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "STANDARD_MODEL_NAME",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "STANDARD_MODEL_NAME_4",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "STANDARD_MODEL_NAME",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "STANDARD_MODEL_NAME_5",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "STANDARD_MODEL_NAME",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "STANDARD_MODEL_NAME_6",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": false,
+      "first_feature_name": "Registration",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Wish_list_save_after_session",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Availability",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Inventory_tracking",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Category_page",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Categories",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Customer_preferences",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Preferences",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "E_mail_wish_list",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Registration",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Eletronic_goods",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Eletronic_goods_fulfillment",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Eletronic_goods",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Size",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Permissions",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Registration",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Physical_goods",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Physical_goods_fulfillment",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Physical_goods",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Size",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Physical_goods",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Weight",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Quick_checkout",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Quick_checkout_profile",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Registered_checkout",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Register_to_buy",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Registered_checkout",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Registration",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Services",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Services_fulfillment",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Shipping_options",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Physical_goods_fulfillment",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Special_offers",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Discounts",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "User_behaviour_tracking_information",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "User_behaviour_tracking",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Wish_list",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Wish_list_save_after_session",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "Wish_list_content",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "Wish_list",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    }
+  ]
+}

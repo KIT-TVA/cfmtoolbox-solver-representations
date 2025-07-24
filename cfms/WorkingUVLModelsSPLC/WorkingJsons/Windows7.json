@@ -1,0 +1,1601 @@
+{
+  "root": {
+    "name": "STANDARD_MODEL_NAME",
+    "instance_cardinality": {
+      "intervals": [
+        {
+          "lower": 1,
+          "upper": 1
+        }
+      ]
+    },
+    "group_type_cardinality": {
+      "intervals": [
+        {
+          "lower": 1,
+          "upper": 4
+        }
+      ]
+    },
+    "group_instance_cardinality": {
+      "intervals": [
+        {
+          "lower": 1,
+          "upper": 4
+        }
+      ]
+    },
+    "children": [
+      {
+        "name": "ConfigureVoiceRecognition",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 4
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 4
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "ConfigureTheMicrophone",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 3
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "MicrophoneOnHeadphones_",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "OfficeMicrophone_",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Other_",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "RunTheLearningModuleOfYourVoice",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "StartVoiceRecognition",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 3
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "MicrophoneOnHeadphones",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "OfficeMicrophone",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "Other",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "VoiceRecognitionTutorial",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "MAkeTheMouseEasyToUse",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": []
+        },
+        "group_instance_cardinality": {
+          "intervals": []
+        },
+        "children": []
+      },
+      {
+        "name": "MakeTheKeyboardEasierToUse",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 2
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 2
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "ControlTheMouseWithTheKeyboard_",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          },
+          {
+            "name": "MakeEntryEasier",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 3
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 3
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "ActivateRetentiveKeys",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "ActivateTheFilterKeys",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "ActivateTheToggleButtons",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Readability",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 4
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 1,
+              "upper": 4
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "EasyOnScreenPlayback",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "EasyOnScreenPlayback_0",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "AverageOneHundredAndTwentyFivePerCent",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "SmallOneHundredPerCent",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "EasyOnScreenPlayback_1",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "MagnifyingGlass",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "MagnifyingGlass_0",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "ZoomInOneThousandSixHundredPerCent",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "ZoomOutOneHundredPercent",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "MagnifyingGlass_1",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Display_",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 4
+                                }
+                              ]
+                            },
+                            "children": [
+                              {
+                                "name": "Anchor",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "FullScreen",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "FullScreenPreview",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "MagnifyingGlass_",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "Parameter",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 5
+                                }
+                              ]
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 5
+                                }
+                              ]
+                            },
+                            "children": [
+                              {
+                                "name": "DisplayorFactorWhenZooming",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 1,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 1,
+                                      "upper": 2
+                                    }
+                                  ]
+                                },
+                                "children": [
+                                  {
+                                    "name": "LessTwentyFivePerCent",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "MoreFourHundredPerCent",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "EnableColorInversion",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "FollowTheMousePointer",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "TheMagnifyingGlassMustFollowTheInsertionPointOfTheText",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "TrackSelectedItemThroughKeyboard",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": []
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": []
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "EnlargeTheItemDisplayedOnTheScreen",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 4
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 4
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "AdjustTextCleartype",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "AdjustTheResolution",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 2
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Display",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Resolution",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "R1024x768",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "R1366x768",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "R800x600",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ColorCalibration",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "SetCustomTextSize",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "HearTextAndDescriptionReadAloud",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "ActivateTheNarrator",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "EnableAudioDescription",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "HighContrast",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "AeroTheme",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 6
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "Architecture",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Characters",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Landscape",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Nature",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Scene",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Windows7",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "BasicThemeAndContrast",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 5
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "ClassicWindows",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "HighBlackContrast",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "HighContrastNumber1",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "HighContrastNumber2",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "HighWhiteContrast",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": [
+    {
+      "require": true,
+      "first_feature_name": "MagnifyingGlass",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "MagnifyingGlass_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "MagnifyingGlass",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "MagnifyingGlass_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "EasyOnScreenPlayback",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "EasyOnScreenPlayback_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "EasyOnScreenPlayback",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "EasyOnScreenPlayback_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    }
+  ]
+}

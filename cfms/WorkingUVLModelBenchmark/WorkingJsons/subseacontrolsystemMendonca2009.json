@@ -1,0 +1,3779 @@
+{
+  "root": {
+    "name": "SubseaCS",
+    "instance_cardinality": {
+      "intervals": [
+        {
+          "lower": 1,
+          "upper": 1
+        }
+      ]
+    },
+    "group_type_cardinality": {
+      "intervals": [
+        {
+          "lower": 0,
+          "upper": 2
+        }
+      ]
+    },
+    "group_instance_cardinality": {
+      "intervals": [
+        {
+          "lower": 5,
+          "upper": 2
+        }
+      ]
+    },
+    "children": [
+      {
+        "name": "SubseaCS_0",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 5,
+              "upper": 5
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 5,
+              "upper": 5
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "ProductionSystem",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 3,
+                  "upper": 3
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 3,
+                  "upper": 3
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "ProductionSystem_1",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "SubseaField",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 2,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 2,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "SubseaField_1",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "XmasTree",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "unit",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Mile",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "KM",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "productionSystemType",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "RateMaxShutinPress",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "WithPressRestriction",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "WithPressProtection",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "subseaField",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "XmasTree_1",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 9,
+                          "upper": 9
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 9,
+                          "upper": 9
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "TreeType",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 3
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "VXT",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "HXT",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Mudline",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "BoreSize",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 5
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Three",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Four",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Five",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Seven",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Nine",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "PressureRating",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 4
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "FiveKsi",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "TenKsi",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "FifteenKsi",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "TwentyKsi",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "InstallType",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 3
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Jackup",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Semisubmersible",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Drillship",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "WellType",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 3
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "ProductionWell",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "WaterInjectionWell",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "GasInjectionWell",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ServiceType",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 3
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Sour",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Neutral",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Sweet",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "TreeCompletionType",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 4
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Simple",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "DiverAssist",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Diverless",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Guidelineless",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "corrosiveityDegree",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 4
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Noncorrosive",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Slightylycorrosive",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "ModeratelytoHighly",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Verycorrosive",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "materialType",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 7
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "AA",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "BB",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "CC",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "DD",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "EE",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "FF",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "HH",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "systemType",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 3
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "AllHydraulic",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "detailedType",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "DirectHydraulic",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "PilotedHydraulic",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "SequentialHydrualic",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ElectroHydraulic",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "detailedType_2",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "DirectElectroHydraulic",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "MultipleElectroHydraulic",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Autonomous",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "AllElectric",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "detailedType_3",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "DirectElectric",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "MultipleElectric",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "AutonomousElectric",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "signalType",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "HydraulicSignal",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              },
+              {
+                "name": "ElectricSignal",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": []
+                },
+                "group_instance_cardinality": {
+                  "intervals": []
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MCS",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "integrationType",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "FullyIntegrated",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "PrimaryInterface",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "SecondaryInterface",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": []
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": []
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ControlModule",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 1,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": [
+                {
+                  "lower": 2,
+                  "upper": 2
+                }
+              ]
+            },
+            "group_instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 2,
+                  "upper": 2
+                }
+              ]
+            },
+            "children": [
+              {
+                "name": "SEM",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 3,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 3,
+                      "upper": 3
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "shockLevel",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Q1",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Q2",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "IdentificationType",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 3
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Tag",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "NamePlate",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "ImprintedId",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 0,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": []
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": []
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "SEM_3",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 1,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "Device",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "type",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 2
+                                }
+                              ]
+                            },
+                            "children": [
+                              {
+                                "name": "Valve",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 2,
+                                      "upper": 2
+                                    }
+                                  ]
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 2,
+                                      "upper": 2
+                                    }
+                                  ]
+                                },
+                                "children": [
+                                  {
+                                    "name": "installType",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 1,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 1,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 1,
+                                          "upper": 2
+                                        }
+                                      ]
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "Buildin",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "Buildon",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "valveType",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 1,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 1,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 1,
+                                          "upper": 5
+                                        }
+                                      ]
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "AnnulusMasterValve",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "ManifoldValve",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "InjectionChokeValve",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "MethanolInjectionValve",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "ProductMasterValve",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 2,
+                                              "upper": 2
+                                            }
+                                          ]
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 2,
+                                              "upper": 2
+                                            }
+                                          ]
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "chokeType",
+                                            "instance_cardinality": {
+                                              "intervals": [
+                                                {
+                                                  "lower": 1,
+                                                  "upper": 1
+                                                }
+                                              ]
+                                            },
+                                            "group_type_cardinality": {
+                                              "intervals": [
+                                                {
+                                                  "lower": 1,
+                                                  "upper": 1
+                                                }
+                                              ]
+                                            },
+                                            "group_instance_cardinality": {
+                                              "intervals": [
+                                                {
+                                                  "lower": 1,
+                                                  "upper": 2
+                                                }
+                                              ]
+                                            },
+                                            "children": [
+                                              {
+                                                "name": "Positive",
+                                                "instance_cardinality": {
+                                                  "intervals": [
+                                                    {
+                                                      "lower": 0,
+                                                      "upper": 1
+                                                    }
+                                                  ]
+                                                },
+                                                "group_type_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "group_instance_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "children": []
+                                              },
+                                              {
+                                                "name": "Adjustable",
+                                                "instance_cardinality": {
+                                                  "intervals": [
+                                                    {
+                                                      "lower": 0,
+                                                      "upper": 1
+                                                    }
+                                                  ]
+                                                },
+                                                "group_type_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "group_instance_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "name": "trimType",
+                                            "instance_cardinality": {
+                                              "intervals": [
+                                                {
+                                                  "lower": 1,
+                                                  "upper": 1
+                                                }
+                                              ]
+                                            },
+                                            "group_type_cardinality": {
+                                              "intervals": [
+                                                {
+                                                  "lower": 1,
+                                                  "upper": 1
+                                                }
+                                              ]
+                                            },
+                                            "group_instance_cardinality": {
+                                              "intervals": [
+                                                {
+                                                  "lower": 1,
+                                                  "upper": 5
+                                                }
+                                              ]
+                                            },
+                                            "children": [
+                                              {
+                                                "name": "RotatingDisc",
+                                                "instance_cardinality": {
+                                                  "intervals": [
+                                                    {
+                                                      "lower": 0,
+                                                      "upper": 1
+                                                    }
+                                                  ]
+                                                },
+                                                "group_type_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "group_instance_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "children": []
+                                              },
+                                              {
+                                                "name": "NeedleSeat",
+                                                "instance_cardinality": {
+                                                  "intervals": [
+                                                    {
+                                                      "lower": 0,
+                                                      "upper": 1
+                                                    }
+                                                  ]
+                                                },
+                                                "group_type_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "group_instance_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "children": []
+                                              },
+                                              {
+                                                "name": "PlugCage",
+                                                "instance_cardinality": {
+                                                  "intervals": [
+                                                    {
+                                                      "lower": 0,
+                                                      "upper": 1
+                                                    }
+                                                  ]
+                                                },
+                                                "group_type_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "group_instance_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "children": []
+                                              },
+                                              {
+                                                "name": "SlidingSleeveCage",
+                                                "instance_cardinality": {
+                                                  "intervals": [
+                                                    {
+                                                      "lower": 0,
+                                                      "upper": 1
+                                                    }
+                                                  ]
+                                                },
+                                                "group_type_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "group_instance_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "children": []
+                                              },
+                                              {
+                                                "name": "Multistage",
+                                                "instance_cardinality": {
+                                                  "intervals": [
+                                                    {
+                                                      "lower": 0,
+                                                      "upper": 1
+                                                    }
+                                                  ]
+                                                },
+                                                "group_type_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "group_instance_cardinality": {
+                                                  "intervals": []
+                                                },
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "Sensor",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 0,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 1,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 1,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "children": [
+                                  {
+                                    "name": "sensorType",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 1,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 1,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 1,
+                                          "upper": 6
+                                        }
+                                      ]
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "DownholeMonitor",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "TemperatureTransducer",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "SubseaFlowMeter",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "PositionSensor",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "SandDetector",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "ErosionProbs",
+                                        "instance_cardinality": {
+                                          "intervals": [
+                                            {
+                                              "lower": 0,
+                                              "upper": 1
+                                            }
+                                          ]
+                                        },
+                                        "group_type_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "group_instance_cardinality": {
+                                          "intervals": []
+                                        },
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SEMApp",
+                "instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 1,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_type_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "group_instance_cardinality": {
+                  "intervals": [
+                    {
+                      "lower": 0,
+                      "upper": 1
+                    }
+                  ]
+                },
+                "children": [
+                  {
+                    "name": "DeviceController",
+                    "instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 0,
+                          "upper": 1
+                        }
+                      ]
+                    },
+                    "group_type_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 2,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "group_instance_cardinality": {
+                      "intervals": [
+                        {
+                          "lower": 2,
+                          "upper": 2
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "name": "operationMode",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "Normal",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Maintenance",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": []
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": []
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "type_2",
+                        "instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_type_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 1
+                            }
+                          ]
+                        },
+                        "group_instance_cardinality": {
+                          "intervals": [
+                            {
+                              "lower": 1,
+                              "upper": 2
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "name": "SensorController",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "children": [
+                              {
+                                "name": "scType",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 1,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 1,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 1,
+                                      "upper": 6
+                                    }
+                                  ]
+                                },
+                                "children": [
+                                  {
+                                    "name": "DownholeMonitorController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "TemperatureTransducerController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "SubseaFlowMeterController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "PositionSensorController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "SandDetectorController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "ErosionProbsController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "name": "ValveController",
+                            "instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 0,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_type_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "group_instance_cardinality": {
+                              "intervals": [
+                                {
+                                  "lower": 1,
+                                  "upper": 1
+                                }
+                              ]
+                            },
+                            "children": [
+                              {
+                                "name": "vcType",
+                                "instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 1,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_type_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 1,
+                                      "upper": 1
+                                    }
+                                  ]
+                                },
+                                "group_instance_cardinality": {
+                                  "intervals": [
+                                    {
+                                      "lower": 1,
+                                      "upper": 5
+                                    }
+                                  ]
+                                },
+                                "children": [
+                                  {
+                                    "name": "annulusMasterValveController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "ManifoldValveController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "InjectionChokeValveController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "MethanolInjectionValveController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "ProductMasterValveController",
+                                    "instance_cardinality": {
+                                      "intervals": [
+                                        {
+                                          "lower": 0,
+                                          "upper": 1
+                                        }
+                                      ]
+                                    },
+                                    "group_type_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "group_instance_cardinality": {
+                                      "intervals": []
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SubseaCS_1",
+        "instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_type_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "group_instance_cardinality": {
+          "intervals": [
+            {
+              "lower": 0,
+              "upper": 1
+            }
+          ]
+        },
+        "children": [
+          {
+            "name": "HIPPS",
+            "instance_cardinality": {
+              "intervals": [
+                {
+                  "lower": 0,
+                  "upper": 1
+                }
+              ]
+            },
+            "group_type_cardinality": {
+              "intervals": []
+            },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": [
+    {
+      "require": true,
+      "first_feature_name": "SubseaCS",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "SubseaCS_0",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "SubseaCS",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "SubseaCS_1",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "ManifoldValve",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "ManifoldValveController",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "ManifoldValveController",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "ManifoldValve",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "AnnulusMasterValve",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "annulusMasterValveController",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "annulusMasterValveController",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "AnnulusMasterValve",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "SubseaFlowMeter",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "SubseaFlowMeterController",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "SubseaFlowMeterController",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "SubseaFlowMeter",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "PositionSensor",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "PositionSensorController",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "PositionSensorController",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "PositionSensor",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "AllElectric",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "ElectricSignal",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "ElectricSignal",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "AllElectric",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "DownholeMonitor",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "DownholeMonitorController",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "DownholeMonitorController",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "DownholeMonitor",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "TemperatureTransducer",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "TemperatureTransducerController",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "TemperatureTransducerController",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "TemperatureTransducer",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "AllHydraulic",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "HydraulicSignal",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "HydraulicSignal",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "AllHydraulic",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "ProductMasterValve",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "ProductMasterValveController",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "ProductMasterValveController",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "ProductMasterValve",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "SandDetector",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "SandDetectorController",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "SandDetectorController",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "SandDetector",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "ErosionProbs",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "ErosionProbsController",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "ErosionProbsController",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "ErosionProbs",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "MethanolInjectionValve",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 0,
+            "upper": 0
+          }
+        ]
+      },
+      "second_feature_name": "MethanolInjectionValveController",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    },
+    {
+      "require": true,
+      "first_feature_name": "MethanolInjectionValveController",
+      "first_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      },
+      "second_feature_name": "MethanolInjectionValve",
+      "second_cardinality": {
+        "intervals": [
+          {
+            "lower": 1,
+            "upper": 1
+          }
+        ]
+      }
+    }
+  ]
+}

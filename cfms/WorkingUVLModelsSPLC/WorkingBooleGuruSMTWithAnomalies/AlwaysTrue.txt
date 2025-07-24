@@ -1,0 +1,18 @@
+(set-logic QF_BV)
+(define-fun implies ((p Bool) (q Bool)) Bool (or (not p) q))
+
+(declare-const STANDARD_MODEL_NAME Bool)
+(declare-const Cheese Bool)
+(declare-const Sauce Bool)
+(declare-const Ketchup Bool)
+(declare-const Mustard Bool)
+(assert
+(and STANDARD_MODEL_NAME(and(implies(or Ketchup Mustard)
+ Sauce)
+(implies Sauce(or(and Ketchup(not Mustard))
+(and(not Ketchup)
+ Mustard)))
+(and(implies Cheese STANDARD_MODEL_NAME)
+(implies Sauce STANDARD_MODEL_NAME)))
+(implies STANDARD_MODEL_NAME(not Ketchup)))
+)

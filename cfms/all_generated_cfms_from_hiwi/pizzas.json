@@ -1,0 +1,167 @@
+{
+    "root": {
+      "name": "pizza",
+      "instance_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+      "group_type_cardinality": { "intervals": [{ "lower": 1, "upper": 3 }] },
+      "group_instance_cardinality": { "intervals": [{ "lower": 2, "upper": 7 }] },
+      "children": [
+        {
+          "name": "dough",
+          "instance_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+          "group_type_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+          "group_instance_cardinality": {
+            "intervals": [{ "lower": 1, "upper": 1 }]
+          },
+          "children": [
+            {
+              "name": "sourdough",
+              "instance_cardinality": {
+                "intervals": [{ "lower": 0, "upper": 1 }]
+              },
+              "group_type_cardinality": { "intervals": [] },
+              "group_instance_cardinality": { "intervals": [] },
+              "children": []
+            },
+            {
+              "name": "pizzadough",
+              "instance_cardinality": {
+                "intervals": [{ "lower": 0, "upper": 1 }]
+              },
+              "group_type_cardinality": { "intervals": [] },
+              "group_instance_cardinality": { "intervals": [] },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "cheese_mix",
+          "instance_cardinality": {
+            "intervals": [
+              {"lower": 1, "upper": 1},
+              { "lower": 2, "upper": 4 }
+            ]
+          },
+          "group_type_cardinality": { "intervals": [{ "lower": 3, "upper": 3 }] },
+          "group_instance_cardinality": {
+            "intervals": [{ "lower": 3, "upper": 3 }]
+          },
+          "children": [
+            {
+              "name": "cheddar",
+              "instance_cardinality": {
+                "intervals": [{ "lower": 0, "upper": 1 }]
+              },
+              "group_type_cardinality": { "intervals": [] },
+              "group_instance_cardinality": { "intervals": [] },
+              "children": []
+            },
+            {
+              "name": "swiss",
+              "instance_cardinality": {
+                "intervals": [{ "lower": 0, "upper": 2 }]
+              },
+              "group_type_cardinality": { "intervals": [] },
+              "group_instance_cardinality": { "intervals": [] },
+              "children": []
+            },
+            {
+              "name": "gouda",
+              "instance_cardinality": {
+                "intervals": [{ "lower": 0, "upper": 3 }]
+              },
+              "group_type_cardinality": { "intervals": [] },
+              "group_instance_cardinality": { "intervals": [] },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "ingredients",
+          "instance_cardinality": { "intervals": [{ "lower": 0, "upper": 1 }] },
+          "group_type_cardinality": { "intervals": [{ "lower": 5, "upper": 10 }] },
+          "group_instance_cardinality": {
+            "intervals": [{ "lower": 1, "upper": 10 }]
+          },
+          "children": [
+            {
+              "name": "salami",
+              "instance_cardinality": {
+                "intervals": [{ "lower": 0, "upper": 10 }]
+              },
+              "group_type_cardinality": { "intervals": [] },
+              "group_instance_cardinality": { "intervals": [] },
+              "children": []
+            },
+            {
+              "name": "peperoni",
+              "instance_cardinality": {
+                "intervals": [{ "lower": 0, "upper": 5 }]
+              },
+              "group_type_cardinality": { "intervals": [] },
+              "group_instance_cardinality": { "intervals": [] },
+              "children": []
+            },
+            {
+              "name": "onion",
+              "instance_cardinality": {
+                "intervals": [{ "lower": 0, "upper": 15 }]
+              },
+              "group_type_cardinality": { "intervals": [] },
+              "group_instance_cardinality": { "intervals": [] },
+              "children": []
+            },
+            {
+                "name": "porch",
+                "instance_cardinality": {
+                  "intervals": [{ "lower": 10, "upper": 10 }]
+                },
+                "group_type_cardinality": { "intervals": [] },
+                "group_instance_cardinality": { "intervals": [] },
+                "children": []
+            },
+            {
+                "name": "corn",
+                "instance_cardinality": {
+                  "intervals": [{ "lower": 0, "upper": 30 }]
+                },
+                "group_type_cardinality": { "intervals": [] },
+                "group_instance_cardinality": { "intervals": [] },
+                "children": []
+            }
+          ]
+        },
+        {
+            "name": "cheesecrust",
+            "instance_cardinality": { "intervals": [{ "lower": 0, "upper": 1 }] },
+            "group_type_cardinality": { "intervals": [] },
+            "group_instance_cardinality": {
+              "intervals": []
+            },
+            "children": []
+          }
+      ]
+    },
+    "constraints": [
+      {
+        "require": true,
+        "first_feature_name": "cheesecrust",
+        "first_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] },
+        "second_feature_name": "pizzadough",
+        "second_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] }
+      },
+      {
+        "require": true,
+        "first_feature_name": "cheddar",
+        "first_cardinality": { "intervals": [{ "lower": 3, "upper": 3 }] },
+        "second_feature_name": "sourdough",
+        "second_cardinality": { "intervals": [{ "lower": 1, "upper": 1 }] }
+      },
+      {
+        "require": false,
+        "first_feature_name": "peperoni",
+        "first_cardinality": { "intervals": [{ "lower": 4, "upper": 5 }] },
+        "second_feature_name": "onion",
+        "second_cardinality": { "intervals": [{ "lower": 0, "upper": 1 }] }
+      }
+    ]
+  }

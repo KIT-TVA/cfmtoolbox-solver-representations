@@ -1,0 +1,22 @@
+include
+	Arithmetic.feature-cardinality
+	Boolean.group-cardinality
+
+features
+	STANDARD_MODEL_NAME
+		[0..2]
+			STANDARD_MODEL_NAME_0 cardinality [0..1]
+				alternative
+					Directed cardinality [0..1]
+					Undirected cardinality [0..1]
+			STANDARD_MODEL_NAME_1 cardinality [0..1]
+				[0..1]
+					Algorithms cardinality [0..1]
+						or
+							Cycle cardinality [0..1]
+							Number cardinality [0..1]
+
+constraints
+	(STANDARD_MODEL_NAME >= 1) => (STANDARD_MODEL_NAME_0 >= 1)
+	(STANDARD_MODEL_NAME >= 1) => (STANDARD_MODEL_NAME_1 >= 1)
+	(Cycle >= 1) => (Directed >= 1)
