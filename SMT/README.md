@@ -5,7 +5,7 @@ To use the Plugin with the CFM Toolbox it first needs to be build via poetry.
 Therefore got to the directory where the repo is saved and run the following command.
 
 ```
-poerty build
+poetry build
 ```
 
 Then install the Plugin and the CFM Toolbox via the following commands.
