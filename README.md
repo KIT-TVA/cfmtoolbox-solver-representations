@@ -1,7 +1,7 @@
 # CFMToolbox-Solver-Representation
 
 ## Installation
-To use the Plugins with the CFM Toolbox it first needs to be build via poetry.
+To use the Plugins with the CFM Toolbox, each of it first needs to be build via poetry.
 Therefore got to one of the three directories (CSP, ILP or SMT) and run the following command.
 
 ```
