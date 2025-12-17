@@ -6,8 +6,8 @@ authors = ["upskk <upskk@student.kit.edu>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-cfmtoolbox = "^0.3.0"
+python = "^3.13"
+cfmtoolbox = "^0.5.0"
 
 [tool.poetry.plugins."cfmtoolbox.plugins"]
 cfmtoolbox-smt-encoder = "cfmtoolbox_smt_encoder"
