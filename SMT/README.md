@@ -1,31 +1,6 @@
 # CFMToolboxPluginSMTEncoding
 
-## Installation
-To use the Plugin with the CFM Toolbox it first needs to be build via poetry.
-Therefore got to the directory where the repo is saved and run the following command.
-
-```
-poetry build
-```
-
-Then install the Plugin and the CFM Toolbox via the following commands.
-
-CFMToolbox
-```
-pip3 install cfmtoolbox
-```
-
-Install the plugin
-```
-pip3 install Path-To-The-Plugin/cfmtoolbox-smt-encoder/dist/cfmtoolbox_smt_encoder-0.1.0.tar.gz
-```
-
-
-## Run 
-
-The Plugin adds the following commands to the toolbox.
-
-### SMT Multiset Encoding Variant
+## SMT Multiset Encoding Variant
  
 
 Searches for Gaps in the CFM with the multiset approach encoding.
@@ -43,7 +18,7 @@ python3 -m cfmtoolbox --import Path-TO-JSON-OF-CFM  run-smt-solver-with-multiset
 ```
 
 
-### SMT Cloning Basic Variant
+## SMT Cloning Basic Variant
 
 Searches for Gaps in the CFM with the basic cloning approach encoding.
 ```
@@ -59,7 +34,7 @@ Return the minimum feature instance cardinality for every feature. This methode 
 python3 -m cfmtoolbox --import Path-TO-JSON-OF-CFM   run-smt-solver-with-cloning-base-minimize-cardinalities
 ```
 
-### SMT Cloning with Integer Leaves
+## SMT Cloning with Integer Leaves
 
 Searches for Gaps in the CFM with the cloning approach encoding, where the leave nodes are represented as int constants.
 ```
