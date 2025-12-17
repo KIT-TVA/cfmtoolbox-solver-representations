@@ -5,7 +5,6 @@ from cfmtoolbox_csp_encoder.cloningCSP import create_csp_cloning_encoding, \
     create_amount_of_children_for_group_instance_cardinality_cloning_csp, getMaxCardinality, \
     get_all_cloned_variables, get_all_clones_of_feature, add_constraint_to_remove_permutations, \
     getMinCardinality, constraint_to_remove_symmetry
-from cfmtoolbox_smt_encoder import get_min_cardinality
 from ortools.sat.python import cp_model
 from cfmtoolbox_csp_encoder.multisetCSP import (create_multiset_csp_encoding, create_const_name,
                                                 get_variables, variables, get_max_interval_value,

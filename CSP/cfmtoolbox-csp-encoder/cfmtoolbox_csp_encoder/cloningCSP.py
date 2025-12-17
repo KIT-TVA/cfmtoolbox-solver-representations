@@ -5,7 +5,6 @@ from cfmtoolbox.plugins.big_m import get_global_upper_bound
 
 from cfmtoolbox_csp_encoder.multisetCSP import create_const_name, \
     create_assert_feature_instance_cardinality, create_assert_group_instance_cardinality
-from cfmtoolbox_smt_encoder.mulitsetSMT import create_amount_of_children_for_group_type_cardinality
 from ortools.sat.python import cp_model
 from ortools.sat.python.cp_model import CpModel
 
