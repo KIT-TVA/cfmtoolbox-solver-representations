@@ -24,4 +24,10 @@ The Plugin adds the following commands to the toolbox.
 
 See [CSP](/CSP/README.md), [SMT](/SMT/README.md) and [ILP](/ILP/README.md)
 
+To show all installed commmands use:
+
+```
+python -m cfmtoolbox --help
+```
+
 
